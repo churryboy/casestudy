@@ -1,16 +1,9 @@
 {
   "version": 2,
-  "buildCommand": null,
-  "outputDirectory": ".",
-  "framework": null,
   "cleanUrls": true,
   "rewrites": [
     {
-      "source": "/assets/:path*",
-      "destination": "/assets/:path*"
-    },
-    {
-      "source": "/(.*)",
+      "source": "/",
       "destination": "/research-case-study-details.html"
     }
   ]
