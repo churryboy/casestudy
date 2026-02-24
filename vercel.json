@@ -3,9 +3,14 @@
   "buildCommand": null,
   "outputDirectory": ".",
   "framework": null,
+  "cleanUrls": true,
   "rewrites": [
     {
-      "source": "/(?!assets/)(.*)",
+      "source": "/assets/:path*",
+      "destination": "/assets/:path*"
+    },
+    {
+      "source": "/(.*)",
       "destination": "/research-case-study-details.html"
     }
   ]
