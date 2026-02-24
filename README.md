@@ -5,8 +5,10 @@
 ## 파일 구조
 
 ```
-리디/
+케이스 스터디/
 ├── research-case-study-details.html  # 케이스 스터디 상세 페이지
+├── index.html                        # 케이스 스터디 목록 페이지
+├── about.html                        # About 페이지
 ├── styles.css                        # 스타일시트
 ├── assets/                           # 이미지 및 자산 파일
 └── README.md                         # 프로젝트 설명
