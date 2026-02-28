@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="ko"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-dynamic-subset.css" />
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#000000",
+                        "background-light": "#f7f7f7",
+                        "background-dark": "#191919",
+                    },
+                    fontFamily: {
+                        "display": ["Pretendard", "-apple-system", "BlinkMacSystemFont", "system-ui", "Roboto", "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<title>Case Study #2 - 지자체 행사 참여 경험 조사 | Proby</title>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 antialiased">
+<div class="relative flex h-auto min-h-screen w-full flex-col overflow-x-hidden">
+<header class="sticky top-0 z-50 w-full border-b border-slate-200 dark:border-slate-800 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md px-6 md:px-20 lg:px-40 py-4">
+<div class="flex items-center justify-between max-w-[1200px] mx-auto">
+<div class="flex items-center gap-3">
+<a href="index.html"><img alt="Proby Logo" class="h-8 w-auto object-contain" src="assets/header.png"/></a>
+</div>
+<div class="flex items-center gap-8">
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-slate-600 dark:text-slate-400 hover:text-primary transition-colors text-sm font-medium" href="about.html">About</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-primary transition-colors text-sm font-medium" href="index.html">Work</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-primary transition-colors text-sm font-medium" href="https://www.proby.io" target="_blank" rel="noopener noreferrer">Our product</a>
+</nav>
+<a href="https://www.proby.io/landing/contact" target="_blank" rel="noopener noreferrer" class="bg-primary hover:bg-slate-800 text-white h-12 px-8 rounded-lg font-bold transition-all flex items-center justify-center">
+                    Get in Touch
+                </a>
+</div>
+</div>
+</header>
+<main class="flex-1 max-w-[1200px] mx-auto w-full px-6 md:px-20 lg:px-40 py-10">
+<div class="w-full mb-12">
+<div class="relative w-full h-[400px] rounded-xl overflow-hidden shadow-2xl group">
+<div class="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/40 to-transparent z-10"></div>
+<div class="absolute inset-0 bg-primary/10 mix-blend-overlay z-10"></div>
+<img alt="Case Study 2 Hero" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="assets/hero.jpeg"/>
+<div class="absolute bottom-0 left-0 p-8 md:p-12 z-20">
+<span class="px-3 py-1 bg-primary text-white text-[10px] font-black rounded-full mb-4 inline-block tracking-widest uppercase">지자체 · 광고 주체 리서치</span>
+<h1 class="text-white text-3xl md:text-5xl font-extrabold leading-tight max-w-2xl">지자체 주관 행사 참여 경험 조사</h1>
+<p class="text-slate-200 mt-4 text-lg max-w-xl">시민의 행사 인지 경로, 참여 동기, 만족도·재방문 의사를 파악하고 광고 에이전시를 위한 제언 도출</p>
+</div>
+</div>
+</div>
+<div class="flex flex-col lg:flex-row gap-12">
+<aside class="lg:w-1/4">
+<div class="sticky top-28 flex flex-col gap-6">
+<div class="p-5 bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm">
+<p class="text-slate-400 dark:text-slate-500 text-xs font-bold uppercase tracking-widest mb-4">케이스 스터디 섹션</p>
+<nav class="flex flex-col gap-1">
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg bg-slate-100 dark:bg-slate-800 text-primary font-bold" href="#overview">
+<span class="material-symbols-outlined text-xl">info</span>
+<span class="text-sm">개요</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" href="#methodology">
+<span class="material-symbols-outlined text-xl">science</span>
+<span class="text-sm">연구 방법론</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" href="#findings">
+<span class="material-symbols-outlined text-xl">insights</span>
+<span class="text-sm">주요 발견사항</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" href="#impact">
+<span class="material-symbols-outlined text-xl">star</span>
+<span class="text-sm">제언 및 시사점</span>
+</a>
+</nav>
+</div>
+</div>
+</aside>
+<div class="lg:w-3/4 flex flex-col gap-16">
+<section class="scroll-mt-32" id="overview">
+<div class="mb-8">
+<h2 class="text-3xl font-extrabold mb-4">프로젝트 개요</h2>
+<p class="text-slate-600 dark:text-slate-400 text-lg leading-relaxed">지자체(지방자치단체)가 주관하는 축제·행사에 대한 시민의 참여 경험을 심층적으로 파악하기 위한 조사입니다. 행사 인지 경로, 참여 결심 요인, 참여 후 만족도, 재방문 의사를 수집하고, 지자체·광고 주체를 위한 홍보 전략·행사 기획·정보 제공 방식에 대한 정성적 인사이트를 도출하는 것을 목표로 했습니다.</p>
+</div>
+<div class="grid md:grid-cols-3 gap-6">
+<div class="bg-white dark:bg-slate-900 p-8 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-md transition-shadow">
+<span class="material-symbols-outlined text-primary mb-3 text-2xl">report_problem</span>
+<h4 class="font-bold text-slate-900 dark:text-white mb-2">조사 목적</h4>
+<p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">행사 인지 경로, “한번 가볼까?” 결심 요인, 만족·불만, 재방문 의사 및 광고·홍보 시사점 도출</p>
+</div>
+<div class="bg-white dark:bg-slate-900 p-8 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-md transition-shadow">
+<span class="material-symbols-outlined text-primary mb-3 text-2xl">person</span>
+<h4 class="font-bold text-slate-900 dark:text-white mb-2">참여자 조건</h4>
+<p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">최근 또는 과거에 지자체 주관 행사/축제를 1회 이상 참여한 경험이 있는 사람, 총 7명</p>
+</div>
+<div class="bg-white dark:bg-slate-900 p-8 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-md transition-shadow">
+<span class="material-symbols-outlined text-primary mb-3 text-2xl">celebration</span>
+<h4 class="font-bold text-slate-900 dark:text-white mb-2">참여 행사 예시</h4>
+<p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">구미 라면 축제, 공주 군밤 축제, 고양 꽃박람회, 여의도 불꽃축제, 화천 산천어 낚시축제, 북평 풍물 대잔치 등</p>
+</div>
+</div>
+</section>
+<section class="scroll-mt-32" id="methodology">
+<h2 class="text-3xl font-extrabold mb-8">연구 방법론</h2>
+<div class="flex flex-col gap-8 mb-12">
+<div class="flex gap-6 items-start">
+<div class="size-12 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-primary text-2xl">smart_toy</span>
+</div>
+<div>
+<h4 class="text-lg font-bold mb-1">AI 인터뷰 (Proby)</h4>
+<p class="text-slate-600 dark:text-slate-400 leading-relaxed mb-3">1:1 대화형 AI 인터뷰 플랫폼을 통해 시민의 진솔한 경험담과 의견을 수집했습니다. 사례비 지급 후 진행되었으며, 응답자의 맥락에 맞는 후속 질문을 통해 인지 경로·참여 동기·만족·불만·재방문 의사 및 AI 인터뷰 경험에 대한 피드백까지 종합적으로 수집했습니다.</p>
+<p class="text-sm text-slate-500 dark:text-slate-500 italic border-l-2 border-primary pl-4">AI 인터뷰는 압박감 없이 편하게 답변할 수 있다는 긍정 반응과, 질문 간 텀·말 인식 오류 등 개선점이 함께 도출되었습니다.</p>
+</div>
+</div>
+</div>
+</section>
+<section class="scroll-mt-32" id="findings">
+<h2 class="text-3xl font-extrabold mb-8">주요 발견사항</h2>
+<div class="bg-primary p-8 md:p-12 rounded-2xl text-white mb-12 relative overflow-hidden shadow-2xl">
+<div class="relative z-10">
+<p class="text-xl md:text-2xl font-light italic leading-relaxed">"홍보 영상을 보고 관심이 가서 구글이나 네이버, 유튜브를 통해서 찾아봤거든요. 꽤 착한 가격과 퀄리티가 높은 요리로 호평을 받은 축제이기 때문에 다양한 사람들의 리뷰·평가를 바탕으로 관심이 가서 가게 됐거든요."</p>
+<p class="mt-4 text-sm font-bold text-white/70">— 인터뷰 2</p>
+</div>
+<div class="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full -mr-20 -mt-20 blur-3xl"></div>
+</div>
+<div class="space-y-6">
+<div class="p-8 bg-white dark:bg-slate-900 border-l-4 border-primary rounded-r-xl shadow-sm hover:shadow-md transition-shadow">
+<h4 class="font-bold text-lg mb-3 text-slate-900 dark:text-white">인지 채널: 비주얼 → 검색·후기 확인</h4>
+<p class="text-slate-600 dark:text-slate-400 leading-relaxed mb-3">유튜브·인스타그램으로 첫 인지를 한 뒤, 네이버·구글에서 후기·정보를 확인하는 경로가 많았습니다. 현수막·포스터·방송·버스 광고, 입소문도 유의미하게 언급되었고, “홍보를 많이 하는 게 중요하다”는 의견이 제시되었습니다.</p>
+<p class="text-sm text-slate-500 dark:text-slate-500 italic">"일단 홍보를 많이 하는 게 중요한 것 같아요. 현수막을 여기저기 배치하고 포스터도 많이 배치한 걸로 알고 있어요." (인터뷰 8)</p>
+</div>
+<div class="p-8 bg-white dark:bg-slate-900 border-l-4 border-primary rounded-r-xl shadow-sm hover:shadow-md transition-shadow">
+<h4 class="font-bold text-lg mb-3 text-slate-900 dark:text-white">“가볼까?” 동기: 가성비·리뷰·이색 체험·지역 대표성</h4>
+<p class="text-slate-600 dark:text-slate-400 leading-relaxed mb-3">착한 가격·퀄리티·바가지 없다는 후기, 대형 화로에서 군밤 굽는 모습·불꽃 영상 등 시각적·경험적 특이성, 꽃·라면·낚시 등 주제·관심사 부합, “우리 지역 대표 행사” 이미지가 참여 결심으로 이어졌습니다.</p>
+<p class="text-sm text-slate-500 dark:text-slate-500 italic">"주말을 좀 색다르게 즐기고 싶은데 요즘은 좀 뻔하잖아요. 우연치 않게 홍보 영상을 보고 마침 일정이 주말이더라고요." (인터뷰 2)</p>
+</div>
+<div class="p-8 bg-white dark:bg-slate-900 border-l-4 border-primary rounded-r-xl shadow-sm hover:shadow-md transition-shadow">
+<h4 class="font-bold text-lg mb-3 text-slate-900 dark:text-white">만족·불만: 가격·체험 다양성 vs 예고 불일치·정보 부족</h4>
+<p class="text-slate-600 dark:text-slate-400 leading-relaxed mb-3">가격 대비 만족, 반띵 메뉴·다양한 체험, QR·키오스크로 결제 대기 감소 등 전년 피드백 반영 사례가 만족으로 이어졌습니다. 반면 드론 쇼 등 핵심 프로그램 당일 취소, 먹거리·편의시설 정보 부족, 혼잡·질서 문제가 불만·조건부 재방문으로 나타났습니다.</p>
+<p class="text-sm text-slate-500 dark:text-slate-500 italic">"드론 쇼가 있다고 예고됐는데 갑자기 취소됐어요. 취소 가능성을 생각하지 않고 방문해서 많이 실망했어요." (인터뷰 8)</p>
+</div>
+<div class="p-8 bg-white dark:bg-slate-900 border-l-4 border-primary rounded-r-xl shadow-sm hover:shadow-md transition-shadow">
+<h4 class="font-bold text-lg mb-3 text-slate-900 dark:text-white">홍보 = 주목 끌기(비주얼) + 신뢰·검증(후기·실제 정보)</h4>
+<p class="text-slate-600 dark:text-slate-400 leading-relaxed mb-3">홍보 영상이 축제 본연의 정보(메뉴·가격·프로그램)와는 거리가 있다는 지적도 있었고, 참여 결심 단계에서는 후기·리뷰가 중요한 역할을 했습니다. “여기서만 할 수 있는” 체험·참여 요소를 전면에 내세우는 전략이 유효했습니다.</p>
+<p class="text-sm text-slate-500 dark:text-slate-500 italic">"전통적인 것에 경험할 기회가 많지 않아서 멀게 느꼈는데, 동네에서 참여하니 생각보다 재밌게 즐겨서 새롭게 인식하게 됐어요." (인터뷰 8)</p>
+</div>
+</div>
+</section>
+<section class="scroll-mt-32" id="impact">
+<h2 class="text-3xl font-extrabold mb-8">광고 에이전시를 위한 제언</h2>
+<div class="space-y-8 mb-12">
+<div class="bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 p-8 shadow-sm">
+<h3 class="text-xl font-bold mb-6 text-slate-900 dark:text-white">채널·메시지·정보 제공</h3>
+<div class="space-y-6">
+<div class="p-6 bg-slate-50 dark:bg-slate-800 rounded-xl">
+<h4 class="font-bold text-slate-900 dark:text-white mb-2">채널: “첫 인지”와 “검증” 분리 설계</h4>
+<p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">유튜브·인스타에 짧고 강한 비주얼로 관심 유발 + 네이버·구글 검색 시 후기·가격·메뉴·프로그램 요약 노출. 홍보 영상과 실제 행사 정보 링크·요약을 같은 캠페인에 묶어 두는 것을 권장.</p>
+</div>
+<div class="p-6 bg-slate-50 dark:bg-slate-800 rounded-xl">
+<h4 class="font-bold text-slate-900 dark:text-white mb-2">메시지: “여기서만 할 수 있는 것” 명시</h4>
+<p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">구체적 체험 포인트(예: 대형 화로에서 군밤 굽기, 반띵 라면으로 여러 메뉴 시식)를 넣고, 가격·편의 개선이 있으면 “전년 피드백 반영” 같은 변화 스토리를 짧게 포함.</p>
+</div>
+<div class="p-6 bg-slate-50 dark:bg-slate-800 rounded-xl">
+<h4 class="font-bold text-slate-900 dark:text-white mb-2">정보: 기대 관리와 현장 니즈</h4>
+<p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">메인 이벤트 취소·변경 가능성과 대체 프로그램을 사전 안내. 먹거리·편의시설·테마별 프로그램을 “한눈에 보기” 형태로 홍보물·SNS에 추가.</p>
+</div>
+<div class="p-6 bg-slate-50 dark:bg-slate-800 rounded-xl">
+<h4 class="font-bold text-slate-900 dark:text-white mb-2">지역 오프라인과 온라인 연계</h4>
+<p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">현수막·포스터를 중심가·주민센터·일상 동선에 배치하고, QR·해시태그·검색어를 통일해 후기·상세 정보로 이어지게 설계.</p>
+</div>
+<div class="p-6 bg-slate-50 dark:bg-slate-800 rounded-xl">
+<h4 class="font-bold text-slate-900 dark:text-white mb-2">타깃·톤</h4>
+<p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">“주말을 색다르게”, “지인·가족과 함께”를 타깃으로, “이색적이지만 부담 없이 즐길 수 있는”, “함께 가면 더 좋은” 경험 톤. 전통·지역 문화는 “멀게 느껴지던 것을 가까이서 즐긴다”는 프레임 권장.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="p-8 bg-slate-50 dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700">
+<p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">본 케이스는 지자체 조사 AI 인터뷰 7건(인터뷰 2~8) 내용을 종합하여 작성되었습니다.</p>
+</div>
+</section>
+<div class="mt-20 pt-10 border-t border-slate-200 dark:border-slate-800 flex flex-col md:flex-row items-center justify-between gap-6">
+<div>
+<h4 class="text-xl font-bold">다른 케이스 스터디</h4>
+<p class="text-slate-600 dark:text-slate-400">웹소설 플랫폼 연재형-단행본 교차 구매 동기 분석</p>
+</div>
+<a class="flex items-center gap-2 text-primary font-bold group" href="research-case-study-details.html">
+                        Case #1 보기
+                        <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+</main>
+<footer class="w-full bg-primary text-white py-12 mt-20">
+<div class="max-w-[1200px] mx-auto px-6 md:px-20 lg:px-40 flex flex-col md:flex-row justify-between items-center gap-8">
+<div class="flex items-center gap-3">
+<div class="size-8 bg-primary rounded-lg flex items-center justify-center text-white">
+<span class="material-symbols-outlined text-xl">biotech</span>
+</div>
+<span class="font-bold text-lg">Proby</span>
+</div>
+<p class="text-slate-400 text-sm">© 2026 Proby. AI 기반 사용자 리서치 플랫폼.</p>
+<div class="flex gap-6">
+<a class="text-slate-400 hover:text-white transition-colors" href="#"><span class="material-symbols-outlined">public</span></a>
+<a class="text-slate-400 hover:text-white transition-colors" href="#"><span class="material-symbols-outlined">mail</span></a>
+<a class="text-slate-400 hover:text-white transition-colors" href="#"><span class="material-symbols-outlined">chat</span></a>
+</div>
+</div>
+</footer>
+</div>
+</body></html>
