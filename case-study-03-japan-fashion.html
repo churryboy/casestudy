@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="ko"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-dynamic-subset.css" />
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#000000",
+                        "background-light": "#f7f7f7",
+                        "background-dark": "#191919",
+                    },
+                    fontFamily: {
+                        "display": ["Pretendard", "-apple-system", "BlinkMacSystemFont", "system-ui", "Roboto", "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<title>Case Study #3 - 일본 유저 선호 패션 앱 UI 방향성 | Proby</title>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 antialiased">
+<div class="relative flex h-auto min-h-screen w-full flex-col overflow-x-hidden">
+<header class="sticky top-0 z-50 w-full border-b border-slate-200 dark:border-slate-800 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md px-6 md:px-20 lg:px-40 py-4">
+<div class="flex items-center justify-between max-w-[1200px] mx-auto">
+<div class="flex items-center gap-3">
+<a href="index.html"><img alt="Proby Logo" class="h-8 w-auto object-contain" src="assets/header.png"/></a>
+</div>
+<div class="flex items-center gap-8">
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-slate-600 dark:text-slate-400 hover:text-primary transition-colors text-sm font-medium" href="about.html">About</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-primary transition-colors text-sm font-medium" href="index.html">Work</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-primary transition-colors text-sm font-medium" href="https://www.proby.io" target="_blank" rel="noopener noreferrer">Our product</a>
+</nav>
+<a href="https://www.proby.io/landing/contact" target="_blank" rel="noopener noreferrer" class="bg-primary hover:bg-slate-800 text-white h-12 px-8 rounded-lg font-bold transition-all flex items-center justify-center">
+                    Get in Touch
+                </a>
+</div>
+</div>
+</header>
+<main class="flex-1 max-w-[1200px] mx-auto w-full px-6 md:px-20 lg:px-40 py-10">
+<div class="w-full mb-12">
+<div class="relative w-full h-[400px] rounded-xl overflow-hidden shadow-2xl group">
+<div class="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/40 to-transparent z-10"></div>
+<div class="absolute inset-0 bg-primary/10 mix-blend-overlay z-10"></div>
+<img alt="Case Study 3 Hero" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="assets/case%233.jpeg"/>
+<div class="absolute bottom-0 left-0 p-8 md:p-12 z-20">
+<span class="px-3 py-1 bg-primary text-white text-[10px] font-black rounded-full mb-4 inline-block tracking-widest uppercase">패션 · 이커머스 · 일본 시장</span>
+<h1 class="text-white text-3xl md:text-5xl font-extrabold leading-tight max-w-2xl">일본 유저가 선호하는 패션 앱 UI 방향성</h1>
+<p class="text-slate-200 mt-4 text-lg max-w-xl">가격·쿠폰·리뷰가 한눈에 보이고, 원탭으로 메뉴·검색이 되며, 시간을 존중해 준다고 느낄 때 ‘이 앱을 더 이용하고 싶다’는 반응을 이끌어냈습니다.</p>
+</div>
+</div>
+</div>
+<div class="flex flex-col lg:flex-row gap-12">
+<aside class="lg:w-1/4">
+<div class="sticky top-28 flex flex-col gap-6">
+<div class="p-5 bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm">
+<p class="text-slate-400 dark:text-slate-500 text-xs font-bold uppercase tracking-widest mb-4">케이스 스터디 섹션</p>
+<nav class="flex flex-col gap-1">
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg bg-slate-100 dark:bg-slate-800 text-primary font-bold" href="#overview">
+<span class="material-symbols-outlined text-xl">info</span>
+<span class="text-sm">개요</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" href="#methodology">
+<span class="material-symbols-outlined text-xl">science</span>
+<span class="text-sm">연구 방법론</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" href="#findings">
+<span class="material-symbols-outlined text-xl">insights</span>
+<span class="text-sm">주요 발견사항</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" href="#impact">
+<span class="material-symbols-outlined text-xl">star</span>
+<span class="text-sm">제언 및 시사점</span>
+</a>
+</nav>
+</div>
+</div>
+</aside>
+<div class="lg:w-3/4 flex flex-col gap-16">
+<section class="scroll-mt-32" id="overview">
+<div class="mb-8">
+<h2 class="text-3xl font-extrabold mb-4">프로젝트 개요</h2>
+<p class="text-slate-600 dark:text-slate-400 text-lg leading-relaxed">일본 시장용 앱(이커머스·패션·리테일)을 디자인할 때, “일본 유저가 실제로 말한 선호”를 한 곳에 정리해 디자인 방향을 가설이 아닌 유저 근거로 제안하고, 무엇을 반드시 담고 무엇을 피해야 하는지를 팀·스테이크홀더와 공유할 수 있도록 하는 것이 목표였습니다. 일본 거주 사용자를 대상으로 패션 앱 UI에 대한 Proby AI 심층 인터뷰를 진행하고, 다수 참여자 VOC를 정리해 Product Designer용 방향성 문서로 도출했습니다.</p>
+</div>
+<div class="grid grid-cols-1 gap-6">
+<div class="bg-white dark:bg-slate-900 p-8 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-md transition-shadow">
+<span class="material-symbols-outlined text-primary mb-3 text-2xl">report_problem</span>
+<h4 class="font-bold text-slate-900 dark:text-white mb-2">조사 목적</h4>
+<p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">일본 유저가 선호하는 앱 디자인 방향성 및 필수 속성 도출, 화면별(홈/리스트/상세) UI 버전 선호도와 선호 이유 수집</p>
+</div>
+<div class="bg-white dark:bg-slate-900 p-8 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-md transition-shadow">
+<span class="material-symbols-outlined text-primary mb-3 text-2xl">person</span>
+<h4 class="font-bold text-slate-900 dark:text-white mb-2">참여자 및 자극물</h4>
+<p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">일본 거주 사용자. 무신사 한국/일본, 조조타운 등 패션 앱 화면(홈·검색 결과 리스트·상품 상세)을 단계별로 제시하고 3개 UI 버전(QM1·QM2·GM2 / JM2 / KM3 등) 중 선호 선택 및 이유를 심층 인터뷰로 수집</p>
+</div>
+<div class="bg-white dark:bg-slate-900 p-8 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-md transition-shadow">
+<span class="material-symbols-outlined text-primary mb-3 text-2xl">palette</span>
+<h4 class="font-bold text-slate-900 dark:text-white mb-2">산출물</h4>
+<p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">일본 유저 선호 디자인 방향성(5가지), 화면별 선호 버전 및 이유, Must-have 속성 표, 문화·정서적 요인 해석, Anti-patterns 정리 — Product Designer용 문서</p>
+</div>
+</div>
+</section>
+<section class="scroll-mt-32" id="methodology">
+<h2 class="text-3xl font-extrabold mb-8">연구 방법론</h2>
+<div class="flex flex-col gap-8 mb-12">
+<div class="flex gap-6 items-start">
+<div class="size-12 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-primary text-2xl">smart_toy</span>
+</div>
+<div>
+<h4 class="text-lg font-bold mb-1">AI 심층 인터뷰 (Proby)</h4>
+<p class="text-slate-600 dark:text-slate-400 leading-relaxed mb-3">일본 사용자에게 평소 패션 앱 사용 습관과 선호 이유를 먼저 묶은 뒤, 홈·리스트·상품 상세 각 단계별로 3개 UI 버전을 제시하고 “가장 마음에 드는 화면 하나”를 고르게 한 후, 선택 이유를 구체적으로 프로빙했습니다. “공통적으로 끌리는 디자인 스타일”, “선호가 일본 정서·문화와 연결되는지”까지 질문해 컴포넌트 수준의 인사이트와 문화적 해석을 함께 수집했습니다.</p>
+<p class="text-sm text-slate-500 dark:text-slate-500 italic border-l-2 border-primary pl-4">자극물(앱 화면)은 이메일 등으로 사전 전달하고, 인터뷰 중 필요 시 참조하며 번호/이름으로 선택지를 식별하는 방식으로 진행되었습니다.</p>
+</div>
+</div>
+</div>
+</section>
+<section class="scroll-mt-32" id="findings">
+<h2 class="text-3xl font-extrabold mb-8">주요 발견사항</h2>
+<div class="bg-primary p-8 md:p-12 rounded-2xl text-white mb-12 relative overflow-hidden shadow-2xl">
+<div class="relative z-10">
+<p class="text-xl md:text-2xl font-light italic leading-relaxed">"사이트가 사용자의 시간을 소중히 해주면, 더 보고 싶고, 더 즐기고 싶다는 마음이 생겨요."</p>
+<p class="mt-4 text-sm font-bold text-white/70">— 일본 참여자 발화</p>
+</div>
+<div class="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full -mr-20 -mt-20 blur-3xl"></div>
+</div>
+<div class="space-y-6">
+<div class="p-8 bg-white dark:bg-slate-900 border-l-4 border-primary rounded-r-xl shadow-sm hover:shadow-md transition-shadow">
+<h4 class="font-bold text-lg mb-3 text-slate-900 dark:text-white">1. 시간을 존중하는 디자인 (Time‑respecting UX)</h4>
+<p class="text-slate-600 dark:text-slate-400 leading-relaxed mb-3">대기·로딩·불필요한 단계·정보 과부하는 “내 시간이 낭비된다”는 느낌을 주고, 반대로 <strong>한 번에 필요한 정보에 닿고, 원탭으로 메뉴·검색이 열리면</strong> “이 앱은 나의 시간을 소중히 한다” → 신뢰와 재방문으로 이어진다는 발화가 반복되었습니다. CTA·주요 메뉴는 원탭/원클릭으로 도달 가능하게, 로딩·전환 단계·팝업은 최소화, 한 화면에 넣는 정보는 “필요한 것만” 스캔 가능한 구조로 설계하는 것이 권장됩니다.</p>
+<p class="text-sm text-slate-500 dark:text-slate-500 italic">"쓸데없는 시간이나 정보가 없으면, 원탭으로 메뉴도 열리고 더 자세한 검색이 되는데, 그게 사이트가 사용자를 존중하고 있다는 뜻이에요."</p>
+</div>
+<div class="p-8 bg-white dark:bg-slate-900 border-l-4 border-primary rounded-r-xl shadow-sm hover:shadow-md transition-shadow">
+<h4 class="font-bold text-lg mb-3 text-slate-900 dark:text-white">2. 가격·프로모션의 투명성 (Price & promotion clarity)</h4>
+<p class="text-slate-600 dark:text-slate-400 leading-relaxed mb-3">가격·할인·쿠폰이 숨겨져 있거나 불명확하면 “사기를 의도한 게 아닌가”라는 <strong>불신</strong>이 생긴다는 발화가 있었습니다. 정가·할인가·세금·배송비·쿠폰 적용을 한눈에 이해할 수 있을 때 “이 사이트는 정직하다”고 느낀다고 했습니다. 가격·할인·쿠폰은 홈·리스트·상세 모두에서 눈에 띄고, 한 블록 안에서 비교 가능하게, 프로모 코드 입력란·적용 결과는 같은 맥락(상세/장바구니)에서 바로 보이게 하는 것이 중요합니다.</p>
+<p class="text-sm text-slate-500 dark:text-slate-500 italic">"가격이 잘 보이지 않으면, 수상한 사이트가 아닌가, 가격을 속이려 하는 게 아닌가 하는 의심이 생겨요."</p>
+</div>
+<div class="p-8 bg-white dark:bg-slate-900 border-l-4 border-primary rounded-r-xl shadow-sm hover:shadow-md transition-shadow">
+<h4 class="font-bold text-lg mb-3 text-slate-900 dark:text-white">3. 쇼핑 = 즐거움 · 심플하고 정돈된 디자인</h4>
+<p class="text-slate-600 dark:text-slate-400 leading-relaxed mb-3">“필수 구매”만이 아니라 <strong>발견·탐색의 재미</strong>를 원하며, 색·타이포·이미지가 너무 딱딱하면 “쇼핑”이 아니라 “업무”처럼 느껴질 수 있다는 의견이 있었습니다. 무인양품·미니멀 브랜드를 쓰는 유저는 일관되게 “심플 = 신뢰·선호”로 연결했고, 앱/웹도 불필요한 요소를 빼고 정보 계층이 분명한 디자인을 선호했습니다. “즐거움”은 과한 장식이 아니라 <strong>명확함 + 시각적 쾌감</strong>으로 정의됩니다.</p>
+<p class="text-sm text-slate-500 dark:text-slate-500 italic">"원래 즐거운 쇼핑을 하고 싶잖아요. 그래서 즐거운 색, 즐거운 글씨를 쓰는 게 중요해요."</p>
+</div>
+<div class="p-8 bg-white dark:bg-slate-900 border-l-4 border-primary rounded-r-xl shadow-sm hover:shadow-md transition-shadow">
+<h4 class="font-bold text-lg mb-3 text-slate-900 dark:text-white">4. 한 화면에서 필요한 정보를 해결 (One-screen completeness)</h4>
+<p class="text-slate-600 dark:text-slate-400 leading-relaxed mb-3">홈/리스트/상세 각 단계에서 “여기서 한 번에 판단할 수 있는가”가 중요했습니다. 쿠폰·가격·리뷰·좋아요 수·필터·장바구니 등이 여러 페이지에 나뉘어 있으면 시간이 낭비되고 “이 앱은 내 시간을 아끼지 않는다”로 이어졌습니다. 인터뷰 결과 <strong>홈은 QM1</strong>(쿠폰·인기·카테고리·검색·장바구니가 한 화면에 있음), <strong>리스트는 JM2</strong>(토글로 세일 중/발매 중만 보기, 메뉴·인기도·리뷰가 한 화면에), <strong>상세는 KM3</strong>(가격·할인·세금·배송·수량이 한 블록에 정리)가 전원 선택되었고, 공통점은 “한 화면·한 블록에서 필요한 정보를 해결” = 시간 존중 + 투명성이었습니다.</p>
+</div>
+<div class="p-8 bg-white dark:bg-slate-900 border-l-4 border-primary rounded-r-xl shadow-sm hover:shadow-md transition-shadow">
+<h4 class="font-bold text-lg mb-3 text-slate-900 dark:text-white">5. 문화·정서적 요인: 배려·투명성·신뢰·여백</h4>
+<p class="text-slate-600 dark:text-slate-400 leading-relaxed mb-3">“시간 존중”, “가격 투명성”, “한 화면에서 해결”, “심플” 같은 선호는 일본에서 자주 언급되는 정서·문화와 연결해 설명할 수 있습니다. <strong>배려(오모테나시)</strong>: 유저가 헤맬 만한 부분을 미리 줄이고 한 번에 닿게 한다 = 시간·클릭 절약 = 배려로 인식. <strong>명확성·애매함 회피</strong>: 가격·쿠폰·조건을 숨기지 않고 분명히 보여주는 UI가 불안 제거와 결정 용이로 이어짐. <strong>신뢰 = 투명성</strong>: 정보가 숨겨지지 않고 드러나야 “이 사이트는 정직하다”로 이어짐. <strong>여백·미니멀리즘</strong>: 여백과 “필요한 것만”을 중시하는 미학과 맞지 않으면 신뢰가 떨어진다는 인식이 있었습니다.</p>
+</div>
+<div class="p-8 bg-white dark:bg-slate-900 border-l-4 border-primary rounded-r-xl shadow-sm hover:shadow-md transition-shadow">
+<h4 class="font-bold text-lg mb-3 text-slate-900 dark:text-white">6. 피해야 할 것 (Anti-patterns)</h4>
+<p class="text-slate-600 dark:text-slate-400 leading-relaxed mb-3">가격·할인을 작게·숨기기 → "수상하다" "속인다"로 이어짐. 필요한 정보를 여러 페이지에 분산 → "시간 낭비" "이 사이트는 나를 소중히 안 한다". 로딩·팝업·단계 과다 → 몰입 끊김, 이탈. 브랜드 정체성 무시(예: 무인양품처럼 "심플"이 정체성인데 화면이 복잡하면 신뢰가 깨짐).</p>
+</div>
+</div>
+</section>
+<section class="scroll-mt-32" id="impact">
+<h2 class="text-3xl font-extrabold mb-8">Product Designer를 위한 제언</h2>
+<div class="space-y-8 mb-12">
+<div class="bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 p-8 shadow-sm">
+<h3 class="text-xl font-bold mb-6 text-slate-900 dark:text-white">Must-have 속성 요약</h3>
+<div class="space-y-4">
+<div class="p-4 bg-slate-50 dark:bg-slate-800 rounded-xl text-sm">
+<strong class="text-slate-900 dark:text-white">가격·할인 가시성</strong> — 큰 글씨·색 강조(할인가 빨강/노랑)·같은 블록에 배치
+</div>
+<div class="p-4 bg-slate-50 dark:bg-slate-800 rounded-xl text-sm">
+<strong class="text-slate-900 dark:text-white">쿠폰·프로모 노출</strong> — 홈·상세에 쿠폰 영역·프로모 코드 입력란 노출
+</div>
+<div class="p-4 bg-slate-50 dark:bg-slate-800 rounded-xl text-sm">
+<strong class="text-slate-900 dark:text-white">리뷰·좋아요 수</strong> — 리스트·상세에 리뷰 수·좋아요 수 표시, 가능하면 한 화면에
+</div>
+<div class="p-4 bg-slate-50 dark:bg-slate-800 rounded-xl text-sm">
+<strong class="text-slate-900 dark:text-white">필터·토글</strong> — “세일 중만” “발매 중만” 등 빠른 스크리닝, 리스트 상단에 토글/필터
+</div>
+<div class="p-4 bg-slate-50 dark:bg-slate-800 rounded-xl text-sm">
+<strong class="text-slate-900 dark:text-white">검색·메뉴 접근</strong> — 원탭으로 검색·깊은 메뉴 진입, 상단 고정 검색·햄버거 메뉴 등 일관된 패턴
+</div>
+<div class="p-4 bg-slate-50 dark:bg-slate-800 rounded-xl text-sm">
+<strong class="text-slate-900 dark:text-white">시간 존중</strong> — 로딩 최소화, CTA·주요 액션 원탭, 불필요한 팝업·단계 제거
+</div>
+</div>
+</div>
+</div>
+<div class="p-8 bg-slate-50 dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700">
+<p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed"><strong>한 문장 요약:</strong> 일본 유저는, 가격·쿠폰·리뷰가 한눈에 보이고, 원탭으로 메뉴·검색이 되며, 불필요한 단계와 정보가 없을 때 — 즉, 자신의 시간을 존중해 준다고 느낄 때 — “이 앱을 더 보고 싶다, 더 이용하고 싶다”고 말합니다. 디자인은 그 “시간 존중”과 “투명성”을 시각·구조로 담아내는 것이 우선입니다.</p>
+</div>
+<div class="p-8 bg-slate-50 dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700">
+<p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">본 케이스는 일본 패션 앱 UI 리서치(Proby AI 심층 인터뷰) 보고서 및 일본 유저 선호 디자인 방향성 Product Designer용 문서를 바탕으로 작성되었습니다.</p>
+</div>
+</section>
+<div class="mt-20 pt-10 border-t border-slate-200 dark:border-slate-800 flex flex-col md:flex-row items-center justify-between gap-6">
+<div>
+<h4 class="text-xl font-bold">다른 케이스 스터디</h4>
+<p class="text-slate-600 dark:text-slate-400">지자체 주관 행사 참여 경험 조사</p>
+</div>
+<a class="flex items-center gap-2 text-primary font-bold group" href="case-study-02-local-government.html">
+                        Case #2 보기
+                        <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+</main>
+<footer class="w-full bg-primary text-white py-12 mt-20">
+<div class="max-w-[1200px] mx-auto px-6 md:px-20 lg:px-40 flex flex-col md:flex-row justify-between items-center gap-8">
+<div class="flex items-center gap-3">
+<div class="size-8 bg-primary rounded-lg flex items-center justify-center text-white">
+<span class="material-symbols-outlined text-xl">biotech</span>
+</div>
+<span class="font-bold text-lg">Proby</span>
+</div>
+<p class="text-slate-400 text-sm">© 2026 Proby. AI 기반 사용자 리서치 플랫폼.</p>
+<div class="flex gap-6">
+<a class="text-slate-400 hover:text-white transition-colors" href="#"><span class="material-symbols-outlined">public</span></a>
+<a class="text-slate-400 hover:text-white transition-colors" href="#"><span class="material-symbols-outlined">mail</span></a>
+<a class="text-slate-400 hover:text-white transition-colors" href="#"><span class="material-symbols-outlined">chat</span></a>
+</div>
+</div>
+</footer>
+</div>
+</body></html>
