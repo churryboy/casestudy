@@ -75,6 +75,10 @@
 <span class="material-symbols-outlined text-xl">insights</span>
 <span class="text-sm">주요 발견사항</span>
 </a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" href="#japan-sentiment">
+<span class="material-symbols-outlined text-xl">eco</span>
+<span class="text-sm">일본 고유 정서</span>
+</a>
 <a class="flex items-center gap-3 px-3 py-2 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" href="#impact">
 <span class="material-symbols-outlined text-xl">star</span>
 <span class="text-sm">제언 및 시사점</span>
@@ -98,7 +102,7 @@
 <div class="bg-white dark:bg-slate-900 p-8 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-md transition-shadow">
 <span class="material-symbols-outlined text-primary mb-3 text-2xl">person</span>
 <h4 class="font-bold text-slate-900 dark:text-white mb-2">참여자 및 자극물</h4>
-<p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">일본 거주 사용자. 무신사 한국/일본, 조조타운 등 패션 앱 화면(홈·검색 결과 리스트·상품 상세)을 단계별로 제시하고 3개 UI 버전(QM1·QM2·GM2 / JM2 / KM3 등) 중 선호 선택 및 이유를 심층 인터뷰로 수집</p>
+<p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">일본 거주 사용자. 한국·일본 시장 패션 앱 화면(홈·검색 결과 리스트·상품 상세)을 단계별로 제시하고 3개 UI 버전(QM1·QM2·GM2 / JM2 / KM3 등) 중 선호 선택 및 이유를 심층 인터뷰로 수집</p>
 </div>
 <div class="bg-white dark:bg-slate-900 p-8 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-md transition-shadow">
 <span class="material-symbols-outlined text-primary mb-3 text-2xl">palette</span>
@@ -155,10 +159,51 @@
 <h4 class="font-bold text-lg mb-3 text-slate-900 dark:text-white">5. 문화·정서적 요인: 배려·투명성·신뢰·여백</h4>
 <p class="text-slate-600 dark:text-slate-400 leading-relaxed mb-3">“시간 존중”, “가격 투명성”, “한 화면에서 해결”, “심플” 같은 선호는 일본에서 자주 언급되는 정서·문화와 연결해 설명할 수 있습니다. <strong>배려(오모테나시)</strong>: 유저가 헤맬 만한 부분을 미리 줄이고 한 번에 닿게 한다 = 시간·클릭 절약 = 배려로 인식. <strong>명확성·애매함 회피</strong>: 가격·쿠폰·조건을 숨기지 않고 분명히 보여주는 UI가 불안 제거와 결정 용이로 이어짐. <strong>신뢰 = 투명성</strong>: 정보가 숨겨지지 않고 드러나야 “이 사이트는 정직하다”로 이어짐. <strong>여백·미니멀리즘</strong>: 여백과 “필요한 것만”을 중시하는 미학과 맞지 않으면 신뢰가 떨어진다는 인식이 있었습니다.</p>
 </div>
+
 <div class="p-8 bg-white dark:bg-slate-900 border-l-4 border-primary rounded-r-xl shadow-sm hover:shadow-md transition-shadow">
 <h4 class="font-bold text-lg mb-3 text-slate-900 dark:text-white">6. 피해야 할 것 (Anti-patterns)</h4>
 <p class="text-slate-600 dark:text-slate-400 leading-relaxed mb-3">가격·할인을 작게·숨기기 → "수상하다" "속인다"로 이어짐. 필요한 정보를 여러 페이지에 분산 → "시간 낭비" "이 사이트는 나를 소중히 안 한다". 로딩·팝업·단계 과다 → 몰입 끊김, 이탈. 브랜드 정체성 무시(예: 무인양품처럼 "심플"이 정체성인데 화면이 복잡하면 신뢰가 깨짐).</p>
 </div>
+
+<section class="scroll-mt-32" id="japan-sentiment">
+<h2 class="text-3xl font-extrabold mb-2">🌸 일본 고유 정서·특징</h2>
+<p class="text-slate-600 dark:text-slate-400 mb-8">인터뷰와 문헌에서 반복되는 일본 소비자 심리입니다. UI 설계 시 이 정서를 반영하면 "이 앱은 나를 이해한다"는 인상으로 이어질 수 있습니다.</p>
+<div class="flex flex-col gap-6 mb-12">
+<div class="group p-6 rounded-2xl border-2 border-slate-200 dark:border-slate-700 bg-gradient-to-br from-slate-50 to-white dark:from-slate-800 dark:to-slate-900 hover:border-primary/30 hover:shadow-lg transition-all duration-300">
+<div class="text-4xl mb-4">⏱️</div>
+<h4 class="font-bold text-lg text-slate-900 dark:text-white mb-2">시간 존중</h4>
+<p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">"24시간만 있다"는 인식이 강해, 불필요한 대기·단계는 "내 시간을 빼앗는다"로 느껴집니다. 원탭 접근·로딩 최소화가 <strong>배려</strong>로 읽힙니다.</p>
+</div>
+<div class="group p-6 rounded-2xl border-2 border-slate-200 dark:border-slate-700 bg-gradient-to-br from-slate-50 to-white dark:from-slate-800 dark:to-slate-900 hover:border-primary/30 hover:shadow-lg transition-all duration-300">
+<div class="text-4xl mb-4">🙏</div>
+<h4 class="font-bold text-lg text-slate-900 dark:text-white mb-2">배려 (오모테나시)</h4>
+<p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">상대의 시간·편의를 미리 읽고 헤맬 부분을 줄이는 태도. "한 번에 닿게 해준다" = 클릭·단계 절약 = <strong>진심으로 돌봐 준다</strong>는 인상.</p>
+</div>
+<div class="group p-6 rounded-2xl border-2 border-slate-200 dark:border-slate-700 bg-gradient-to-br from-slate-50 to-white dark:from-slate-800 dark:to-slate-900 hover:border-primary/30 hover:shadow-lg transition-all duration-300">
+<div class="text-4xl mb-4">✨</div>
+<h4 class="font-bold text-lg text-slate-900 dark:text-white mb-2">명확성·애매함 회피</h4>
+<p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">"애매한 것"보다 "명확한 것"을 선호. 가격·쿠폰·조건을 숨기지 않고 분명히 보여주는 UI가 불안을 줄이고 결정을 쉽게 합니다.</p>
+</div>
+<div class="group p-6 rounded-2xl border-2 border-slate-200 dark:border-slate-700 bg-gradient-to-br from-slate-50 to-white dark:from-slate-800 dark:to-slate-900 hover:border-primary/30 hover:shadow-lg transition-all duration-300">
+<div class="text-4xl mb-4">💎</div>
+<h4 class="font-bold text-lg text-slate-900 dark:text-white mb-2">신뢰 = 투명성</h4>
+<p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">정보가 숨겨지지 않고 드러나야 믿음이 쌓인다는 인식. 가격·할인·이용 조건이 한눈에 보이면 "정직한 사이트"로 느껴집니다.</p>
+</div>
+<div class="group p-6 rounded-2xl border-2 border-slate-200 dark:border-slate-700 bg-gradient-to-br from-slate-50 to-white dark:from-slate-800 dark:to-slate-900 hover:border-primary/30 hover:shadow-lg transition-all duration-300">
+<div class="text-4xl mb-4">⬜</div>
+<h4 class="font-bold text-lg text-slate-900 dark:text-white mb-2">여백·미니멀리즘</h4>
+<p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">여백과 "필요한 것만"을 중시하는 미학. 정보 과다·시각적 노이즈는 "정돈되지 않았다", "신뢰가 떨어진다"로 이어질 수 있습니다.</p>
+</div>
+<div class="group p-6 rounded-2xl border-2 border-slate-200 dark:border-slate-700 bg-gradient-to-br from-slate-50 to-white dark:from-slate-800 dark:to-slate-900 hover:border-primary/30 hover:shadow-lg transition-all duration-300">
+<div class="text-4xl mb-4">🛡️</div>
+<h4 class="font-bold text-lg text-slate-900 dark:text-white mb-2">심리적 안전감</h4>
+<p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">"사기 당한 것처럼 보이거나, 불확실한 선택"을 피하고 싶은 심리. 가격·조건이 명확해야 "손해 보는 구매"를 피했다고 느끼며 안심합니다.</p>
+</div>
+</div>
+<div class="p-6 rounded-2xl bg-primary/5 dark:bg-primary/10 border border-primary/20">
+<p class="text-slate-700 dark:text-slate-300 text-sm leading-relaxed"><span class="text-lg">💡</span> <strong>한 줄 요약:</strong> 일본 유저의 선호(시간 존중, 투명성, 한 화면 해결, 심플)는 배려·명확성·신뢰·여백 같은 정서와 맞닿아 있습니다. 디자인이 이 정서를 반영할 때 "이 앱은 나를 소중히 하고, 속이지 않는다"는 인상으로 이어져 이탈을 줄이고 재방문·전환으로 연결할 수 있습니다.</p>
+</div>
+</section>
 </div>
 </section>
 <section class="scroll-mt-32" id="impact">
