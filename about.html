@@ -499,29 +499,29 @@
 <section class="relative z-10">
 
   <!-- Trusted by — fixed band -->
-  <div class="py-10 border-y" style="border-color:rgba(21,34,56,0.7);background:#111114;">
+  <div class="py-10 border-y" style="border-color:#e5e7eb;background:#ffffff;">
     <div class="max-w-[1600px] mx-auto px-6 md:px-16 flex flex-col items-center gap-5">
-      <span class="section-label text-center">Trusted by</span>
+      <span class="section-label text-center" style="color:#6b7280;">Trusted by</span>
       <div class="flex items-center gap-10">
-        <img src="assets/logo/fastventures.png" alt="Fastventures" class="h-8 w-auto object-contain" style="filter:grayscale(1) brightness(1.8) contrast(1.2);mix-blend-mode:screen;opacity:0.8;"/>
-        <img src="assets/logo/TIPS.png"         alt="TIPS"         class="h-8 w-auto object-contain" style="filter:grayscale(1) brightness(1.8) contrast(1.2);mix-blend-mode:screen;opacity:0.8;"/>
+        <img src="assets/logo/fastventures.png" alt="Fastventures" class="h-8 w-auto object-contain" style="opacity:0.85;"/>
+        <img src="assets/logo/TIPS.png"         alt="TIPS"         class="h-8 w-auto object-contain" style="opacity:0.85;"/>
       </div>
     </div>
   </div>
 
   <!-- Our Client — infinite scrolling marquee -->
-  <div class="py-12" style="background:#0A0A0B;">
+  <div class="py-12" style="background:#ffffff;">
     <div class="w-full text-center mb-6">
-      <span class="section-label">Our Clients</span>
+      <span class="section-label" style="color:#6b7280;">Our Clients</span>
     </div>
 
     <!-- marquee track wrapper -->
     <div class="overflow-hidden relative">
       <!-- left/right fade masks -->
       <div class="pointer-events-none absolute inset-y-0 left-0 w-24 z-10"
-           style="background:linear-gradient(to right, rgba(10,10,11,1), transparent);"></div>
+           style="background:linear-gradient(to right, rgba(255,255,255,1), transparent);"></div>
       <div class="pointer-events-none absolute inset-y-0 right-0 w-24 z-10"
-           style="background:linear-gradient(to left, rgba(10,10,11,1), transparent);"></div>
+           style="background:linear-gradient(to left, rgba(255,255,255,1), transparent);"></div>
 
       <!-- marquee inner: duplicated for seamless loop -->
       <div class="marquee-track flex items-center gap-14 w-max">
@@ -555,20 +555,16 @@
 </section>
 
 <style>
-  /* marquee logo — screen blend removes opaque light backgrounds on dark bg */
   .marquee-logo {
     height: 32px;
     width: auto;
     object-fit: contain;
     flex-shrink: 0;
-    filter: grayscale(1) brightness(1.8) contrast(1.2);
-    mix-blend-mode: screen;
-    opacity: 0.7;
-    transition: opacity 0.25s, filter 0.25s;
+    opacity: 0.8;
+    transition: opacity 0.25s;
   }
   .marquee-logo:hover {
     opacity: 1;
-    filter: grayscale(1) brightness(2.2) contrast(1.2);
   }
 
   /* marquee scroll animation */
