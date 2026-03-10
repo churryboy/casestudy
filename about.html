@@ -617,29 +617,188 @@
   <div class="max-w-[1600px] mx-auto px-6 md:px-16">
     <p class="section-label mb-4 text-center">Our Mission</p>
     <h2 class="text-4xl md:text-5xl font-black text-center mb-3">
-      <span class="grad-text">Real Insights Come</span>
+      <span class="grad-text">Removing barriers in obtaining</span>
     </h2>
-    <p class="text-white/65 text-2xl md:text-3xl font-bold text-center mb-14">From Conversation</p>
-    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-4xl mx-auto">
-      <div class="glass rounded-2xl p-7">
-        <span class="material-symbols-outlined mb-4 text-3xl" style="color:var(--accent-lt)">psychology</span>
-        <h3 class="font-bold text-lg mb-2">AI-Powered Analysis</h3>
-        <p class="text-white/40 text-sm leading-relaxed">Rapidly analyze large-scale interview data and surface patterns with cutting-edge AI.</p>
-      </div>
-      <div class="glass rounded-2xl p-7">
-        <span class="material-symbols-outlined mb-4 text-3xl" style="color:var(--accent-text)">groups</span>
-        <h3 class="font-bold text-lg mb-2">User-Centered</h3>
-        <p class="text-white/40 text-sm leading-relaxed">We understand real experiences and needs, then propose clear, actionable solutions.</p>
-      </div>
-      <div class="glass rounded-2xl p-7">
-        <span class="material-symbols-outlined mb-4 text-3xl" style="color:var(--accent-lt)">insights</span>
-        <h3 class="font-bold text-lg mb-2">Data-Driven Decisions</h3>
-        <p class="text-white/40 text-sm leading-relaxed">Integrating qualitative and quantitative data to deliver reliable, evidence-backed insights.</p>
-      </div>
-      <div class="glass rounded-2xl p-7">
-        <span class="material-symbols-outlined mb-4 text-3xl" style="color:var(--accent-text)">speed</span>
-        <h3 class="font-bold text-lg mb-2">Fast Research Cycles</h3>
-        <p class="text-white/40 text-sm leading-relaxed">From interview design to final report — significantly faster than traditional research.</p>
+    <p class="text-white/65 text-2xl md:text-3xl font-bold text-center mb-4">market / user insight</p>
+    <p class="text-white/35 text-sm text-center mb-16 tracking-widest uppercase">To achieve our mission, here's how we work with our clients</p>
+
+    <!-- ── Workflow ─────────────────────────────────────────────── -->
+    <style>
+      .wf-scroll { overflow-x: auto; margin: 0 -1.5rem; padding: 0 1.5rem 1.5rem; }
+      @media(min-width:768px){ .wf-scroll { margin: 0 -4rem; padding: 0 4rem 1.5rem; } }
+      .wf-scroll::-webkit-scrollbar { height: 3px; }
+      .wf-scroll::-webkit-scrollbar-thumb { background: rgba(65,104,175,.3); border-radius: 2px; }
+      .wf-row { display: flex; align-items: flex-start; gap: 0; min-width: max-content; }
+      .wf-step { width: 200px; flex-shrink: 0; }
+      @media(min-width:1024px){ .wf-step { width: 220px; } }
+      .wf-badge {
+        width: 30px; height: 30px; border-radius: 50%;
+        background: var(--accent-hi); color: #fff;
+        font-size: .65rem; font-weight: 900;
+        display: flex; align-items: center; justify-content: center;
+        flex-shrink: 0;
+      }
+      .wf-card {
+        background: rgba(25,25,30,.95);
+        border: 1px solid rgba(40,64,110,.4);
+        border-radius: 14px;
+        padding: 16px 14px;
+        width: 100%;
+        transition: border-color .25s;
+      }
+      .wf-card-src {
+        background: linear-gradient(135deg, rgba(40,64,110,.45) 0%, rgba(25,25,30,.95) 100%);
+        border-color: rgba(65,104,175,.5);
+        box-shadow: 0 0 22px rgba(65,104,175,.18);
+      }
+      .wf-card .material-symbols-outlined { font-size: 1.5rem; color: var(--accent-lt); margin-bottom: 8px; display: block; }
+      .wf-card-name { font-size: .8rem; font-weight: 700; color: rgba(255,255,255,.85); }
+      .wf-dots {
+        display: flex; flex-direction: column; align-items: flex-start;
+        gap: 4px; padding-left: 18px; margin: 6px 0;
+      }
+      .wf-dot { width: 4px; height: 4px; border-radius: 50%; background: var(--accent-hi); opacity: .7; }
+      .wf-conn {
+        flex-shrink: 0; width: 40px;
+        display: flex; align-items: center; justify-content: center;
+        padding-top: 52px;
+      }
+      .wf-conn-inner { display: flex; gap: 3px; align-items: center; }
+      .wf-conn-dot { width: 3px; height: 3px; border-radius: 50%; background: rgba(65,104,175,.45); }
+    </style>
+
+    <div class="wf-scroll">
+      <div class="wf-row">
+
+        <!-- Step 01 -->
+        <div class="wf-step">
+          <div class="flex items-center gap-2.5 mb-4">
+            <span class="wf-badge">01</span>
+            <h3 class="text-sm font-bold text-white tracking-wide">Brief</h3>
+          </div>
+          <div class="wf-card wf-card-src">
+            <span class="material-symbols-outlined">corporate_fare</span>
+            <p class="wf-card-name">Client</p>
+          </div>
+          <div class="wf-dots">
+            <div class="wf-dot"></div><div class="wf-dot"></div><div class="wf-dot"></div>
+            <span class="material-symbols-outlined text-sm" style="color:var(--accent-hi);transform:rotate(90deg);display:block">arrow_forward</span>
+          </div>
+          <div class="wf-card">
+            <span class="material-symbols-outlined">group</span>
+            <p class="wf-card-name">Proby Team</p>
+          </div>
+          <p class="text-white/40 text-xs leading-relaxed mt-4">Client shares research goals, target audience, and key questions to be answered.</p>
+        </div>
+
+        <!-- Connector -->
+        <div class="wf-conn"><div class="wf-conn-inner">
+          <div class="wf-conn-dot"></div><div class="wf-conn-dot"></div><div class="wf-conn-dot"></div>
+          <span class="material-symbols-outlined text-sm" style="color:rgba(65,104,175,.6)">chevron_right</span>
+        </div></div>
+
+        <!-- Step 02 -->
+        <div class="wf-step">
+          <div class="flex items-center gap-2.5 mb-4">
+            <span class="wf-badge">02</span>
+            <h3 class="text-sm font-bold text-white tracking-wide">Script Design</h3>
+          </div>
+          <div class="wf-card wf-card-src">
+            <span class="material-symbols-outlined">assignment</span>
+            <p class="wf-card-name">Research Brief</p>
+          </div>
+          <div class="wf-dots">
+            <div class="wf-dot"></div><div class="wf-dot"></div><div class="wf-dot"></div>
+            <span class="material-symbols-outlined text-sm" style="color:var(--accent-hi);transform:rotate(90deg);display:block">arrow_forward</span>
+          </div>
+          <div class="wf-card">
+            <span class="material-symbols-outlined">edit_note</span>
+            <p class="wf-card-name">Interview Script</p>
+          </div>
+          <p class="text-white/40 text-xs leading-relaxed mt-4">Proby crafts a tailored AI interview guide aligned with the client's objectives.</p>
+        </div>
+
+        <!-- Connector -->
+        <div class="wf-conn"><div class="wf-conn-inner">
+          <div class="wf-conn-dot"></div><div class="wf-conn-dot"></div><div class="wf-conn-dot"></div>
+          <span class="material-symbols-outlined text-sm" style="color:rgba(65,104,175,.6)">chevron_right</span>
+        </div></div>
+
+        <!-- Step 03 -->
+        <div class="wf-step">
+          <div class="flex items-center gap-2.5 mb-4">
+            <span class="wf-badge">03</span>
+            <h3 class="text-sm font-bold text-white tracking-wide">AI Interviews</h3>
+          </div>
+          <div class="wf-card wf-card-src">
+            <span class="material-symbols-outlined">people</span>
+            <p class="wf-card-name">Participants</p>
+          </div>
+          <div class="wf-dots">
+            <div class="wf-dot"></div><div class="wf-dot"></div><div class="wf-dot"></div>
+            <span class="material-symbols-outlined text-sm" style="color:var(--accent-hi);transform:rotate(90deg);display:block">arrow_forward</span>
+          </div>
+          <div class="wf-card">
+            <span class="material-symbols-outlined">smart_toy</span>
+            <p class="wf-card-name">AI Agent</p>
+          </div>
+          <p class="text-white/40 text-xs leading-relaxed mt-4">Proby's AI conducts 1-on-1 interviews with participants — naturally and at scale.</p>
+        </div>
+
+        <!-- Connector -->
+        <div class="wf-conn"><div class="wf-conn-inner">
+          <div class="wf-conn-dot"></div><div class="wf-conn-dot"></div><div class="wf-conn-dot"></div>
+          <span class="material-symbols-outlined text-sm" style="color:rgba(65,104,175,.6)">chevron_right</span>
+        </div></div>
+
+        <!-- Step 04 -->
+        <div class="wf-step">
+          <div class="flex items-center gap-2.5 mb-4">
+            <span class="wf-badge">04</span>
+            <h3 class="text-sm font-bold text-white tracking-wide">Analysis</h3>
+          </div>
+          <div class="wf-card wf-card-src">
+            <span class="material-symbols-outlined">forum</span>
+            <p class="wf-card-name">Transcripts</p>
+          </div>
+          <div class="wf-dots">
+            <div class="wf-dot"></div><div class="wf-dot"></div><div class="wf-dot"></div>
+            <span class="material-symbols-outlined text-sm" style="color:var(--accent-hi);transform:rotate(90deg);display:block">arrow_forward</span>
+          </div>
+          <div class="wf-card">
+            <span class="material-symbols-outlined">lightbulb</span>
+            <p class="wf-card-name">Key Insights</p>
+          </div>
+          <p class="text-white/40 text-xs leading-relaxed mt-4">AI + human researchers extract patterns and surface the most critical findings.</p>
+        </div>
+
+        <!-- Connector -->
+        <div class="wf-conn"><div class="wf-conn-inner">
+          <div class="wf-conn-dot"></div><div class="wf-conn-dot"></div><div class="wf-conn-dot"></div>
+          <span class="material-symbols-outlined text-sm" style="color:rgba(65,104,175,.6)">chevron_right</span>
+        </div></div>
+
+        <!-- Step 05 -->
+        <div class="wf-step">
+          <div class="flex items-center gap-2.5 mb-4">
+            <span class="wf-badge">05</span>
+            <h3 class="text-sm font-bold text-white tracking-wide">Delivery</h3>
+          </div>
+          <div class="wf-card wf-card-src">
+            <span class="material-symbols-outlined">summarize</span>
+            <p class="wf-card-name">Findings</p>
+          </div>
+          <div class="wf-dots">
+            <div class="wf-dot"></div><div class="wf-dot"></div><div class="wf-dot"></div>
+            <span class="material-symbols-outlined text-sm" style="color:var(--accent-hi);transform:rotate(90deg);display:block">arrow_forward</span>
+          </div>
+          <div class="wf-card">
+            <span class="material-symbols-outlined">rocket_launch</span>
+            <p class="wf-card-name">Action Plan</p>
+          </div>
+          <p class="text-white/40 text-xs leading-relaxed mt-4">A full report with prioritized recommendations — ready to act on immediately.</p>
+        </div>
+
       </div>
     </div>
   </div>
@@ -692,50 +851,6 @@
             <span class="text-xs font-bold px-2.5 py-1 rounded-full badge" style="color:var(--accent-lt)">CTO</span>
           </div>
           <p class="text-white/40 text-sm leading-relaxed">Oversees technical strategy and product development, ensuring the platform's technical excellence.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ─── VALUES ────────────────────────────────────────────────────── -->
-<section class="relative z-10 py-24">
-  <div class="max-w-[1600px] mx-auto px-6 md:px-16">
-      <div class="relative rounded-3xl overflow-hidden p-10 md:p-16"
-         style="background:linear-gradient(135deg,rgba(30,48,80,0.3) 0%,rgba(25,25,30,0.5) 100%);border:1px solid rgba(40,64,110,0.2);">
-      <div class="blob w-[400px] h-[400px] -top-20 -right-20" style="background:#1E3050;opacity:0.2;"></div>
-      <div class="relative z-10">
-        <p class="section-label mb-4">Our Values</p>
-        <h2 class="text-4xl md:text-5xl font-black mb-14 grad-text">What We Believe In</h2>
-        <div class="grid sm:grid-cols-2 md:grid-cols-4 gap-8">
-          <div>
-            <div class="icon-chip-1 w-10 h-10 rounded-xl flex items-center justify-center mb-4">
-              <span class="material-symbols-outlined text-xl" style="color:var(--accent-lt)">visibility</span>
-            </div>
-            <h3 class="font-bold text-lg mb-2">Transparency</h3>
-            <p class="text-white/40 text-sm leading-relaxed">We share every step of our research openly, delivering data you can truly trust.</p>
-          </div>
-          <div>
-            <div class="icon-chip-2 w-10 h-10 rounded-xl flex items-center justify-center mb-4">
-              <span class="material-symbols-outlined text-xl" style="color:var(--accent-text)">lightbulb</span>
-            </div>
-            <h3 class="font-bold text-lg mb-2">Innovation</h3>
-            <p class="text-white/40 text-sm leading-relaxed">We adopt the latest technology and methodologies to conduct more efficient, precise research.</p>
-          </div>
-          <div>
-            <div class="icon-chip-3 w-10 h-10 rounded-xl flex items-center justify-center mb-4">
-              <span class="material-symbols-outlined text-xl" style="color:var(--accent-lt)">bolt</span>
-            </div>
-            <h3 class="font-bold text-lg mb-2">Execution</h3>
-            <p class="text-white/40 text-sm leading-relaxed">We transform insights into actionable solutions, not just information.</p>
-          </div>
-          <div>
-            <div class="icon-chip-4 w-10 h-10 rounded-xl flex items-center justify-center mb-4">
-              <span class="material-symbols-outlined text-xl" style="color:var(--accent-text)">handshake</span>
-            </div>
-            <h3 class="font-bold text-lg mb-2">Collaboration</h3>
-            <p class="text-white/40 text-sm leading-relaxed">We work closely with clients to create the best possible outcomes together.</p>
-          </div>
         </div>
       </div>
     </div>
