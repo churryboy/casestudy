@@ -1,183 +1,642 @@
 <!DOCTYPE html>
-<html lang="ko"><head>
+<html lang="ko">
+<head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-dynamic-subset.css" />
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<script id="tailwind-config">
-        tailwind.config = {
-            darkMode: "class",
-            theme: {
-                extend: {
-                    colors: {
-                        "primary": "#000000",
-                        "background-light": "#f7f7f7",
-                        "background-dark": "#191919",
-                    },
-                    fontFamily: {
-                        "display": ["Pretendard", "-apple-system", "BlinkMacSystemFont", "system-ui", "Roboto", "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "sans-serif"]
-                    },
-                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
-                },
-            },
-        }
-    </script>
+<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-dynamic-subset.css"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
 <title>About - Proby</title>
+<style>
+  /* ── Color Tokens (from color.md Dark series) ───────────────────
+     Dark_2  #0C0A14   ← page background
+     Dark_5  #100E1B   ← elevated surface
+     Dark_10 #191731   ← card / glass base
+     Dark_20 #211D49   ← border / divider
+     Dark_30 #2C256A   ← muted accent
+     Dark_40 #38319B   ← accent (buttons, highlights)
+     Dark_60 #5247EB   ← bright accent (sparingly)
+     Dark_80 #7E7EF1   ← accent text
+     Dark_90 #A3A3F5   ← light accent text
+  ──────────────────────────────────────────────────────────────── */
+  :root {
+    --bg:          #0C0A14;
+    --surface:     #100E1B;
+    --card:        #191731;
+    --border:      #211D49;
+    --accent-dim:  #2C256A;
+    --accent:      #38319B;
+    --accent-hi:   #5247EB;
+    --accent-text: #7E7EF1;
+    --accent-lt:   #A3A3F5;
+  }
+
+  body { background: var(--bg); }
+
+  /* Noise overlay */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 1;
+    opacity: 0.5;
+  }
+
+  /* Glow blobs — dark navy, no bright purple/pink */
+  .blob {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(140px);
+    pointer-events: none;
+  }
+
+  /* Hero video */
+  .hero-video {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.18;
+  }
+
+  /* Glass card — dark navy base */
+  .glass {
+    background: rgba(25, 23, 49, 0.7);   /* Dark_10 */
+    border: 1px solid rgba(33, 29, 73, 0.9);  /* Dark_20 */
+    backdrop-filter: blur(20px);
+  }
+
+  /* Gradient text — white → accent_lt, monochromatic */
+  .grad-text {
+    background: linear-gradient(135deg, #ffffff 20%, var(--accent-lt) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Badge — dark navy tint */
+  .badge {
+    background: rgba(44, 37, 106, 0.5);   /* accent-dim */
+    border: 1px solid rgba(82, 71, 235, 0.25);
+    backdrop-filter: blur(8px);
+  }
+
+  /* Pulse ring */
+  @keyframes pulse-ring {
+    0%   { transform: scale(1); opacity: 0.5; }
+    100% { transform: scale(1.9); opacity: 0; }
+  }
+  .pulse-ring   { animation: pulse-ring 2.8s ease-out infinite; }
+  .pulse-ring-2 { animation: pulse-ring 2.8s ease-out 0.9s infinite; }
+  .pulse-ring-3 { animation: pulse-ring 2.8s ease-out 1.8s infinite; }
+
+  /* Fade in */
+  @keyframes fade-up {
+    from { opacity: 0; transform: translateY(28px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  .fade-up  { animation: fade-up 0.9s cubic-bezier(.16,1,.3,1) both; }
+  .delay-1  { animation-delay: 0.15s; }
+  .delay-2  { animation-delay: 0.3s; }
+  .delay-3  { animation-delay: 0.45s; }
+  .delay-4  { animation-delay: 0.6s; }
+
+  /* Divider — subtle dark navy line */
+  .divider {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--border), transparent);
+  }
+
+  /* Stat number */
+  .stat-num {
+    font-size: clamp(2.5rem, 6vw, 5rem);
+    font-weight: 900;
+    line-height: 1;
+  }
+
+  /* Section label */
+  .section-label {
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    color: var(--accent-text);
+    text-transform: uppercase;
+  }
+
+  /* CTA button — dark navy, token Dark_40 base */
+  .btn-primary {
+    background: var(--accent);           /* #38319B — Dark_40 */
+    box-shadow: 0 0 32px rgba(44, 37, 106, 0.5);
+    transition: box-shadow 0.2s, background 0.2s;
+  }
+  .btn-primary:hover {
+    background: var(--accent-hi);        /* #5247EB — Dark_60, hover only */
+    box-shadow: 0 0 40px rgba(56, 49, 155, 0.45);
+  }
+
+  /* Icon accent chip */
+  .icon-chip-1 { background: rgba(44,37,106,0.5);  border: 1px solid rgba(82,71,235,0.2); }
+  .icon-chip-2 { background: rgba(33,29,73,0.6);   border: 1px solid rgba(56,49,155,0.25); }
+  .icon-chip-3 { background: rgba(25,23,49,0.7);   border: 1px solid rgba(44,37,106,0.3); }
+  .icon-chip-4 { background: rgba(16,14,27,0.8);   border: 1px solid rgba(33,29,73,0.4); }
+
+  /* ── Interview Modal ──────────────────────────────────────────── */
+  #interview-modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+  }
+  #interview-modal.open { display: flex; }
+
+  #modal-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(8, 8, 16, 0.85);
+    backdrop-filter: blur(12px);
+  }
+
+  #modal-box {
+    position: relative;
+    z-index: 10;
+    width: min(480px, calc(100vw - 32px));
+    height: min(780px, calc(100dvh - 48px));
+    border-radius: 24px;
+    overflow: hidden;
+    border: 1px solid rgba(82, 71, 235, 0.25);
+    box-shadow: 0 0 80px rgba(44, 37, 106, 0.5), 0 0 0 1px rgba(255,255,255,0.04);
+    animation: modal-in 0.35s cubic-bezier(.16,1,.3,1) both;
+  }
+
+  @keyframes modal-in {
+    from { opacity: 0; transform: scale(0.92) translateY(20px); }
+    to   { opacity: 1; transform: scale(1) translateY(0); }
+  }
+
+  #modal-box iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    display: block;
+  }
+
+  #modal-close {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    z-index: 20;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: rgba(25,23,49,0.9);
+    border: 1px solid rgba(82,71,235,0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+  #modal-close:hover { background: rgba(44,37,106,0.9); }
+
+  /* mic button hover glow */
+  #mic-btn {
+    cursor: pointer;
+    transition: filter 0.2s;
+  }
+  #mic-btn:hover { filter: brightness(1.2); }
+</style>
 </head>
-<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 antialiased">
-<div class="relative flex h-auto min-h-screen w-full flex-col overflow-x-hidden">
-<header class="sticky top-0 z-50 w-full border-b border-slate-200 dark:border-slate-800 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md px-6 md:px-20 lg:px-40 py-4">
-<div class="flex items-center justify-between max-w-[1200px] mx-auto">
-<div class="flex items-center gap-3">
-<a href="index.html"><img alt="Proby Logo" class="h-8 w-auto object-contain" src="assets/header.png"/></a>
-</div>
-<div class="flex items-center gap-8">
-<nav class="hidden md:flex items-center gap-8">
-<a class="text-slate-600 dark:text-slate-400 hover:text-primary transition-colors text-sm font-medium text-primary font-bold" href="about.html">About</a>
-<a class="text-slate-600 dark:text-slate-400 hover:text-primary transition-colors text-sm font-medium" href="index.html">Work</a>
-<a class="text-slate-600 dark:text-slate-400 hover:text-primary transition-colors text-sm font-medium" href="https://www.proby.io" target="_blank" rel="noopener noreferrer">Our product</a>
-</nav>
-<a href="https://www.proby.io/landing/contact" target="_blank" rel="noopener noreferrer" class="bg-primary hover:bg-slate-800 text-white h-12 px-8 rounded-lg font-bold transition-all flex items-center justify-center">
-                    Get in Touch
-                </a>
-</div>
-</div>
+<body class="font-display text-white antialiased overflow-x-hidden">
+
+<!-- ─── HEADER ───────────────────────────────────────────────────── -->
+<header class="fixed top-0 left-0 right-0 z-50" style="background:rgba(12,10,20,0.7);backdrop-filter:blur(20px);border-bottom:1px solid rgba(33,29,73,0.8);">
+  <div class="max-w-[1600px] mx-auto px-6 md:px-16 py-4 flex items-center justify-between">
+    <a href="index.html"><img alt="Proby" class="h-7 w-auto" src="assets/header-white.png"/></a>
+    <nav class="hidden md:flex items-center gap-8">
+      <a class="text-sm font-medium" style="color:var(--accent-lt)" href="about.html">About</a>
+      <a class="text-sm font-medium text-white/50 hover:text-white transition-colors" href="index.html">Work</a>
+      <a class="text-sm font-medium text-white/50 hover:text-white transition-colors" href="https://www.proby.io" target="_blank" rel="noopener">Our product</a>
+    </nav>
+    <a href="https://www.proby.io/landing/contact" target="_blank" rel="noopener"
+       class="text-sm font-bold px-5 py-2.5 rounded-full transition-all"
+       style="border:1px solid rgba(82,71,235,0.35);color:var(--accent-lt);">
+      Contact
+    </a>
+  </div>
 </header>
-<!-- Hero Section -->
-<section class="w-full mb-20">
-<div class="relative w-full h-[500px] overflow-hidden shadow-2xl group">
-<img alt="About Hero" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="assets/about-hero.jpeg"/>
-<div class="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/40 to-transparent z-10"></div>
-<div class="absolute inset-0 bg-primary/10 mix-blend-overlay z-10"></div>
-<div class="absolute bottom-0 left-0 p-8 md:p-12 lg:px-40 z-20 max-w-[1200px] w-full">
-<h1 class="text-white text-4xl md:text-6xl font-black leading-tight max-w-3xl mb-4">사용자 중심의<br/>리서치 솔루션</h1>
-<p class="text-slate-200 text-lg md:text-xl max-w-2xl leading-relaxed">AI 기반 사용자 리서치 플랫폼으로 더 깊은 인사이트를 제공합니다.</p>
-</div>
-</div>
+
+<!-- ─── HERO ──────────────────────────────────────────────────────── -->
+<section class="relative min-h-screen flex flex-col items-center justify-center overflow-hidden pt-20">
+
+  <!-- background blobs — dark navy tones only -->
+  <div class="blob w-[700px] h-[700px] top-[-200px] left-[-200px]" style="background:#2C256A;opacity:0.18;"></div>
+  <div class="blob w-[600px] h-[600px] bottom-[-150px] right-[-150px]" style="background:#211D49;opacity:0.15;"></div>
+  <div class="blob w-[400px] h-[400px] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" style="background:#191731;opacity:0.2;"></div>
+
+  <!-- video bg -->
+  <video class="hero-video" autoplay muted loop playsinline>
+    <source src="assets/main.mp4" type="video/mp4"/>
+  </video>
+
+  <!-- overlay gradient -->
+  <div class="absolute inset-0" style="background:linear-gradient(to bottom, rgba(12,10,20,0.65) 0%, transparent 50%, rgba(12,10,20,1) 100%);" aria-hidden="true"></div>
+
+  <!-- content -->
+  <div class="relative z-10 text-center px-6 max-w-5xl mx-auto">
+    <!-- badge -->
+    <div class="fade-up inline-flex items-center gap-2 badge rounded-full px-4 py-2 mb-8 text-sm font-medium text-purple-200">
+      <span class="text-base">⭐</span> AI 기반 리서치로 100개 이상의 인사이트 도출
+    </div>
+
+    <!-- headline -->
+    <h1 class="fade-up delay-1 text-5xl md:text-7xl lg:text-8xl font-black leading-[1.05] mb-6 tracking-tight">
+      <span class="grad-text">사용자의 목소리를</span><br/>
+      <span class="text-white">데이터로 바꿉니다</span>
+    </h1>
+
+    <!-- sub -->
+    <p class="fade-up delay-2 text-white/60 text-lg md:text-xl max-w-2xl mx-auto mb-12 leading-relaxed">
+      Proby는 AI 인터뷰 기반 정성 리서치로 더 빠르고, 더 깊은 사용자 인사이트를 제공합니다.
+    </p>
+
+    <!-- CTA -->
+    <div class="fade-up delay-3 flex flex-col sm:flex-row items-center justify-center gap-4">
+      <a href="https://www.proby.io/landing/contact" target="_blank" rel="noopener"
+         class="btn-primary inline-flex items-center gap-2 px-8 py-4 rounded-full font-bold text-white text-sm">
+        프로젝트 시작하기
+        <span class="material-symbols-outlined text-xl">arrow_forward</span>
+      </a>
+      <a href="index.html"
+         class="inline-flex items-center gap-2 px-8 py-4 rounded-full font-bold text-sm transition-all"
+         style="color:var(--accent-lt);border:1px solid rgba(33,29,73,0.9);">
+        케이스 스터디 보기
+        <span class="material-symbols-outlined text-xl">chevron_right</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- mic icon with pulse rings — click to open interview modal -->
+  <div class="fade-up delay-4 relative mt-20 mb-[-60px] z-10">
+    <div id="mic-btn" onclick="openInterviewModal()" class="relative flex items-center justify-center w-24 h-24 mx-auto" title="AI 인터뷰 체험하기">
+      <div class="pulse-ring absolute inset-0 rounded-full" style="border:1px solid rgba(82,71,235,0.35)"></div>
+      <div class="pulse-ring-2 absolute inset-0 rounded-full" style="border:1px solid rgba(56,49,155,0.25)"></div>
+      <div class="pulse-ring-3 absolute inset-0 rounded-full" style="border:1px solid rgba(44,37,106,0.2)"></div>
+      <div class="relative w-20 h-20 rounded-full flex items-center justify-center"
+           style="background:var(--accent);box-shadow:0 0 40px rgba(44,37,106,0.55);">
+        <span class="material-symbols-outlined text-white text-3xl">mic</span>
+      </div>
+    </div>
+    <p class="text-center text-xs mt-6 mb-0" style="color:var(--accent-text);letter-spacing:0.1em;">AI 인터뷰 체험하기</p>
+  </div>
+
+  <!-- scroll hint -->
+  <div class="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-1 text-white/30 text-xs">
+    <span class="material-symbols-outlined text-base animate-bounce">keyboard_arrow_down</span>
+  </div>
 </section>
 
-<main class="flex-1 max-w-[1200px] mx-auto w-full px-6 md:px-20 lg:px-40 py-10">
-<!-- Mission Section -->
-<section class="mb-20">
-<div class="text-center mb-12">
-<h2 class="text-3xl md:text-4xl font-extrabold mb-4">우리의 미션</h2>
-<p class="text-slate-600 dark:text-slate-400 text-lg max-w-3xl mx-auto leading-relaxed">사용자의 진짜 목소리를 듣고, 데이터 기반의 명확한 인사이트를 제공하여 더 나은 제품과 서비스를 만드는 것을 목표로 합니다.</p>
-</div>
-<div class="grid md:grid-cols-3 gap-6">
-<div class="bg-white dark:bg-slate-900 p-8 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-md transition-shadow">
-<span class="material-symbols-outlined text-primary mb-4 text-4xl">psychology</span>
-<h3 class="font-bold text-xl mb-3 text-slate-900 dark:text-white">AI 기반 분석</h3>
-<p class="text-slate-600 dark:text-slate-400 leading-relaxed">최신 AI 기술을 활용하여 대규모 사용자 데이터를 효율적으로 분석하고 심층적인 인사이트를 도출합니다.</p>
-</div>
-<div class="bg-white dark:bg-slate-900 p-8 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-md transition-shadow">
-<span class="material-symbols-outlined text-primary mb-4 text-4xl">groups</span>
-<h3 class="font-bold text-xl mb-3 text-slate-900 dark:text-white">사용자 중심</h3>
-<p class="text-slate-600 dark:text-slate-400 leading-relaxed">사용자의 실제 경험과 니즈를 이해하고, 이를 바탕으로 실행 가능한 솔루션을 제안합니다.</p>
-</div>
-<div class="bg-white dark:bg-slate-900 p-8 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-md transition-shadow">
-<span class="material-symbols-outlined text-primary mb-4 text-4xl">insights</span>
-<h3 class="font-bold text-xl mb-3 text-slate-900 dark:text-white">데이터 기반 의사결정</h3>
-<p class="text-slate-600 dark:text-slate-400 leading-relaxed">정성적, 정량적 데이터를 통합하여 신뢰할 수 있는 의사결정 근거를 제공합니다.</p>
-</div>
-</div>
+<!-- ─── TRUSTED BY + OUR CLIENT ──────────────────────────────────── -->
+<section class="relative z-10">
+
+  <!-- Trusted by — fixed band -->
+  <div class="py-10 border-y" style="border-color:rgba(33,29,73,0.7);background:#100E1B;">
+    <div class="max-w-[1600px] mx-auto px-6 md:px-16 flex flex-col items-center gap-5">
+      <span class="section-label text-center">Trusted by</span>
+      <div class="flex items-center gap-10">
+        <img src="assets/logo/fastventures.png" alt="Fastventures" class="h-8 w-auto object-contain" style="filter:grayscale(1) brightness(1.8) contrast(1.2);mix-blend-mode:screen;opacity:0.8;"/>
+        <img src="assets/logo/TIPS.png"         alt="TIPS"         class="h-8 w-auto object-contain" style="filter:grayscale(1) brightness(1.8) contrast(1.2);mix-blend-mode:screen;opacity:0.8;"/>
+      </div>
+    </div>
+  </div>
+
+  <!-- Our Client — infinite scrolling marquee -->
+  <div class="py-12" style="background:#0C0A14;">
+    <div class="w-full text-center mb-6">
+      <span class="section-label">Our Clients</span>
+    </div>
+
+    <!-- marquee track wrapper -->
+    <div class="overflow-hidden relative">
+      <!-- left/right fade masks -->
+      <div class="pointer-events-none absolute inset-y-0 left-0 w-24 z-10"
+           style="background:linear-gradient(to right, rgba(12,10,20,1), transparent);"></div>
+      <div class="pointer-events-none absolute inset-y-0 right-0 w-24 z-10"
+           style="background:linear-gradient(to left, rgba(12,10,20,1), transparent);"></div>
+
+      <!-- marquee inner: duplicated for seamless loop -->
+      <div class="marquee-track flex items-center gap-14 w-max">
+        <!-- set A -->
+        <img src="assets/logo/ridibooks.png"      alt="Ridi Books"       class="marquee-logo"/>
+        <img src="assets/logo/musinsa.png"         alt="Musinsa"          class="marquee-logo"/>
+        <img src="assets/logo/skt.jpg"             alt="SKT"              class="marquee-logo"/>
+        <img src="assets/logo/cjenm.png"           alt="CJ ENM"           class="marquee-logo"/>
+        <img src="assets/logo/nicednr.png"         alt="Nice D&R"         class="marquee-logo"/>
+        <img src="assets/logo/woowa.png"           alt="Woowa Brothers"   class="marquee-logo"/>
+        <img src="assets/logo/lguplus.png"         alt="LG U+"            class="marquee-logo"/>
+        <img src="assets/logo/consumerinsight.png" alt="Consumer Insight" class="marquee-logo"/>
+        <img src="assets/logo/qanda.png"           alt="Qanda"            class="marquee-logo"/>
+        <img src="assets/logo/gangnamunni.png"     alt="Gangnam Unni"     class="marquee-logo"/>
+        <img src="assets/logo/researchlab.png"     alt="Research Lab"     class="marquee-logo"/>
+        <!-- set B (duplicate for seamless) -->
+        <img src="assets/logo/ridibooks.png"      alt="Ridi Books"       class="marquee-logo"/>
+        <img src="assets/logo/musinsa.png"         alt="Musinsa"          class="marquee-logo"/>
+        <img src="assets/logo/skt.jpg"             alt="SKT"              class="marquee-logo"/>
+        <img src="assets/logo/cjenm.png"           alt="CJ ENM"           class="marquee-logo"/>
+        <img src="assets/logo/nicednr.png"         alt="Nice D&R"         class="marquee-logo"/>
+        <img src="assets/logo/woowa.png"           alt="Woowa Brothers"   class="marquee-logo"/>
+        <img src="assets/logo/lguplus.png"         alt="LG U+"            class="marquee-logo"/>
+        <img src="assets/logo/consumerinsight.png" alt="Consumer Insight" class="marquee-logo"/>
+        <img src="assets/logo/qanda.png"           alt="Qanda"            class="marquee-logo"/>
+        <img src="assets/logo/gangnamunni.png"     alt="Gangnam Unni"     class="marquee-logo"/>
+        <img src="assets/logo/researchlab.png"     alt="Research Lab"     class="marquee-logo"/>
+      </div>
+    </div>
+  </div>
 </section>
 
-<!-- Team Section -->
-<section class="mb-20">
-<div class="text-center mb-12">
-<h2 class="text-3xl md:text-4xl font-extrabold mb-4">팀 소개</h2>
-<p class="text-slate-600 dark:text-slate-400 text-lg max-w-3xl mx-auto leading-relaxed">다양한 배경과 전문성을 가진 팀원들이 함께 더 나은 사용자 경험을 만들어갑니다.</p>
-</div>
-<div class="grid md:grid-cols-3 gap-8">
-<div class="bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 p-8 shadow-sm hover:shadow-xl transition-all group">
-<div class="mb-6">
-<img alt="김유빈" class="w-full aspect-[4/5] object-cover rounded-xl mb-4 group-hover:scale-105 transition-transform duration-300" src="assets/team/kim-yubin.png"/>
-<h3 class="text-xl font-bold mb-1 text-slate-900 dark:text-white">김유빈</h3>
-<p class="text-sm text-slate-500 dark:text-slate-400 mb-4">CEO</p>
-<p class="text-slate-600 dark:text-slate-400 leading-relaxed text-sm">회사의 전략과 비전을 수립하며, AI 기반 사용자 리서치 플랫폼의 성장을 이끌어갑니다.</p>
-</div>
-</div>
-<div class="bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 p-8 shadow-sm hover:shadow-xl transition-all group">
-<div class="mb-6">
-<img alt="이철희" class="w-full aspect-[4/5] object-cover rounded-xl mb-4 group-hover:scale-105 transition-transform duration-300" src="assets/team/lee-chulhee.png"/>
-<h3 class="text-xl font-bold mb-1 text-slate-900 dark:text-white">이철희</h3>
-<p class="text-sm text-slate-500 dark:text-slate-400 mb-4">CBO</p>
-<p class="text-slate-600 dark:text-slate-400 leading-relaxed text-sm">비즈니스 전략 수립과 파트너십 개발을 통해 회사의 사업 확장을 주도합니다.</p>
-</div>
-</div>
-<div class="bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 p-8 shadow-sm hover:shadow-xl transition-all group">
-<div class="mb-6">
-<img alt="진현우" class="w-full aspect-[4/5] object-cover rounded-xl mb-4 group-hover:scale-105 transition-transform duration-300" src="assets/team/jin-hyunwoo.png"/>
-<h3 class="text-xl font-bold mb-1 text-slate-900 dark:text-white">진현우</h3>
-<p class="text-sm text-slate-500 dark:text-slate-400 mb-4">CTO</p>
-<p class="text-slate-600 dark:text-slate-400 leading-relaxed text-sm">기술 전략과 제품 개발을 총괄하며, AI 기반 리서치 플랫폼의 기술적 우수성을 확보합니다.</p>
-</div>
-</div>
-</div>
+<style>
+  /* marquee logo — screen blend removes opaque light backgrounds on dark bg */
+  .marquee-logo {
+    height: 32px;
+    width: auto;
+    object-fit: contain;
+    flex-shrink: 0;
+    filter: grayscale(1) brightness(1.8) contrast(1.2);
+    mix-blend-mode: screen;
+    opacity: 0.7;
+    transition: opacity 0.25s, filter 0.25s;
+  }
+  .marquee-logo:hover {
+    opacity: 1;
+    filter: grayscale(1) brightness(2.2) contrast(1.2);
+  }
+
+  /* marquee scroll animation */
+  @keyframes marquee-scroll {
+    0%   { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+  .marquee-track {
+    animation: marquee-scroll 28s linear infinite;
+  }
+  .marquee-track:hover {
+    animation-play-state: paused;
+  }
+</style>
+
+<!-- ─── STATS ──────────────────────────────────────────────────────── -->
+<section class="relative z-10 py-24">
+  <div class="max-w-[1600px] mx-auto px-6 md:px-16">
+    <div class="divider mb-16"></div>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-10 text-center">
+      <div class="fade-up">
+        <div class="stat-num grad-text">100+</div>
+        <p class="text-white/40 text-sm mt-2 font-medium">진행 인터뷰</p>
+      </div>
+      <div class="fade-up delay-1">
+        <div class="stat-num grad-text">13+</div>
+        <p class="text-white/40 text-sm mt-2 font-medium">케이스 스터디</p>
+      </div>
+      <div class="fade-up delay-2">
+        <div class="stat-num grad-text">7점</div>
+        <p class="text-white/40 text-sm mt-2 font-medium">AI 유사도 평균 (10점 만점)</p>
+      </div>
+      <div class="fade-up delay-3">
+        <div class="stat-num grad-text">100%</div>
+        <p class="text-white/40 text-sm mt-2 font-medium">재참여 의향</p>
+      </div>
+    </div>
+    <div class="divider mt-16"></div>
+  </div>
 </section>
 
-<!-- Values Section -->
-<section class="mb-20">
-<div class="bg-primary text-white rounded-2xl p-8 md:p-12 relative overflow-hidden shadow-2xl">
-<div class="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full -mr-20 -mt-20 blur-3xl"></div>
-<div class="relative z-10">
-<h2 class="text-3xl md:text-4xl font-extrabold mb-8 text-center">우리의 가치</h2>
-<div class="grid md:grid-cols-2 gap-8">
-<div>
-<h3 class="text-xl font-bold mb-3">투명성</h3>
-<p class="text-white/80 leading-relaxed">모든 연구 과정과 결과를 투명하게 공유하며, 신뢰할 수 있는 데이터를 제공합니다.</p>
-</div>
-<div>
-<h3 class="text-xl font-bold mb-3">혁신</h3>
-<p class="text-white/80 leading-relaxed">최신 기술과 방법론을 도입하여 더 효율적이고 정확한 리서치를 수행합니다.</p>
-</div>
-<div>
-<h3 class="text-xl font-bold mb-3">실행력</h3>
-<p class="text-white/80 leading-relaxed">인사이트를 단순한 정보가 아닌 실행 가능한 솔루션으로 전환합니다.</p>
-</div>
-<div>
-<h3 class="text-xl font-bold mb-3">협업</h3>
-<p class="text-white/80 leading-relaxed">클라이언트와의 긴밀한 협업을 통해 최적의 결과를 만들어냅니다.</p>
-</div>
-</div>
-</div>
-</div>
+<!-- ─── MISSION ───────────────────────────────────────────────────── -->
+<section class="relative z-10 py-24">
+  <div class="blob w-[500px] h-[500px] right-[-100px] top-0" style="background:#2C256A;opacity:0.12;"></div>
+  <div class="max-w-[1600px] mx-auto px-6 md:px-16">
+    <p class="section-label mb-4">Our Mission</p>
+    <div class="flex flex-col lg:flex-row gap-16 items-start">
+      <div class="lg:w-1/2">
+        <h2 class="text-4xl md:text-5xl font-black leading-tight mb-6">
+          <span class="text-white">진짜 인사이트는</span><br/>
+          <span class="grad-text">대화에서 나옵니다</span>
+        </h2>
+        <p class="text-white/50 text-lg leading-relaxed">
+          Proby는 AI와의 1:1 대화형 인터뷰를 통해 설문지로는 닿지 못하는 사용자의 진짜 생각을 꺼냅니다. 압박 없이 솔직하게, 시간과 장소에 구애받지 않고 — 더 자연스럽게 더 깊이.
+        </p>
+      </div>
+      <div class="lg:w-1/2 grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div class="glass rounded-2xl p-7">
+          <span class="material-symbols-outlined mb-4 text-3xl" style="color:var(--accent-lt)">psychology</span>
+          <h3 class="font-bold text-lg mb-2">AI 기반 분석</h3>
+          <p class="text-white/40 text-sm leading-relaxed">최신 AI로 대규모 인터뷰 데이터를 빠르게 분석하고 패턴을 도출합니다.</p>
+        </div>
+        <div class="glass rounded-2xl p-7">
+          <span class="material-symbols-outlined mb-4 text-3xl" style="color:var(--accent-text)">groups</span>
+          <h3 class="font-bold text-lg mb-2">사용자 중심</h3>
+          <p class="text-white/40 text-sm leading-relaxed">실제 경험과 니즈를 이해하고 실행 가능한 솔루션을 제안합니다.</p>
+        </div>
+        <div class="glass rounded-2xl p-7">
+          <span class="material-symbols-outlined mb-4 text-3xl" style="color:var(--accent-lt)">insights</span>
+          <h3 class="font-bold text-lg mb-2">데이터 기반 의사결정</h3>
+          <p class="text-white/40 text-sm leading-relaxed">정성·정량 데이터를 통합해 신뢰할 수 있는 근거를 제공합니다.</p>
+        </div>
+        <div class="glass rounded-2xl p-7">
+          <span class="material-symbols-outlined mb-4 text-3xl" style="color:var(--accent-text)">speed</span>
+          <h3 class="font-bold text-lg mb-2">빠른 리서치 사이클</h3>
+          <p class="text-white/40 text-sm leading-relaxed">기존 대비 훨씬 짧은 시간 안에 인터뷰 설계부터 보고서까지 완성합니다.</p>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
 
-<!-- Contact Section -->
-<section class="mb-20">
-<div class="bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 p-8 md:p-12 shadow-sm">
-<div class="text-center mb-8">
-<h2 class="text-3xl md:text-4xl font-extrabold mb-4">함께 일하고 싶으신가요?</h2>
-<p class="text-slate-600 dark:text-slate-400 text-lg max-w-2xl mx-auto leading-relaxed">프로젝트 문의나 협업 제안을 환영합니다. 언제든지 연락주세요.</p>
-</div>
-<div class="flex flex-col md:flex-row gap-4 justify-center">
-<a href="https://www.proby.io/landing/contact" target="_blank" rel="noopener noreferrer" class="bg-primary hover:bg-slate-800 text-white h-12 px-8 rounded-lg font-bold transition-all flex items-center justify-center gap-2">
-<span class="material-symbols-outlined">mail</span>
-이메일 보내기
-</a>
-</div>
-</div>
+<!-- ─── TEAM ───────────────────────────────────────────────────────── -->
+<section class="relative z-10 py-24">
+  <div class="blob w-[500px] h-[500px] left-[-100px] top-0" style="background:#211D49;opacity:0.15;"></div>
+  <div class="max-w-[1600px] mx-auto px-6 md:px-16">
+    <p class="section-label mb-4">Our Team</p>
+    <h2 class="text-4xl md:text-5xl font-black mb-16">
+      <span class="grad-text">함께 만드는 팀</span>
+    </h2>
+    <div class="grid md:grid-cols-3 gap-6">
+      <div class="glass rounded-2xl overflow-hidden group">
+        <div class="relative h-72 overflow-hidden">
+          <img alt="김유빈" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="assets/team/kim-yubin.png"/>
+          <div class="absolute inset-0" style="background:linear-gradient(to top, #0C0A14, rgba(12,10,20,0.2) 60%, transparent)"></div>
+        </div>
+        <div class="p-7">
+          <div class="flex items-center gap-3 mb-3">
+            <h3 class="text-xl font-bold">김유빈</h3>
+            <span class="text-xs font-bold px-2.5 py-1 rounded-full badge" style="color:var(--accent-lt)">CEO</span>
+          </div>
+          <p class="text-white/40 text-sm leading-relaxed">회사의 전략과 비전을 수립하며, AI 기반 사용자 리서치 플랫폼의 성장을 이끌어갑니다.</p>
+        </div>
+      </div>
+      <div class="glass rounded-2xl overflow-hidden group">
+        <div class="relative h-72 overflow-hidden">
+          <img alt="이철희" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="assets/team/lee-chulhee.png"/>
+          <div class="absolute inset-0" style="background:linear-gradient(to top, #0C0A14, rgba(12,10,20,0.2) 60%, transparent)"></div>
+        </div>
+        <div class="p-7">
+          <div class="flex items-center gap-3 mb-3">
+            <h3 class="text-xl font-bold">이철희</h3>
+            <span class="text-xs font-bold px-2.5 py-1 rounded-full badge" style="color:var(--accent-lt)">CBO</span>
+          </div>
+          <p class="text-white/40 text-sm leading-relaxed">비즈니스 전략 수립과 파트너십 개발을 통해 회사의 사업 확장을 주도합니다.</p>
+        </div>
+      </div>
+      <div class="glass rounded-2xl overflow-hidden group">
+        <div class="relative h-72 overflow-hidden">
+          <img alt="진현우" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="assets/team/jin-hyunwoo.png"/>
+          <div class="absolute inset-0" style="background:linear-gradient(to top, #0C0A14, rgba(12,10,20,0.2) 60%, transparent)"></div>
+        </div>
+        <div class="p-7">
+          <div class="flex items-center gap-3 mb-3">
+            <h3 class="text-xl font-bold">진현우</h3>
+            <span class="text-xs font-bold px-2.5 py-1 rounded-full badge" style="color:var(--accent-lt)">CTO</span>
+          </div>
+          <p class="text-white/40 text-sm leading-relaxed">기술 전략과 제품 개발을 총괄하며, AI 기반 리서치 플랫폼의 기술적 우수성을 확보합니다.</p>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
-</main>
-<footer class="w-full bg-primary text-white py-12 mt-20">
-<div class="max-w-[1200px] mx-auto px-6 md:px-20 lg:px-40 flex flex-col md:flex-row justify-between items-center gap-8">
-<div class="flex items-center gap-3">
-<div class="size-8 bg-primary rounded-lg flex items-center justify-center text-white">
-<span class="material-symbols-outlined text-xl">biotech</span>
+
+<!-- ─── VALUES ────────────────────────────────────────────────────── -->
+<section class="relative z-10 py-24">
+  <div class="max-w-[1600px] mx-auto px-6 md:px-16">
+      <div class="relative rounded-3xl overflow-hidden p-10 md:p-16"
+         style="background:linear-gradient(135deg,rgba(44,37,106,0.3) 0%,rgba(25,23,49,0.5) 100%);border:1px solid rgba(56,49,155,0.2);">
+      <div class="blob w-[400px] h-[400px] -top-20 -right-20" style="background:#2C256A;opacity:0.2;"></div>
+      <div class="relative z-10">
+        <p class="section-label mb-4">Our Values</p>
+        <h2 class="text-4xl md:text-5xl font-black mb-14 grad-text">우리가 믿는 것들</h2>
+        <div class="grid sm:grid-cols-2 md:grid-cols-4 gap-8">
+          <div>
+            <div class="icon-chip-1 w-10 h-10 rounded-xl flex items-center justify-center mb-4">
+              <span class="material-symbols-outlined text-xl" style="color:var(--accent-lt)">visibility</span>
+            </div>
+            <h3 class="font-bold text-lg mb-2">투명성</h3>
+            <p class="text-white/40 text-sm leading-relaxed">모든 연구 과정과 결과를 투명하게 공유하며 신뢰할 수 있는 데이터를 제공합니다.</p>
+          </div>
+          <div>
+            <div class="icon-chip-2 w-10 h-10 rounded-xl flex items-center justify-center mb-4">
+              <span class="material-symbols-outlined text-xl" style="color:var(--accent-text)">lightbulb</span>
+            </div>
+            <h3 class="font-bold text-lg mb-2">혁신</h3>
+            <p class="text-white/40 text-sm leading-relaxed">최신 기술과 방법론을 도입하여 더 효율적이고 정확한 리서치를 수행합니다.</p>
+          </div>
+          <div>
+            <div class="icon-chip-3 w-10 h-10 rounded-xl flex items-center justify-center mb-4">
+              <span class="material-symbols-outlined text-xl" style="color:var(--accent-lt)">bolt</span>
+            </div>
+            <h3 class="font-bold text-lg mb-2">실행력</h3>
+            <p class="text-white/40 text-sm leading-relaxed">인사이트를 단순한 정보가 아닌 실행 가능한 솔루션으로 전환합니다.</p>
+          </div>
+          <div>
+            <div class="icon-chip-4 w-10 h-10 rounded-xl flex items-center justify-center mb-4">
+              <span class="material-symbols-outlined text-xl" style="color:var(--accent-text)">handshake</span>
+            </div>
+            <h3 class="font-bold text-lg mb-2">협업</h3>
+            <p class="text-white/40 text-sm leading-relaxed">클라이언트와의 긴밀한 협업을 통해 최적의 결과를 만들어냅니다.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── CTA ───────────────────────────────────────────────────────── -->
+<section class="relative z-10 py-32">
+  <div class="blob w-[600px] h-[600px] left-1/2 -translate-x-1/2 top-0" style="background:#211D49;opacity:0.18;"></div>
+  <div class="max-w-[1600px] mx-auto px-6 md:px-16 text-center relative z-10">
+    <p class="section-label mb-6">Get Started</p>
+    <h2 class="text-5xl md:text-7xl font-black leading-tight mb-6">
+      <span class="grad-text">함께 시작할<br/>준비가 됐나요?</span>
+    </h2>
+    <p class="text-white/50 text-lg max-w-xl mx-auto mb-12 leading-relaxed">
+      프로젝트 문의나 협업 제안을 환영합니다. AI 인터뷰로 더 깊은 사용자 인사이트를 경험해보세요.
+    </p>
+    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+      <a href="https://www.proby.io/landing/contact" target="_blank" rel="noopener"
+         class="btn-primary inline-flex items-center gap-2 px-10 py-4 rounded-full font-bold text-white text-sm">
+        <span class="material-symbols-outlined">mail</span>
+        이메일 보내기
+      </a>
+      <a href="index.html"
+         class="inline-flex items-center gap-2 px-10 py-4 rounded-full font-bold text-sm transition-all"
+         style="color:var(--accent-lt);border:1px solid rgba(33,29,73,0.9);">
+        Work 보러가기
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ─── INTERVIEW MODAL ───────────────────────────────────────────── -->
+<div id="interview-modal" role="dialog" aria-modal="true" aria-label="AI 인터뷰 체험">
+  <div id="modal-backdrop" onclick="closeInterviewModal()"></div>
+  <div id="modal-box">
+    <button id="modal-close" onclick="closeInterviewModal()" aria-label="닫기">
+      <span class="material-symbols-outlined text-white text-lg">close</span>
+    </button>
+    <iframe
+      id="interview-iframe"
+      src=""
+      data-src="https://www.proby.io/interview?t=zNuzR2NC&is_preview=true"
+      allow="microphone; camera"
+      allowfullscreen
+    ></iframe>
+  </div>
 </div>
-<span class="font-bold text-lg">Proby</span>
-</div>
-<p class="text-slate-400 text-sm">© 2026 Proby. AI 기반 사용자 리서치 플랫폼.</p>
-<div class="flex gap-6">
-<a class="text-slate-400 hover:text-white transition-colors" href="#"><span class="material-symbols-outlined">public</span></a>
-<a class="text-slate-400 hover:text-white transition-colors" href="#"><span class="material-symbols-outlined">mail</span></a>
-<a class="text-slate-400 hover:text-white transition-colors" href="#"><span class="material-symbols-outlined">chat</span></a>
-</div>
-</div>
+
+<script>
+  function openInterviewModal() {
+    const modal = document.getElementById('interview-modal');
+    const iframe = document.getElementById('interview-iframe');
+    // lazy-load: src를 열 때 세팅
+    if (!iframe.src || iframe.src === window.location.href) {
+      iframe.src = iframe.dataset.src;
+    }
+    modal.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeInterviewModal() {
+    const modal = document.getElementById('interview-modal');
+    modal.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  // ESC 키로 닫기
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeInterviewModal();
+  });
+</script>
+
+<!-- ─── FOOTER ────────────────────────────────────────────────────── -->
+<footer class="relative z-10 border-t border-white/5 py-10">
+  <div class="max-w-[1600px] mx-auto px-6 md:px-16 flex flex-col md:flex-row justify-between items-center gap-6">
+    <div class="flex items-center gap-3">
+      <div class="w-8 h-8 rounded-lg flex items-center justify-center"
+           style="background:var(--accent-hi);">
+        <span class="material-symbols-outlined text-white text-sm">biotech</span>
+      </div>
+      <span class="font-bold text-lg">Proby</span>
+    </div>
+    <p class="text-white/25 text-sm">© 2026 Proby. AI 기반 사용자 리서치 플랫폼.</p>
+    <div class="flex gap-5">
+      <a class="text-white/25 hover:text-white transition-colors" href="#"><span class="material-symbols-outlined">public</span></a>
+      <a class="text-white/25 hover:text-white transition-colors" href="#"><span class="material-symbols-outlined">mail</span></a>
+      <a class="text-white/25 hover:text-white transition-colors" href="#"><span class="material-symbols-outlined">chat</span></a>
+    </div>
+  </div>
 </footer>
-</div>
 
-</body></html>
-
+</body>
+</html>

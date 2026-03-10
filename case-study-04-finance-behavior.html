@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="ko"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-dynamic-subset.css" />
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#000000",
+                        "background-light": "#f7f7f7",
+                        "background-dark": "#191919",
+                    },
+                    fontFamily: {
+                        "display": ["Pretendard", "-apple-system", "BlinkMacSystemFont", "system-ui", "Roboto", "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<title>Case Study #4 - MZ 세대 금융 라이프스타일 및 은행 이용 인사이트 | Proby</title>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 antialiased">
+<div class="relative flex h-auto min-h-screen w-full flex-col overflow-x-hidden">
+<header class="sticky top-0 z-50 w-full border-b border-slate-200 dark:border-slate-800 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md px-6 md:px-20 lg:px-16 py-4">
+<div class="flex items-center justify-between max-w-[1600px] mx-auto">
+<div class="flex items-center gap-3">
+<a href="index.html"><img alt="Proby Logo" class="h-8 w-auto object-contain" src="assets/header.png"/></a>
+</div>
+<div class="flex items-center gap-8">
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-slate-600 dark:text-slate-400 hover:text-primary transition-colors text-sm font-medium" href="about.html">About</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-primary transition-colors text-sm font-medium" href="index.html">Work</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-primary transition-colors text-sm font-medium" href="https://www.proby.io" target="_blank" rel="noopener noreferrer">Our product</a>
+</nav>
+<a href="https://www.proby.io/landing/contact" target="_blank" rel="noopener noreferrer" class="bg-primary hover:bg-slate-800 text-white h-12 px-8 rounded-lg font-bold transition-all flex items-center justify-center">
+                    Get in Touch
+                </a>
+</div>
+</div>
+</header>
+<main class="flex-1 max-w-[1600px] mx-auto w-full px-6 md:px-20 lg:px-16 py-10">
+<div class="w-full mb-12">
+<div class="relative w-full h-[400px] rounded-xl overflow-hidden shadow-2xl group">
+<div class="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/40 to-transparent z-10"></div>
+<div class="absolute inset-0 bg-primary/10 mix-blend-overlay z-10"></div>
+<img alt="Case Study 4 Hero" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="assets/case4.jpg"/>
+<div class="absolute bottom-0 left-0 p-8 md:p-12 z-20">
+<span class="px-3 py-1 bg-primary text-white text-[10px] font-black rounded-full mb-4 inline-block tracking-widest uppercase">금융 · MZ · 하나은행/하나원큐</span>
+<h1 class="text-white text-3xl md:text-5xl font-extrabold leading-tight max-w-2xl">MZ 세대 금융 라이프스타일 및 은행 이용 인사이트</h1>
+<p class="text-slate-200 mt-4 text-lg max-w-xl">금융 관심·소비/저축/투자·은행·앱 이용·브랜드 인식을 심층 파악하고, MZ 타깃 디지털 마케팅 캠페인 제언을 도출했습니다.</p>
+</div>
+</div>
+</div>
+<div class="flex flex-col lg:flex-row gap-12">
+<aside class="lg:w-1/4">
+<div class="sticky top-28 flex flex-col gap-6">
+<div class="p-5 bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm">
+<p class="text-slate-400 dark:text-slate-500 text-xs font-bold uppercase tracking-widest mb-4">케이스 스터디 섹션</p>
+<nav class="flex flex-col gap-1">
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg bg-slate-100 dark:bg-slate-800 text-primary font-bold" href="#overview">
+<span class="material-symbols-outlined text-xl">info</span>
+<span class="text-sm">개요</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" href="#methodology">
+<span class="material-symbols-outlined text-xl">science</span>
+<span class="text-sm">연구 방법론</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" href="#findings">
+<span class="material-symbols-outlined text-xl">insights</span>
+<span class="text-sm">주요 발견사항</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" href="#impact">
+<span class="material-symbols-outlined text-xl">star</span>
+<span class="text-sm">제언 및 시사점</span>
+</a>
+</nav>
+</div>
+</div>
+</aside>
+<div class="lg:w-3/4 flex flex-col gap-16">
+<section class="scroll-mt-32" id="overview">
+<div class="mb-8">
+<h2 class="text-3xl font-extrabold mb-4">프로젝트 개요</h2>
+<p class="text-slate-600 dark:text-slate-400 text-lg leading-relaxed">MZ 세대(20~40대)가 돈을 어떻게 생각하고, 어떤 은행을 쓰며, 앱과 광고에는 어떻게 반응하는지 한 번에 파악하기 위한 조사입니다. 금융 생활 전반을 <strong>서로 겹치지 않는 7개 영역</strong>으로 나누어 인터뷰를 진행했고, 그 결과를 바탕으로 MZ를 타깃으로 한 디지털 마케팅 캠페인 방향을 제안했습니다.</p>
+</div>
+<div class="grid grid-cols-1 gap-6">
+<div class="bg-white dark:bg-slate-900 p-8 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-md transition-shadow">
+<span class="material-symbols-outlined text-primary mb-3 text-2xl">report_problem</span>
+<h4 class="font-bold text-slate-900 dark:text-white mb-2">조사 목적</h4>
+<p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">참여자들이 금융에 얼마나 관심 있는지, 돈을 어떻게 쓰고 저축·투자하는지, 은행을 어떻게 선택하고 바꾸는지, 앱 사용 경험과 은행 광고에 대한 인상은 어떤지 등을 깊이 있게 듣고, 이를 바탕으로 디지털 마케팅 방향을 제안하는 것.</p>
+</div>
+<div class="bg-white dark:bg-slate-900 p-8 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-md transition-shadow">
+<span class="material-symbols-outlined text-primary mb-3 text-2xl">person</span>
+<h4 class="font-bold text-slate-900 dark:text-white mb-2">참여자 조건</h4>
+<p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed"><strong>7명</strong>의 20~40대 (직장인·자영업 포함). 주로 이용하는 은행은 신한, 국민, 농협, 토스뱅크, 우리, 하나 등으로 다양했습니다.</p>
+</div>
+<div class="bg-white dark:bg-slate-900 p-8 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-md transition-shadow">
+<span class="material-symbols-outlined text-primary mb-3 text-2xl">analytics</span>
+<h4 class="font-bold text-slate-900 dark:text-white mb-2">다룬 주제와 결과물</h4>
+<p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed mb-3">① 금융에 대한 관심과 정보 얻는 경로 ② 쓰기·저축·투자 비중과 만족도 ③ 은행 지점 방문 이유와 불편함 ④ 주거래 은행 선택·유지·바꿀 의향 ⑤ 은행 브랜드에 대한 이미지와 선호 ⑥ 모바일 뱅킹 앱 사용 경험 ⑦ 은행 광고 기억과 평가. 분석 결과를 정리한 보고서와, MZ 타깃 디지털 마케팅을 위한 제안(6개 영역)을 도출했습니다.</p>
+</div>
+</div>
+</section>
+<section class="scroll-mt-32" id="methodology">
+<h2 class="text-3xl font-extrabold mb-8">연구 방법론</h2>
+<div class="flex flex-col gap-8 mb-12">
+<div class="flex gap-6 items-start">
+<div class="size-12 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-primary text-2xl">smart_toy</span>
+</div>
+<div>
+<h4 class="text-lg font-bold mb-1">AI 인터뷰 (Proby)</h4>
+<p class="text-slate-600 dark:text-slate-400 leading-relaxed mb-3">Proby AI 인터뷰로 참여자 7명과 1:1 대화를 진행했습니다. 금융 생활과 은행 이용에 대한 질문을 바탕으로, 답변에 따라 이어지는 질문을 넣어 평균 약 <strong>24분</strong> 동안 깊이 있게 이야기를 들었습니다.</p>
+<p class="text-sm text-slate-500 dark:text-slate-500 italic border-l-2 border-primary pl-4">참여자마다 금융 관심도와 은행 이용 경험이 달라, 같은 질문이라도 답의 깊이나 구체성은 사람마다 다르게 나왔습니다.</p>
+</div>
+</div>
+</div>
+</section>
+<section class="scroll-mt-32" id="findings">
+<h2 class="text-3xl font-extrabold mb-8">주요 발견사항</h2>
+<div class="bg-primary p-8 md:p-12 rounded-2xl text-white mb-12 relative overflow-hidden shadow-2xl">
+<div class="relative z-10">
+<p class="text-xl md:text-2xl font-light italic leading-relaxed">"요즘은 주식 관련해서도 좀 관심이 있고… 통장 나누기라든가 기초 부분부터 실천을 하고 있는 것 같아요. 금융 강의도 듣고 있습니다."</p>
+<p class="mt-4 text-sm font-bold text-white/70">— 인터뷰 5 (여-40-직장)</p>
+</div>
+<div class="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full -mr-20 -mt-20 blur-3xl"></div>
+</div>
+<div class="space-y-6">
+<div class="p-8 bg-white dark:bg-slate-900 border-l-4 border-primary rounded-r-xl shadow-sm hover:shadow-md transition-shadow">
+<h4 class="font-bold text-lg mb-3 text-slate-900 dark:text-white">1. 금융 관심사 및 정보 수집: 투자·저축·기초 금융, 채널은 뉴스·앱·유튜브·단톡</h4>
+<p class="text-slate-600 dark:text-slate-400 leading-relaxed mb-3">참여자 전원이 <strong>투자(주식·ETF·코인·연금저축)·저축·기초 금융(통장 나누기)</strong> 중 하나 이상을 언급했습니다. "월급만으로는 한계", "친구들이 실질적으로 수익을 내는 걸 봤다", "영끌·투자로 돈 벌려는 경향"이 반복되었고, 정보 채널은 <strong>네이버 뉴스·주식/은행 앱·유튜브(슈카, 머니그래피, 매경)·단톡방·서적·서민금융진흥원 강의</strong> 등으로 다양했습니다.</p>
+<p class="text-sm text-slate-500 dark:text-slate-500 italic">"자산을 축적해야 되는데 월급만 가지고는 한계가 있고 요즘에 뭐 주식시장도 되게 많이 상승하고 있어서." (여-30-직장)</p>
+<p class="text-sm text-slate-500 dark:text-slate-500 italic mt-2">"제 또래에서도 열심히 회사에서 일하는 것보다 투자로 돈을 벌려고 하는 경향들이 많이 있어서." (여-20-직장)</p>
+</div>
+<div class="p-8 bg-white dark:bg-slate-900 border-l-4 border-primary rounded-r-xl shadow-sm hover:shadow-md transition-shadow">
+<h4 class="font-bold text-lg mb-3 text-slate-900 dark:text-white">2. 소비·투자·저축 비중: 분포 넓고, "저축 늘리고 싶다·투자 비중 늘리고 싶다" 니즈</h4>
+<p class="text-slate-600 dark:text-slate-400 leading-relaxed mb-3">소비 10~50%, 투자 0~40%, 저축 10~90%로 <strong>라이프스타일별 비중 차이</strong>가 뚜렷했습니다. 만족하지 않는다고 한 사람은 "저축을 더 늘리고 싶다", "투자 비중을 키우고 싶다", "실제로 투자를 실행하지 않아서 점수가 낮다"고 이유를 구체적으로 말했고, 만족한다고 한 사람은 "지금 비중에 만족", "투자 비중은 늘릴 수 있을 것 같다"는 식으로 답했습니다.</p>
+<p class="text-sm text-slate-500 dark:text-slate-500 italic">"저는 개인적으로 저축이 80%까지 되면 좋을 것 같은데… 대출도 있고 소비 나가야 되는 곳이 많아서 당장은 쉬워 보이진 않습니다." (여-30-직장)</p>
+<p class="text-sm text-slate-500 dark:text-slate-500 italic mt-2">"투자를 공부하고 있지만 실제로 실행하고 있지는 않기 때문에 만족 점수가 좀 낮은 것 같습니다." (여-20-직장)</p>
+</div>
+<div class="p-8 bg-white dark:bg-slate-900 border-l-4 border-primary rounded-r-xl shadow-sm hover:shadow-md transition-shadow">
+<h4 class="font-bold text-lg mb-3 text-slate-900 dark:text-white">3. 은행 지점 이용: 방문은 상품 문의·보안·해지·환전·VIP 상담, 물리·심리적 어려움 존재</h4>
+<p class="text-slate-600 dark:text-slate-400 leading-relaxed mb-3">방문 빈도는 "1년에 한두 번"~"한 달–두 달에 한 번"까지 다양했습니다. 방문 이유는 <strong>상품 문의(직접 설명 듣고 싶을 때), 보안·해지 등 반드시 지점이 필요한 업무, 환전, VIP 상담실에서 한 번에 여러 업무 처리</strong>로 한정되었습니다. <strong>물리적 어려움</strong>으로는 대기·응대 시간이 길다, 앱 예약이 시간 단축으로 이어지지 않는다는 불만이, <strong>심리적 어려움</strong>으로는 홈페이지 글은 "금융 지식 유무를 고려하지 않고 쓰여 있다", AI 챗봇은 "형식적·기계적으로 길게 답변만 한다"고 느껴 <strong>유기적으로 질문하고 답을 들을 사람</strong>을 찾으려 지점에 간다는 발화가 나왔습니다.</p>
+<p class="text-sm text-slate-500 dark:text-slate-500 italic">"홈페이지에서는 상품 관련 글이 굉장히 구체적으로 나열되어 있는데… 이 글을 보는 사람이 금융 지식이 있는지 없는지 상관없이 그냥 글을 적어놓은 경우가 많다고 생각이 들거든요. AI 챗봇은 형식적이고 기계적인 답변을 길게 해주는 경향이 많거든요. 그래서 유기적으로 물어보고 답변을 해줄 만한 사람을 찾아서 간 것 같아요." (여-20-직장)</p>
+</div>
+<div class="p-8 bg-white dark:bg-slate-900 border-l-4 border-primary rounded-r-xl shadow-sm hover:shadow-md transition-shadow">
+<h4 class="font-bold text-lg mb-3 text-slate-900 dark:text-white">4. 주거래 은행 관계: 생활 밀착 요인·혜택으로 유지, "귀찮지만 조건 좋으면 바꿀 수 있다"</h4>
+<p class="text-slate-600 dark:text-slate-400 leading-relaxed mb-3">주거래 은행이 된 계기는 <strong>부모·집과 가까운 지점, 학교 내 은행·학생증 연동, 시골·지역에서 쓰던 은행(농협), 주택 청약, 급여통장, 토스 앱 설치 후 자연스럽게 사용</strong> 등 <strong>생활 밀착 요인</strong>이 압도적이었습니다. 관계 심화·충성 요인으로는 <strong>쿠폰·VIP·장기 고객 혜택, 지점·상담사가 있어 편함, 파킹통장 이율·신규 상품, 결제 시 포인트 환급</strong>이 꼽혔고, 전환 가능성(온도감)은 "전혀 불가능"이라기보다 <strong>"귀찮아서 안 바꾸지만, 조건이 좋으면 바꿀 수 있다"</strong>는 답이 다수였습니다. "6개월 이내 예·적금 이율로 갈아타겠다"는 구체적 응답도 있었습니다.</p>
+<p class="text-sm text-slate-500 dark:text-slate-500 italic">"오랫동안 사용하다 보니까 쿠폰이나 VIP 멤버십 혜택 이런 것들도 쌓여 있어서… 다른 은행으로 갈아타기 어렵게 만드는 요인들인 것 같습니다." (여-30-직장)</p>
+<p class="text-sm text-slate-500 dark:text-slate-500 italic mt-2">"신한은행이 장기 고객 우대가 약한 것 같아서 다른 은행으로 고려를 하긴 했었어요. 향후 6개월 이내에 예·적금 상품 이율로 나오는 게 있다면 갈아탈 생각이 있습니다." (여-30-자영업)</p>
+</div>
+<div class="p-8 bg-white dark:bg-slate-900 border-l-4 border-primary rounded-r-xl shadow-sm hover:shadow-md transition-shadow">
+<h4 class="font-bold text-lg mb-3 text-slate-900 dark:text-white">5. 은행 브랜드 인식: 국민·신한·우리 선호 다수, 하나은행은 "딱히 이미지 없음·올드"</h4>
+<p class="text-slate-600 dark:text-slate-400 leading-relaxed mb-3">참여자 7명이 선호 브랜드 3개씩 꼽은 결과, <strong>국민은행 5회, 신한 4회, 우리 3회, 토스뱅크·하나·농협 각 2회</strong> 등이었습니다. 국민은 "규모·노란색·학교·김연아 광고", 신한은 "젊고 트렌디·게임 스폰서", 우리는 "e스포츠·젊은 감각·외환 수수료 면제" 등 <strong>구체적 인물·콘셉트</strong>와 연결되어 기억되었고, <strong>하나은행</strong>은 "딱히 떠오르는 이미지 없음", "올드한 느낌"이 반복되었습니다. 선호 이유로는 "장기 이용 혜택·대접받는 느낌"이 일부에서만 언급되었습니다.</p>
+<p class="text-sm text-slate-500 dark:text-slate-500 italic">"국내 은행이랑 하나은행은 왠지 좀 올드한 느낌이 든다고요." (여-30-직장)</p>
+<p class="text-sm text-slate-500 dark:text-slate-500 italic mt-2">"하나은행에는 딱히 떠오르는 이미지는 없는 것 같습니다." (여-20-직장)</p>
+</div>
+<div class="p-8 bg-white dark:bg-slate-900 border-l-4 border-primary rounded-r-xl shadow-sm hover:shadow-md transition-shadow">
+<h4 class="font-bold text-lg mb-3 text-slate-900 dark:text-white">6. 모바일 뱅킹 앱 경험: 토스·카카오 "빠르고 가볍다", 하나원큐 "깔끔·보안 좋지만 로딩·정보 미활용"</h4>
+<p class="text-slate-600 dark:text-slate-400 leading-relaxed mb-3"><strong>토스·카카오뱅크</strong>는 "빠르고 가볍다", "자주 쓰는 기능이 바로 나온다", "뎁스가 적다"로 칭찬받고, <strong>신한 계열</strong>은 "메뉴가 조잡하다", "앱이 여러 개로 쪼개져 있다"고 비판되었습니다. <strong>하나원큐</strong>는 "깔끔·심플", "보안 알림·소비 케어 좋다"는 평가와 "로딩 느림", "가끔 앱이 꺼진다", "토스·카카오뱅크보다는 보통"이라는 평가가 공존했습니다. 하나원큐를 쓰면서 <strong>금융 정보 수집에는 활용하지 않는다</strong>("특별한 정보가 있는 것 같지도 않고, 찾아보기에도 루트가 불편하다")는 답이 나왔습니다.</p>
+<p class="text-sm text-slate-500 dark:text-slate-500 italic">"카카오뱅크나 토스뱅크는 앱 자체가 굉장히 빠릿빠릿하고 가볍고, 자주 이용하는 서비스를 누르면 여러 뎁스 없이 바로 원하는 결과가 나오게끔 되어 있어요. 하나은행 앱은 딱히 엄청 편리하지도, 엄청 불편하지도 않은 서비스. 토스·카카오뱅크를 비하면 만족도는 그냥 보통입니다." (여-30-자영업)</p>
+<p class="text-sm text-slate-500 dark:text-slate-500 italic mt-2">"하나원큐 같은 금융 앱을 사용하고 있기는 하지만 정보를 얻고 있지는 않은 것 같습니다. 특별한 정보가 있는 것 같지도 않고 찾아보기에도 루트가 다른 거에 비해 불편하다고 생각합니다." (남-30-직장)</p>
+</div>
+<div class="p-8 bg-white dark:bg-slate-900 border-l-4 border-primary rounded-r-xl shadow-sm hover:shadow-md transition-shadow">
+<h4 class="font-bold text-lg mb-3 text-slate-900 dark:text-white">7. 은행 광고 인지: TV·모델 각인 강함, 하나은행 본체는 희미·하나카드 이벤트는 기억</h4>
+<p class="text-slate-600 dark:text-slate-400 leading-relaxed mb-3"><strong>TV</strong>가 가장 많이 나왔고, <strong>모델(박보검, 김연아, 아이유, 지드래곤, 손흥민)</strong>과 결합된 한두 장면이 강하게 기억되었습니다. 하나은행 <strong>본체</strong> 광고는 "기억나는 게 없다"는 반응이 많고, <strong>하나원큐</strong>는 "해외 환전 혜택", "손흥민 배너", "지드래곤 머리 초록색" 등 일부만 기억되었습니다. <strong>하나카드 여행 팝업 이벤트</strong>(비행기·공항 콘셉트, 여권형 티켓)는 SNS·경험으로 선명히 기억되는 사례가 있었습니다.</p>
+<p class="text-sm text-slate-500 dark:text-slate-500 italic">"하나원큐는 해외 환전할 때 혜택이 좋다는 걸 본 기억이 있습니다. TV 광고에서 본 것 같고, 다른 은행에 비해 혜택을 강조했던 것 같아요." (남-30-직장)</p>
+<p class="text-sm text-slate-500 dark:text-slate-500 italic mt-2">"하나은행 자체 광고보다는 하나카드 여행 관련 카드 팝업 이벤트를 SNS에서 본 게 기억에 남습니다. 비행기 안에 있는 것처럼, 출국 수속을 하는 것처럼 운영해서, 입장권도 여권처럼 생긴 티켓을 만들어 사용했던 게 기억에 남습니다." (여-30-자영업)</p>
+</div>
+</div>
+</section>
+<section class="scroll-mt-32" id="impact">
+<h2 class="text-3xl font-extrabold mb-8">하나은행·하나원큐 MZ 타깃 디지털 마케팅 캠페인 제언</h2>
+<div class="space-y-8 mb-12">
+<div class="bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 p-8 shadow-sm">
+<h3 class="text-xl font-bold mb-6 text-slate-900 dark:text-white">제언 6개 영역</h3>
+<div class="space-y-6">
+<div class="p-6 bg-slate-50 dark:bg-slate-800 rounded-xl">
+<h4 class="font-bold text-slate-900 dark:text-white mb-2">1. 브랜드 인지도·연상 강화</h4>
+<p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-2"><strong>현상:</strong> 하나은행은 "딱히 떠오르는 이미지가 없다", "올드한 느낌"이 반복되고, 선호 3개 선택 빈도에서 국민·신한·우리·토스에 비해 밀립니다.</p>
+<p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed"><strong>제언:</strong> 키 비주얼·모델·콘셉트를 하나로 정리해 디지털 채널(유튜브, SNS, 디스플레이)에서 짧고 반복 노출. 손흥민·해외 환전, 지드래곤 비주얼 등 이미 기억에 남은 요소를 활용해 "하나원큐 = OO" 같은 단일 메시지 연동. e스포츠·게임·젊은 문화 스폰서십·콜라보 검토로 "젊은 이미지" 연상 보강.</p>
+</div>
+<div class="p-6 bg-slate-50 dark:bg-slate-800 rounded-xl">
+<h4 class="font-bold text-slate-900 dark:text-white mb-2">2. 앱(하나원큐) 경험과 연계한 캠페인</h4>
+<p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-2"><strong>현상:</strong> 하나원큐는 "깔끔·보안·소비 케어"는 긍정이나, "로딩·안정성 아쉬움", "정보는 이 앱에서 얻지 않는다"는 인식이 있습니다.</p>
+<p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed"><strong>제언:</strong> 인앱·푸시·배너로 실제로 쓸 만한 정보/인사이트(투자·저축·소비 요약) 제공해 "앱에서 정보를 얻는다"는 인식 형성. 보안 알림·소비 케어 장점을 디지털 크리에이터·숏폼으로 소개하는 에듀/경험 공유형 캠페인. 앱 성능 개선 후 "더 빠르고 안정적이다" 리런치 캠페인 집행.</p>
+</div>
+<div class="p-6 bg-slate-50 dark:bg-slate-800 rounded-xl">
+<h4 class="font-bold text-slate-900 dark:text-white mb-2">3. 채널·콘텐츠 전략 (MZ 금융 관심에 맞춤)</h4>
+<p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-2"><strong>현상:</strong> MZ는 투자·기초 금융 관심이 높고, 뉴스·주식/은행 앱·유튜브(슈카, 머니그래피 등)·단톡·서적·강의를 통해 정보를 얻습니다.</p>
+<p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed"><strong>제언:</strong> 유튜브·팟캐스트·금융 인플루언서와 협업해 "기초 금융·통장 나누기·예적금·해외투자" 등 실사용 정보 시리즈 제작, 크레딧에 하나원큐·하나은행 노출. 단톡·커뮤니티·앱 내에서 "오늘의 소비 요약", "한 달 저축 현황" 등 경험 공유형·UGC 친화 이벤트/캠페인 설계. 검색·포털·뉴스에서 "예적금·파킹·해외송금" 검색 니즈에 맞는 실용 정보+상품 안내 랜딩 페이지 운영.</p>
+</div>
+<div class="p-6 bg-slate-50 dark:bg-slate-800 rounded-xl">
+<h4 class="font-bold text-slate-900 dark:text-white mb-2">4. 전환 유도(타 은행 사용자·비주거래)</h4>
+<p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-2"><strong>현상:</strong> 주거래 전환 온도감은 "귀찮지만 조건이 좋으면 바꿀 수 있다" 수준이며, "6개월 이내 예·적금 이율", "장기 고객 우대"가 전환 검토 이유로 나왔습니다.</p>
+<p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed"><strong>제언:</strong> 예·적금·파킹 이율·신규 가입 혜택을 명확히 한 디지털 전용 오퍼 제작, 디스플레이·SNS·검색·앱 설치 유도 캠페인에서 CTA(가입·앱 다운로드)로 직결. 장기 고객 우대를 "오래 쓸수록 혜택"으로 요약한 스토리·카드 뉴스형 크리에이터로 "갈아타도 손해 안 본다" 메시지 강화. 세그먼트별(예·적금·이율에 민감한 30대, 앱·편의에 민감한 20·40대) 메시지·채널 테스트.</p>
+</div>
+<div class="p-6 bg-slate-50 dark:bg-slate-800 rounded-xl">
+<h4 class="font-bold text-slate-900 dark:text-white mb-2">5. 경험·이벤트 기반 기억 형성 (하나카드 사례 확대)</h4>
+<p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-2"><strong>현상:</strong> 하나은행 본체 광고는 기억이 희미한 반면, 하나카드 여행 팝업 이벤트(비행기·공항 콘셉트, 여권형 티켓)는 SNS·경험으로 선명히 기억됩니다.</p>
+<p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed"><strong>제언:</strong> 하나은행·하나원큐에도 오프라인·팝업·이벤트를 결합한 "참여·경험" 캠페인 설계, 디지털(SNS·인플루언서·쇼츠)로 경험 확산. 비주얼·콘셉트가 뚜렷한 한두 가지 이벤트/시즌 캠페인을 정해 TV·온라인·인앱에서 동일 콘셉트로 반복 노출해 "하나 = OO" 연상 고정. 사회공헌·젊은 감각을 디지털 스토리·영상으로 정기 배포.</p>
+</div>
+<div class="p-6 bg-slate-50 dark:bg-slate-800 rounded-xl">
+<h4 class="font-bold text-slate-900 dark:text-white mb-2">6. KPI·측정 제안</h4>
+<p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed"><strong>브랜드:</strong> 하나은행/하나원큐 무조사 연상률·선호도 추이, "젊다/믿음직하다/편하다" 등 키워드 연상 변화 정기 측정. <strong>캠페인:</strong> 채널별 앱 다운로드·가입·예적금 가입 전환, 비디오 완시청·클릭·공유 등 디지털 퍼포먼스와 브랜드 설문 연계 효과 검증. <strong>세그먼트:</strong> 연령·성별·직장/자영업별 노출·전환·설문 분리 집계해 세그먼트별 메시지·채널 최적화에 활용.</p>
+</div>
+</div>
+</div>
+<div class="p-8 bg-slate-50 dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700">
+<p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed"><strong>한 줄 요약:</strong> 하나은행·하나원큐는 "딱히 이미지 없음·올드" 인식을 넘어, 단일 메시지·키 비주얼 반복 노출, 앱 내 실용 정보·보안/소비 케어 강조, MZ 금융 정보 채널(유튜브·인플루언서·검색) 연동, 예·적금·장기 고객 우대 오퍼와 경험·이벤트 기반 기억으로 MZ 타깃 디지털 캠페인을 설계할 때 효과를 높일 수 있습니다.</p>
+</div>
+<div class="p-8 bg-slate-50 dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700">
+<p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">본 케이스는 20~40대 7명과 진행한 AI 인터뷰 내용을 7개 영역으로 정리·분석한 결과와, 이를 바탕으로 한 디지털 마케팅 제안을 요약해 작성했습니다.</p>
+</div>
+</section>
+<div class="mt-20 pt-10 border-t border-slate-200 dark:border-slate-800 flex flex-col md:flex-row items-center justify-between gap-6">
+<div>
+<h4 class="text-xl font-bold">다른 케이스 스터디</h4>
+<p class="text-slate-600 dark:text-slate-400">일본 유저가 선호하는 패션 앱 UI 방향성</p>
+</div>
+<a class="flex items-center gap-2 text-primary font-bold group" href="case-study-03-japan-fashion.html">
+                        Case #3 보기
+                        <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+</main>
+<footer class="w-full bg-primary text-white py-12 mt-20">
+<div class="max-w-[1600px] mx-auto px-6 md:px-20 lg:px-16 flex flex-col md:flex-row justify-between items-center gap-8">
+<div class="flex items-center gap-3">
+<div class="size-8 bg-primary rounded-lg flex items-center justify-center text-white">
+<span class="material-symbols-outlined text-xl">biotech</span>
+</div>
+<span class="font-bold text-lg">Proby</span>
+</div>
+<p class="text-slate-400 text-sm">© 2026 Proby. AI 기반 사용자 리서치 플랫폼.</p>
+<div class="flex gap-6">
+<a class="text-slate-400 hover:text-white transition-colors" href="#"><span class="material-symbols-outlined">public</span></a>
+<a class="text-slate-400 hover:text-white transition-colors" href="#"><span class="material-symbols-outlined">mail</span></a>
+<a class="text-slate-400 hover:text-white transition-colors" href="#"><span class="material-symbols-outlined">chat</span></a>
+</div>
+</div>
+</footer>
+</div>
+</body></html>

@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="ko"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-dynamic-subset.css" />
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#000000",
+                        "background-light": "#f7f7f7",
+                        "background-dark": "#191919",
+                    },
+                    fontFamily: {
+                        "display": ["Pretendard", "-apple-system", "BlinkMacSystemFont", "system-ui", "Roboto", "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<title>Case Study #5 - AI 인터뷰에 대한 참여자 태도와 선호 인사이트 | Proby</title>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 antialiased">
+<div class="relative flex h-auto min-h-screen w-full flex-col overflow-x-hidden">
+<header class="sticky top-0 z-50 w-full border-b border-slate-200 dark:border-slate-800 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md px-6 md:px-20 lg:px-16 py-4">
+<div class="flex items-center justify-between max-w-[1600px] mx-auto">
+<div class="flex items-center gap-3">
+<a href="index.html"><img alt="Proby Logo" class="h-8 w-auto object-contain" src="assets/header.png"/></a>
+</div>
+<div class="flex items-center gap-8">
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-slate-600 dark:text-slate-400 hover:text-primary transition-colors text-sm font-medium" href="about.html">About</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-primary transition-colors text-sm font-medium" href="index.html">Work</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-primary transition-colors text-sm font-medium" href="https://www.proby.io" target="_blank" rel="noopener noreferrer">Our product</a>
+</nav>
+<a href="https://www.proby.io/landing/contact" target="_blank" rel="noopener noreferrer" class="bg-primary hover:bg-slate-800 text-white h-12 px-8 rounded-lg font-bold transition-all flex items-center justify-center">
+                    Get in Touch
+                </a>
+</div>
+</div>
+</header>
+<main class="flex-1 max-w-[1600px] mx-auto w-full px-6 md:px-20 lg:px-16 py-10">
+<div class="w-full mb-12">
+<div class="relative w-full h-[400px] rounded-xl overflow-hidden shadow-2xl group">
+<div class="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/40 to-transparent z-10"></div>
+<div class="absolute inset-0 bg-primary/10 mix-blend-overlay z-10"></div>
+<img alt="Case Study 5 Hero" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="assets/hero.jpeg"/>
+<div class="absolute bottom-0 left-0 p-8 md:p-12 z-20">
+<span class="px-3 py-1 bg-primary text-white text-[10px] font-black rounded-full mb-4 inline-block tracking-widest uppercase">AI 인터뷰 · 사용자 인식 · 정성 리서치</span>
+<h1 class="text-white text-3xl md:text-5xl font-extrabold leading-tight max-w-2xl">AI 인터뷰에 대한 참여자 태도와 선호 인사이트</h1>
+<p class="text-slate-200 mt-4 text-lg max-w-xl">AI로 진행한 인터뷰에 참여한 13명의 경험을 모아, 사람 연구원과의 유사도·선호 상황·재참여 의향을 파악하고 개선 포인트와 활용 방향을 제안했습니다.</p>
+</div>
+</div>
+</div>
+<div class="flex flex-col lg:flex-row gap-12">
+<aside class="lg:w-1/4">
+<div class="sticky top-28 flex flex-col gap-6">
+<div class="p-5 bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm">
+<p class="text-slate-400 dark:text-slate-500 text-xs font-bold uppercase tracking-widest mb-4">케이스 스터디 섹션</p>
+<nav class="flex flex-col gap-1">
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg bg-slate-100 dark:bg-slate-800 text-primary font-bold" href="#overview">
+<span class="material-symbols-outlined text-xl">info</span>
+<span class="text-sm">개요</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" href="#methodology">
+<span class="material-symbols-outlined text-xl">science</span>
+<span class="text-sm">연구 방법론</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" href="#findings">
+<span class="material-symbols-outlined text-xl">insights</span>
+<span class="text-sm">주요 발견사항</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" href="#impact">
+<span class="material-symbols-outlined text-xl">star</span>
+<span class="text-sm">제언 및 시사점</span>
+</a>
+</nav>
+</div>
+</div>
+</aside>
+<div class="lg:w-3/4 flex flex-col gap-16">
+<section class="scroll-mt-32" id="overview">
+<div class="mb-8">
+<h2 class="text-3xl font-extrabold mb-4">프로젝트 개요</h2>
+<p class="text-slate-600 dark:text-slate-400 text-lg leading-relaxed">AI가 진행하는 1:1 인터뷰에 참여한 사람들이 그 경험을 어떻게 느끼는지, 사람 연구원과 비교했을 때 어떤 점이 비슷하고 다른지, 그리고 어떤 상황에서 AI 인터뷰를 선호하는지 알아보기 위한 분석입니다. 다양한 주제(일상·인식, 지자체 행사 경험 등)로 AI 인터뷰를 경험한 <strong>13명</strong>의 응답을 모아 태도·선호·개선 요청을 정리했습니다.</p>
+</div>
+<div class="grid grid-cols-1 gap-6">
+<div class="bg-white dark:bg-slate-900 p-8 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-md transition-shadow">
+<span class="material-symbols-outlined text-primary mb-3 text-2xl">report_problem</span>
+<h4 class="font-bold text-slate-900 dark:text-white mb-2">조사 목적</h4>
+<p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">AI 인터뷰 경험에 대한 전반적 평가, 사람 연구원 대비 유사도, 사람 vs AI 선호, AI를 선호하는 이유·상황, 향후 참여 의향을 통합적으로 파악하는 것.</p>
+</div>
+<div class="bg-white dark:bg-slate-900 p-8 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-md transition-shadow">
+<span class="material-symbols-outlined text-primary mb-3 text-2xl">person</span>
+<h4 class="font-bold text-slate-900 dark:text-white mb-2">참여자</h4>
+<p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">AI 인터뷰를 한 번 이상 경험한 <strong>13명</strong>(인식·일상 주제 5명 + 지자체 행사 참여 경험 등 8명).</p>
+</div>
+<div class="bg-white dark:bg-slate-900 p-8 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-md transition-shadow">
+<span class="material-symbols-outlined text-primary mb-3 text-2xl">analytics</span>
+<h4 class="font-bold text-slate-900 dark:text-white mb-2">다룬 주제와 결과물</h4>
+<p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">유사도 10점 척도 분포, 선호 선택(사람 vs AI), AI 선호 이유·상황, 전반적 경험, 참여 의향, 시사점·제언.</p>
+</div>
+</div>
+</section>
+<section class="scroll-mt-32" id="methodology">
+<h2 class="text-3xl font-extrabold mb-8">연구 방법론</h2>
+<div class="flex flex-col gap-8 mb-12">
+<div class="flex gap-6 items-start">
+<div class="size-12 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-primary text-2xl">smart_toy</span>
+</div>
+<div>
+<h4 class="text-lg font-bold mb-1">AI 인터뷰 (Proby)</h4>
+<p class="text-slate-600 dark:text-slate-400 leading-relaxed mb-3">참여자들은 Proby가 제공하는 AI 인터뷰에 1:1로 참여했습니다. 인터뷰 말미에 "AI와 인터뷰하는 것에 대한 태도"를 묻는 공통 질문 블록(전반적 경험, 사람 대비 유사도 10점, 사람 vs AI 선호, AI 선호 시 이유·상황, 향후 참여 의향)이 포함되어 있어, 이 부분만 추출해 13건을 통합 분석했습니다. 별도 자극물 없이 대화형으로 진행되었습니다.</p>
+</div>
+</div>
+</div>
+</section>
+<section class="scroll-mt-32" id="findings">
+<h2 class="text-3xl font-extrabold mb-8">주요 발견사항</h2>
+<div class="bg-primary p-8 md:p-12 rounded-2xl text-white mb-12 relative overflow-hidden shadow-2xl">
+<div class="relative z-10">
+<p class="text-xl md:text-2xl font-light italic leading-relaxed">"바로바로 또 소통이 이루어지고 또 그때그때 상황에 맞춰서 질문을 해주는 게 거의 완벽하다고 생각이 들어서."</p>
+<p class="mt-4 text-sm font-bold text-white/70">— 참여자</p>
+</div>
+<div class="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full -mr-20 -mt-20 blur-3xl"></div>
+</div>
+<div class="space-y-6">
+<div class="p-8 bg-white dark:bg-slate-900 border-l-4 border-primary rounded-r-xl shadow-sm hover:shadow-md transition-shadow">
+<h4 class="font-bold text-lg mb-3 text-slate-900 dark:text-white">1. 사람 연구원 대비 유사도 (10점 만점)</h4>
+<p class="text-slate-600 dark:text-slate-400 leading-relaxed mb-3">평균 대역은 <strong>7점 전후</strong>. "거의 사람 같다"부터 "인식·말투 때문에 아쉽다"까지 스펙트럼이 형성되었습니다. 10점 1명, 8점 3명, 7점 6명, 6~6.5점 2명, "사람같다"(점수 미명시) 1명. 유사도를 낮게 준 주요 이유는 (1) 말투·톤이 딱딱하거나 기계적 (2) 답변 후 다음 질문까지 텀이 길다 (3) 말을 잘 못 알아듣거나 전달이 안 되는 느낌 (4) 실시간으로 주고받는 대화감 부족 (5) 진심 어린 공감·반응이 부족하다는 인상입니다.</p>
+</div>
+<div class="p-8 bg-white dark:bg-slate-900 border-l-4 border-primary rounded-r-xl shadow-sm hover:shadow-md transition-shadow">
+<h4 class="font-bold text-lg mb-3 text-slate-900 dark:text-white">2. 사람 vs AI 인터뷰 선호</h4>
+<p class="text-slate-600 dark:text-slate-400 leading-relaxed mb-3">"반드시 사람을 선택한다" 1명(약 8%). 다만 시간·장소에 구애받지 않을 때는 AI도 고려한다고 응답했고, 향후 참여 의향이 있습니다. <strong>"AI 인터뷰가 선호되는 경우도 있을 것 같다" 12명(약 92%)</strong>. 조건부·상황부로 AI 인터뷰 선호 가능하다는 응답이 압도적이었습니다.</p>
+</div>
+<div class="p-8 bg-white dark:bg-slate-900 border-l-4 border-primary rounded-r-xl shadow-sm hover:shadow-md transition-shadow">
+<h4 class="font-bold text-lg mb-3 text-slate-900 dark:text-white">3. AI 인터뷰를 선호하게 되는 이유·상황</h4>
+<p class="text-slate-600 dark:text-slate-400 leading-relaxed mb-3"><strong>압박감·부담 감소</strong> — 사람 인터뷰에서는 질문에 대한 압박감이 들 때가 있으나, AI는 기다려 주어 압박 없이 편하게 말할 수 있다는 의견. <strong>편견·판단 부재</strong>, <strong>시간·장소 유연성</strong>, <strong>솔직함·민감 주제</strong>(프라이빗·민감한 내용은 AI와 하면 더 솔직하게 답할 수 있다는 기대), <strong>소통·기술적 편의</strong>, <strong>주제·목적 적합성</strong>(간단·객관적 얘기, 정해진 내용에 대한 답 등)이 꼽혔습니다.</p>
+<p class="text-sm text-slate-500 dark:text-slate-500 italic">"AI이기 때문에 제가 답변을 좀 느리게 했을 상황에도 AI니까 좀 기다려주잖아요. 이런 면에서는 압박감 없이 편하게 말할 수 있어서 좋은 것 같습니다." — 참여자</p>
+</div>
+<div class="p-8 bg-white dark:bg-slate-900 border-l-4 border-primary rounded-r-xl shadow-sm hover:shadow-md transition-shadow">
+<h4 class="font-bold text-lg mb-3 text-slate-900 dark:text-white">4. 전반적 경험과 참여 의향</h4>
+<p class="text-slate-600 dark:text-slate-400 leading-relaxed mb-3">긍정 표현으로는 "대화가 될 것 같다", "제 답변 듣고 맞는 질문 잘 해줘서 좋았다", "사람하고 흡사하고", "실제 사람과 인터뷰하는 느낌", "새로운 경험이라 좋았다" 등이 나왔습니다. 개선 요청으로는 말투를 부드럽고 자연스럽게, 끊기지 않게 해달라는 피드백이 있었습니다. <strong>향후 AI 인터뷰 참여 의향은 13명 전원</strong>에서 "너무 좋다", "언제든 참여할게요", "적극 참여하겠다" 등으로 확인되었습니다.</p>
+</div>
+</div>
+</section>
+<section class="scroll-mt-32" id="impact">
+<h2 class="text-3xl font-extrabold mb-8">제언 및 시사점</h2>
+<div class="space-y-8 mb-12">
+<div class="bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 p-8 shadow-sm">
+<h3 class="text-xl font-bold mb-4 text-slate-900 dark:text-white">강점 (유지·강화)</h3>
+<p class="text-slate-600 dark:text-slate-400 leading-relaxed mb-3">13명 중 12명이 "AI 인터뷰가 선호되는 경우도 있다"에 가깝게 응답했고, 압박·편견·시간·솔직함·기술적 편의 등에서 AI 인터뷰의 상대적 장점이 인정되었습니다. 13명 전원 향후 참여 의향이 있으며, 유사도 7점대는 "말투만 보완하면", "인식만 좋아지면" 사람에 가깝다고 느낄 여지가 있다는 신호로 해석할 수 있습니다.</p>
+</div>
+<div class="bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 p-8 shadow-sm">
+<h3 class="text-xl font-bold mb-4 text-slate-900 dark:text-white">개선 포인트</h3>
+<div class="space-y-3 text-slate-600 dark:text-slate-400">
+<p><strong>1. 말투·톤</strong> — 딱딱함·정형화·기계감 완화. "부드럽고 자연스럽게, 끊기지 않게" 요청이 반복됨.</p>
+<p><strong>2. 질문 간 텀</strong> — 답변 → 분석 → 다음 질문까지 지연 체감 완화. 실시간에 가까운 대화 설계 검토.</p>
+<p><strong>3. 인식·이해도</strong> — 음성·텍스트 인식 정확도, 발음·방언·문맥 이해 개선이 유사도·만족도 상승에 직결.</p>
+<p><strong>4. 공감·반응</strong> — "진심 어린 공감", "경험을 끌어내는 반응" 등 감정·경험 반영 표현 강화 시 8점 이상으로 올릴 여지 있음.</p>
+</div>
+</div>
+<div class="bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 p-8 shadow-sm">
+<h3 class="text-xl font-bold mb-4 text-slate-900 dark:text-white">활용 방향</h3>
+<p class="text-slate-600 dark:text-slate-400 leading-relaxed mb-3">"간단한 질의응답", "객관적·민감 주제", "시간·장소 유연이 중요한 경우" 등에서 AI 인터뷰를 우선 권장하는 설계가 가능합니다. "반드시 사람"을 선택한 1명도 시간·장소 편의에서는 AI를 수용했으므로, 심층·감정 중심 구간은 사람, 단순·구조화 구간은 AI 등 역할 분담 설계에 참고할 수 있습니다.</p>
+</div>
+</div>
+<div class="p-8 bg-slate-50 dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700">
+<p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed"><strong>한 줄 요약:</strong> 참여자들은 AI 인터뷰를 전반적으로 수용하며, 압박·편견·시간·솔직함·기술적 편의에서 장점을 인정했습니다. 말투·텀·인식·공감을 보완하면 유사도와 만족도를 더 끌어올릴 수 있고, 주제·상황에 따라 사람과 AI를 혼합하는 설계에 활용할 수 있습니다.</p>
+</div>
+</section>
+<div class="mt-20 pt-10 border-t border-slate-200 dark:border-slate-800 flex flex-col md:flex-row items-center justify-between gap-6">
+<div>
+<h4 class="text-xl font-bold">다른 케이스 스터디</h4>
+<p class="text-slate-600 dark:text-slate-400">MZ 세대 금융 라이프스타일 및 은행 이용 인사이트</p>
+</div>
+<a class="flex items-center gap-2 text-primary font-bold group" href="case-study-04-finance-behavior.html">
+                        Case #4 보기
+                        <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+</main>
+<footer class="w-full bg-primary text-white py-12 mt-20">
+<div class="max-w-[1600px] mx-auto px-6 md:px-20 lg:px-16 flex flex-col md:flex-row justify-between items-center gap-8">
+<div class="flex items-center gap-3">
+<div class="size-8 bg-primary rounded-lg flex items-center justify-center text-white">
+<span class="material-symbols-outlined text-xl">biotech</span>
+</div>
+<span class="font-bold text-lg">Proby</span>
+</div>
+<p class="text-slate-400 text-sm">© 2026 Proby. AI 기반 사용자 리서치 플랫폼.</p>
+<div class="flex gap-6">
+<a class="text-slate-400 hover:text-white transition-colors" href="#"><span class="material-symbols-outlined">public</span></a>
+<a class="text-slate-400 hover:text-white transition-colors" href="#"><span class="material-symbols-outlined">mail</span></a>
+<a class="text-slate-400 hover:text-white transition-colors" href="#"><span class="material-symbols-outlined">chat</span></a>
+</div>
+</div>
+</footer>
+</div>
+</body></html>
