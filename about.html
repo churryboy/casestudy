@@ -621,184 +621,173 @@
     </h2>
     <p class="text-white/35 text-sm text-center mb-16 tracking-widest uppercase">Our work process</p>
 
-    <!-- ── Workflow ─────────────────────────────────────────────── -->
+    <!-- ── Workflow 2-col ───────────────────────────────────────── -->
     <style>
-      .wf-scroll { overflow-x: auto; margin: 0 -1.5rem; padding: 0 1.5rem 1.5rem; }
-      @media(min-width:768px){ .wf-scroll { margin: 0 -4rem; padding: 0 4rem 1.5rem; } }
-      .wf-scroll::-webkit-scrollbar { height: 3px; }
-      .wf-scroll::-webkit-scrollbar-thumb { background: rgba(65,104,175,.3); border-radius: 2px; }
-      .wf-row { display: flex; align-items: flex-start; gap: 0; min-width: max-content; }
-      .wf-step { width: 200px; flex-shrink: 0; }
-      @media(min-width:1024px){ .wf-step { width: 220px; } }
-      .wf-badge {
-        width: 30px; height: 30px; border-radius: 50%;
-        background: var(--accent-hi); color: #fff;
-        font-size: .65rem; font-weight: 900;
-        display: flex; align-items: center; justify-content: center;
-        flex-shrink: 0;
+      .wf2-wrap { position: relative; max-width: 680px; margin: 0 auto; }
+      .wf2-divider {
+        position: absolute; left: 50%; top: 0; bottom: 0; width: 1px;
+        background: linear-gradient(to bottom, transparent 0%, rgba(65,104,175,.2) 12%, rgba(65,104,175,.2) 88%, transparent 100%);
+        pointer-events: none;
       }
-      .wf-card {
-        background: rgba(25,25,30,.95);
-        border: 1px solid rgba(40,64,110,.4);
-        border-radius: 14px;
-        padding: 16px 14px;
-        width: 100%;
+      .wf2-col-header {
+        font-size: .6rem; font-weight: 900; letter-spacing: .18em;
+        text-transform: uppercase; color: var(--accent-text);
+        padding: 5px 16px; border-radius: 999px;
+        background: rgba(30,48,80,.35); border: 1px solid rgba(65,104,175,.2);
+        display: inline-block;
+      }
+      .wf2-card {
+        background: rgba(25,25,30,.97);
+        border: 1px solid rgba(40,64,110,.35);
+        border-radius: 14px; padding: 16px 18px;
         transition: border-color .25s;
       }
-      .wf-card-src {
-        background: linear-gradient(135deg, rgba(40,64,110,.45) 0%, rgba(25,25,30,.95) 100%);
+      .wf2-card-client {
+        border-color: rgba(65,104,175,.3);
+        background: linear-gradient(135deg, rgba(13,23,40,.7) 0%, rgba(25,25,30,.97) 100%);
+      }
+      .wf2-card-proby {
         border-color: rgba(65,104,175,.5);
-        box-shadow: 0 0 22px rgba(65,104,175,.18);
+        background: linear-gradient(135deg, rgba(40,64,110,.4) 0%, rgba(25,25,30,.97) 100%);
+        box-shadow: 0 0 24px rgba(65,104,175,.12);
       }
-      .wf-card .material-symbols-outlined { font-size: 1.5rem; color: var(--accent-lt); margin-bottom: 8px; display: block; }
-      .wf-card-name { font-size: .8rem; font-weight: 700; color: rgba(255,255,255,.85); }
-      .wf-dots {
-        display: flex; flex-direction: column; align-items: flex-start;
-        gap: 4px; padding-left: 18px; margin: 6px 0;
+      .wf2-card .material-symbols-outlined { font-size: 1.4rem; color: var(--accent-lt); margin-bottom: 6px; display: block; }
+      .wf2-card-label { font-size: .82rem; font-weight: 700; color: rgba(255,255,255,.85); }
+      .wf2-card-desc { font-size: .7rem; color: rgba(255,255,255,.4); line-height: 1.6; margin-top: 5px; }
+      .wf2-tag {
+        display: inline-flex; align-items: center; gap: 4px; margin-top: 10px;
+        background: rgba(30,48,80,.6); border: 1px solid rgba(65,104,175,.25);
+        border-radius: 999px; padding: 3px 10px;
+        font-size: .6rem; font-weight: 800; color: var(--accent-lt); letter-spacing: .05em;
       }
-      .wf-dot { width: 4px; height: 4px; border-radius: 50%; background: var(--accent-hi); opacity: .7; }
-      .wf-conn {
-        flex-shrink: 0; width: 40px;
-        display: flex; align-items: center; justify-content: center;
-        padding-top: 52px;
+      .wf2-tag-opt {
+        background: rgba(25,25,30,.6); border-color: rgba(65,104,175,.18);
+        color: rgba(255,255,255,.3);
       }
-      .wf-conn-inner { display: flex; gap: 3px; align-items: center; }
-      .wf-conn-dot { width: 3px; height: 3px; border-radius: 50%; background: rgba(65,104,175,.45); }
+      .wf2-tag .material-symbols-outlined { font-size: .78rem; }
+      .wf2-vconn { width: 1px; background: rgba(65,104,175,.22); margin: 0 auto; height: 28px; }
+      .wf2-xarrow { position: relative; height: 52px; }
+      .wf2-xarrow-line {
+        position: absolute; top: 50%; left: 10%; right: 10%; height: 1px;
+        background: rgba(65,104,175,.28); transform: translateY(-50%);
+      }
+      .wf2-xarrow-badge {
+        position: absolute; left: 50%; top: 50%;
+        transform: translate(-50%, -50%);
+        display: inline-flex; align-items: center; gap: 5px;
+        background: var(--surface); border: 1px solid rgba(65,104,175,.35);
+        border-radius: 999px; padding: 5px 14px;
+        font-size: .6rem; font-weight: 900; letter-spacing: .1em;
+        color: var(--accent-lt); text-transform: uppercase; white-space: nowrap;
+      }
+      .wf2-xarrow-badge .material-symbols-outlined { font-size: .82rem; color: var(--accent-hi); }
     </style>
 
-    <div class="wf-scroll">
-      <div class="wf-row">
+    <div class="wf2-wrap mt-6">
+      <div class="wf2-divider"></div>
 
-        <!-- Step 01 -->
-        <div class="wf-step">
-          <div class="flex items-center gap-2.5 mb-4">
-            <span class="wf-badge">01</span>
-            <h3 class="text-sm font-bold text-white tracking-wide">Brief</h3>
-          </div>
-          <div class="wf-card wf-card-src">
-            <span class="material-symbols-outlined">corporate_fare</span>
-            <p class="wf-card-name">Client</p>
-          </div>
-          <div class="wf-dots">
-            <div class="wf-dot"></div><div class="wf-dot"></div><div class="wf-dot"></div>
-            <span class="material-symbols-outlined text-sm" style="color:var(--accent-hi);transform:rotate(90deg);display:block">arrow_forward</span>
-          </div>
-          <div class="wf-card">
-            <span class="material-symbols-outlined">group</span>
-            <p class="wf-card-name">Proby Team</p>
-          </div>
-          <p class="text-white/40 text-xs leading-relaxed mt-4">Client shares research goals, target audience, and key questions to be answered.</p>
-        </div>
-
-        <!-- Connector -->
-        <div class="wf-conn"><div class="wf-conn-inner">
-          <div class="wf-conn-dot"></div><div class="wf-conn-dot"></div><div class="wf-conn-dot"></div>
-          <span class="material-symbols-outlined text-sm" style="color:rgba(65,104,175,.6)">chevron_right</span>
-        </div></div>
-
-        <!-- Step 02 -->
-        <div class="wf-step">
-          <div class="flex items-center gap-2.5 mb-4">
-            <span class="wf-badge">02</span>
-            <h3 class="text-sm font-bold text-white tracking-wide">Script Design</h3>
-          </div>
-          <div class="wf-card wf-card-src">
-            <span class="material-symbols-outlined">assignment</span>
-            <p class="wf-card-name">Research Brief</p>
-          </div>
-          <div class="wf-dots">
-            <div class="wf-dot"></div><div class="wf-dot"></div><div class="wf-dot"></div>
-            <span class="material-symbols-outlined text-sm" style="color:var(--accent-hi);transform:rotate(90deg);display:block">arrow_forward</span>
-          </div>
-          <div class="wf-card">
-            <span class="material-symbols-outlined">edit_note</span>
-            <p class="wf-card-name">Interview Script</p>
-          </div>
-          <p class="text-white/40 text-xs leading-relaxed mt-4">Proby crafts a tailored AI interview guide aligned with the client's objectives.</p>
-        </div>
-
-        <!-- Connector -->
-        <div class="wf-conn"><div class="wf-conn-inner">
-          <div class="wf-conn-dot"></div><div class="wf-conn-dot"></div><div class="wf-conn-dot"></div>
-          <span class="material-symbols-outlined text-sm" style="color:rgba(65,104,175,.6)">chevron_right</span>
-        </div></div>
-
-        <!-- Step 03 -->
-        <div class="wf-step">
-          <div class="flex items-center gap-2.5 mb-4">
-            <span class="wf-badge">03</span>
-            <h3 class="text-sm font-bold text-white tracking-wide">AI Interviews</h3>
-          </div>
-          <div class="wf-card wf-card-src">
-            <span class="material-symbols-outlined">people</span>
-            <p class="wf-card-name">Participants</p>
-          </div>
-          <div class="wf-dots">
-            <div class="wf-dot"></div><div class="wf-dot"></div><div class="wf-dot"></div>
-            <span class="material-symbols-outlined text-sm" style="color:var(--accent-hi);transform:rotate(90deg);display:block">arrow_forward</span>
-          </div>
-          <div class="wf-card">
-            <span class="material-symbols-outlined">smart_toy</span>
-            <p class="wf-card-name">AI Agent</p>
-          </div>
-          <p class="text-white/40 text-xs leading-relaxed mt-4">Proby's AI conducts 1-on-1 interviews with participants — naturally and at scale.</p>
-        </div>
-
-        <!-- Connector -->
-        <div class="wf-conn"><div class="wf-conn-inner">
-          <div class="wf-conn-dot"></div><div class="wf-conn-dot"></div><div class="wf-conn-dot"></div>
-          <span class="material-symbols-outlined text-sm" style="color:rgba(65,104,175,.6)">chevron_right</span>
-        </div></div>
-
-        <!-- Step 04 -->
-        <div class="wf-step">
-          <div class="flex items-center gap-2.5 mb-4">
-            <span class="wf-badge">04</span>
-            <h3 class="text-sm font-bold text-white tracking-wide">Analysis</h3>
-          </div>
-          <div class="wf-card wf-card-src">
-            <span class="material-symbols-outlined">forum</span>
-            <p class="wf-card-name">Transcripts</p>
-          </div>
-          <div class="wf-dots">
-            <div class="wf-dot"></div><div class="wf-dot"></div><div class="wf-dot"></div>
-            <span class="material-symbols-outlined text-sm" style="color:var(--accent-hi);transform:rotate(90deg);display:block">arrow_forward</span>
-          </div>
-          <div class="wf-card">
-            <span class="material-symbols-outlined">lightbulb</span>
-            <p class="wf-card-name">Key Insights</p>
-          </div>
-          <p class="text-white/40 text-xs leading-relaxed mt-4">AI + human researchers extract patterns and surface the most critical findings.</p>
-        </div>
-
-        <!-- Connector -->
-        <div class="wf-conn"><div class="wf-conn-inner">
-          <div class="wf-conn-dot"></div><div class="wf-conn-dot"></div><div class="wf-conn-dot"></div>
-          <span class="material-symbols-outlined text-sm" style="color:rgba(65,104,175,.6)">chevron_right</span>
-        </div></div>
-
-        <!-- Step 05 -->
-        <div class="wf-step">
-          <div class="flex items-center gap-2.5 mb-4">
-            <span class="wf-badge">05</span>
-            <h3 class="text-sm font-bold text-white tracking-wide">Delivery</h3>
-          </div>
-          <div class="wf-card wf-card-src">
-            <span class="material-symbols-outlined">summarize</span>
-            <p class="wf-card-name">Findings</p>
-          </div>
-          <div class="wf-dots">
-            <div class="wf-dot"></div><div class="wf-dot"></div><div class="wf-dot"></div>
-            <span class="material-symbols-outlined text-sm" style="color:var(--accent-hi);transform:rotate(90deg);display:block">arrow_forward</span>
-          </div>
-          <div class="wf-card">
-            <span class="material-symbols-outlined">rocket_launch</span>
-            <p class="wf-card-name">Action Plan</p>
-          </div>
-          <p class="text-white/40 text-xs leading-relaxed mt-4">A full report with prioritized recommendations — ready to act on immediately.</p>
-        </div>
-
+      <!-- Column headers -->
+      <div class="grid grid-cols-2 gap-8 mb-10 px-6">
+        <div class="text-center"><span class="wf2-col-header">Client</span></div>
+        <div class="text-center"><span class="wf2-col-header">Proby</span></div>
       </div>
+
+      <!-- Step 1: Client sends brief -->
+      <div class="grid grid-cols-2 gap-6 px-6">
+        <div class="pr-4">
+          <div class="wf2-card wf2-card-client">
+            <span class="material-symbols-outlined">corporate_fare</span>
+            <p class="wf2-card-label">Share Brief</p>
+            <p class="wf2-card-desc">Research goals, target audience, and key questions to be answered.</p>
+          </div>
+        </div>
+        <div></div>
+      </div>
+
+      <!-- Arrow: Client → Proby -->
+      <div class="wf2-xarrow mx-6">
+        <div class="wf2-xarrow-line"></div>
+        <div class="wf2-xarrow-badge">
+          Request
+          <span class="material-symbols-outlined">arrow_forward</span>
+        </div>
+      </div>
+
+      <!-- Step 2: Proby sets up agent -->
+      <div class="grid grid-cols-2 gap-6 px-6">
+        <div></div>
+        <div class="pl-4">
+          <div class="wf2-card wf2-card-proby">
+            <span class="material-symbols-outlined">smart_toy</span>
+            <p class="wf2-card-label">Set up Proby Agent</p>
+            <p class="wf2-card-desc">Configure interview script, persona, and conversation flow.</p>
+            <span class="wf2-tag"><span class="material-symbols-outlined">schedule</span> ~1 day</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Vertical connector (Proby side) -->
+      <div class="grid grid-cols-2 gap-6 px-6 my-1">
+        <div></div>
+        <div class="pl-4 flex justify-center"><div class="wf2-vconn"></div></div>
+      </div>
+
+      <!-- Step 3: Run interviews -->
+      <div class="grid grid-cols-2 gap-6 px-6">
+        <div></div>
+        <div class="pl-4">
+          <div class="wf2-card wf2-card-proby">
+            <span class="material-symbols-outlined">record_voice_over</span>
+            <p class="wf2-card-label">Run Interviews</p>
+            <p class="wf2-card-desc">AI agent conducts 1-on-1 interviews at scale, in real-time.</p>
+            <div class="flex gap-2 flex-wrap">
+              <span class="wf2-tag"><span class="material-symbols-outlined">schedule</span> 1–2 days</span>
+              <span class="wf2-tag wf2-tag-opt">Panel recruitment: optional</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Vertical connector (Proby side) -->
+      <div class="grid grid-cols-2 gap-6 px-6 my-1">
+        <div></div>
+        <div class="pl-4 flex justify-center"><div class="wf2-vconn"></div></div>
+      </div>
+
+      <!-- Step 4: Analysis & Report -->
+      <div class="grid grid-cols-2 gap-6 px-6">
+        <div></div>
+        <div class="pl-4">
+          <div class="wf2-card wf2-card-proby">
+            <span class="material-symbols-outlined">analytics</span>
+            <p class="wf2-card-label">Analysis & Report</p>
+            <p class="wf2-card-desc">Key insights extracted and a full report prepared for delivery.</p>
+            <span class="wf2-tag"><span class="material-symbols-outlined">schedule</span> ~1 day</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Arrow: Proby → Client (report delivery) -->
+      <div class="wf2-xarrow mx-6">
+        <div class="wf2-xarrow-line"></div>
+        <div class="wf2-xarrow-badge">
+          <span class="material-symbols-outlined">arrow_back</span>
+          Delivery
+        </div>
+      </div>
+
+      <!-- Step 5: Client receives report -->
+      <div class="grid grid-cols-2 gap-6 px-6">
+        <div class="pr-4">
+          <div class="wf2-card wf2-card-client">
+            <span class="material-symbols-outlined">summarize</span>
+            <p class="wf2-card-label">Receive Report</p>
+            <p class="wf2-card-desc">Actionable insights and recommendations, ready to act on.</p>
+          </div>
+        </div>
+        <div></div>
+      </div>
+
     </div>
   </div>
 </section>
