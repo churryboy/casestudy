@@ -1,3 +1,45 @@
+# Black
+
+## Neutral Dark (near-black → light gray, slight cool undertone)
+
+| Token | Value / Hex | Value / RGBA |
+|---|---|---|
+| Black/2 | #0A0A0B | rgba(10, 10, 11, 1) |
+| Black/5 | #111114 | rgba(17, 17, 20, 1) |
+| Black/10 | #19191E | rgba(25, 25, 30, 1) |
+| Black/20 | #25252D | rgba(37, 37, 45, 1) |
+| Black/30 | #32323E | rgba(50, 50, 62, 1) |
+| Black/40 | #424251 | rgba(66, 66, 81, 1) |
+| Black/50 | #555568 | rgba(85, 85, 104, 1) |
+| Black/60 | #6B6B83 | rgba(107, 107, 131, 1) |
+| Black/70 | #888899 | rgba(136, 136, 153, 1) |
+| Black/80 | #A5A5B5 | rgba(165, 165, 181, 1) |
+| Black/90 | #C8C8D4 | rgba(200, 200, 212, 1) |
+| Black/95 | #E2E2E9 | rgba(226, 226, 233, 1) |
+
+---
+
+# Dark Navy
+
+## Deep Ocean Navy (near-black navy → sky blue)
+
+| Token | Value / Hex | Value / RGBA |
+|---|---|---|
+| Dark Navy/2 | #05080F | rgba(5, 8, 15, 1) |
+| Dark Navy/5 | #080E1A | rgba(8, 14, 26, 1) |
+| Dark Navy/10 | #0D1728 | rgba(13, 23, 40, 1) |
+| Dark Navy/20 | #152238 | rgba(21, 34, 56, 1) |
+| Dark Navy/30 | #1E3050 | rgba(30, 48, 80, 1) |
+| Dark Navy/40 | #28406E | rgba(40, 64, 110, 1) |
+| Dark Navy/50 | #34538E | rgba(52, 83, 142, 1) |
+| Dark Navy/60 | #4168AF | rgba(65, 104, 175, 1) |
+| Dark Navy/70 | #5B84CC | rgba(91, 132, 204, 1) |
+| Dark Navy/80 | #7DA3E0 | rgba(125, 163, 224, 1) |
+| Dark Navy/90 | #A3C2EF | rgba(163, 194, 239, 1) |
+| Dark Navy/95 | #CDE0F7 | rgba(205, 224, 247, 1) |
+
+---
+
 # Blue Purple
 
 ## Light
