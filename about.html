@@ -82,8 +82,8 @@
 
   /* Badge — dark navy tint */
   .badge {
-    background: rgba(44, 37, 106, 0.5);   /* accent-dim */
-    border: 1px solid rgba(82, 71, 235, 0.25);
+    background: rgba(30,48,80,0.5);   /* Dark Navy/30 */
+    border: 1px solid rgba(65,104,175,0.25);
     backdrop-filter: blur(8px);
   }
 
@@ -132,7 +132,7 @@
   /* CTA button — dark navy, token Dark_40 base */
   .btn-primary {
     background: var(--accent);           /* #28406E — Dark Navy/40 */
-    box-shadow: 0 0 32px rgba(44, 37, 106, 0.5);
+    box-shadow: 0 0 32px rgba(30,48,80,0.5);
     transition: box-shadow 0.2s, background 0.2s;
   }
   .btn-primary:hover {
@@ -171,7 +171,7 @@
     height: min(780px, calc(100dvh - 48px));
     border-radius: 24px;
     overflow: hidden;
-    border: 1px solid rgba(82, 71, 235, 0.25);
+    border: 1px solid rgba(65,104,175,0.25);
     box-shadow: 0 0 80px rgba(30,48,80,0.5), 0 0 0 1px rgba(255,255,255,0.04);
     animation: modal-in 0.35s cubic-bezier(.16,1,.3,1) both;
   }
@@ -252,7 +252,7 @@
   <!-- content -->
   <div class="relative z-10 text-center px-6 max-w-5xl mx-auto">
     <!-- badge -->
-    <div class="fade-up inline-flex items-center gap-2 badge rounded-full px-4 py-2 mb-8 text-sm font-medium text-purple-200">
+    <div class="fade-up inline-flex items-center gap-2 badge rounded-full px-4 py-2 mb-8 text-sm font-medium" style="color:var(--accent-lt)">
       <span class="text-base">⭐</span> 100+ insights powered by AI-driven research
     </div>
 
