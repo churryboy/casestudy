@@ -1,5 +1,18 @@
 {
   "version": 2,
-  "cleanUrls": true
+  "cleanUrls": true,
+  "headers": [
+    {
+      "source": "/no-use/(.*)",
+      "headers": [{ "key": "x-robots-tag", "value": "noindex" }]
+    }
+  ],
+  "redirects": [
+    {
+      "source": "/no-use/(.*)",
+      "destination": "/",
+      "permanent": false
+    }
+  ]
 }
 
