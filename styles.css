@@ -414,6 +414,149 @@ body::before {
   margin-bottom: 0.4rem;
 }
 
+/* ── Pricing cards ───────────────────────────────────────────── */
+.pricing-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background: rgba(25,25,30,0.85);
+  border: 1px solid rgba(40,64,110,0.3);
+  border-radius: 1.25rem;
+  padding: 2rem 1.75rem;
+  transition: border-color 0.25s, transform 0.25s, box-shadow 0.25s;
+}
+.pricing-card:hover {
+  border-color: rgba(65,104,175,0.55);
+  transform: translateY(-4px);
+  box-shadow: 0 16px 48px rgba(30,48,80,0.35);
+}
+.pricing-card-featured {
+  border-color: rgba(65,104,175,0.55);
+  background: linear-gradient(160deg, rgba(40,64,110,0.45) 0%, rgba(25,25,30,0.95) 55%);
+  box-shadow: 0 0 48px rgba(65,104,175,0.15), 0 0 0 1px rgba(65,104,175,0.2);
+}
+.pricing-card-featured:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 64px rgba(65,104,175,0.25);
+}
+
+.pricing-badge-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
+.pricing-tier-label {
+  font-size: 0.7rem;
+  font-weight: 900;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--accent-text);
+}
+.pricing-popular-badge {
+  font-size: 0.6rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent-lt);
+  background: rgba(65,104,175,0.25);
+  border: 1px solid rgba(65,104,175,0.4);
+  border-radius: 999px;
+  padding: 3px 10px;
+}
+
+.pricing-price-block {
+  display: flex;
+  align-items: baseline;
+  gap: 2px;
+  margin-bottom: 0.4rem;
+}
+.pricing-currency {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: rgba(255,255,255,0.6);
+  line-height: 1;
+}
+.pricing-amount {
+  font-size: 3.2rem;
+  font-weight: 900;
+  color: #fff;
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+.pricing-unit {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: rgba(255,255,255,0.35);
+  margin-left: 4px;
+}
+
+.pricing-range {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: rgba(255,255,255,0.35);
+  margin-bottom: 1.5rem;
+}
+
+.pricing-divider {
+  height: 1px;
+  background: rgba(65,104,175,0.15);
+  margin-bottom: 1.5rem;
+}
+
+.pricing-features {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  flex: 1;
+}
+.pricing-features li {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: rgba(255,255,255,0.65);
+}
+.pricing-features li .material-symbols-outlined {
+  font-size: 1rem;
+  color: var(--accent-text);
+  flex-shrink: 0;
+}
+
+.pricing-cta {
+  width: 100%;
+  padding: 0.8rem;
+  border-radius: 0.75rem;
+  font-weight: 700;
+  font-size: 0.875rem;
+  cursor: pointer;
+  border: none;
+  transition: background 0.2s, box-shadow 0.2s;
+  margin-top: auto;
+}
+.pricing-cta-ghost {
+  background: rgba(65,104,175,0.12);
+  color: var(--accent-lt);
+  border: 1px solid rgba(65,104,175,0.3);
+}
+.pricing-cta-ghost:hover {
+  background: rgba(65,104,175,0.22);
+  border-color: rgba(65,104,175,0.55);
+}
+.pricing-cta-solid {
+  background: var(--accent);
+  color: #fff;
+  box-shadow: 0 0 28px rgba(65,104,175,0.25);
+}
+.pricing-cta-solid:hover {
+  background: var(--accent-hi);
+  box-shadow: 0 0 40px rgba(65,104,175,0.4);
+}
+
 /* ── Mic button ──────────────────────────────────────────────── */
 #mic-btn {
   cursor: pointer;
