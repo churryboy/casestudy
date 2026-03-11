@@ -364,6 +364,217 @@
   </div>
 </section>
 
+<!-- ─── BENCHMARK ─────────────────────────────────────────────── -->
+<section class="relative z-10 py-20">
+  <div class="max-w-[1600px] mx-auto px-6 md:px-16">
+
+    <div class="text-center mb-12">
+      <p class="section-label mb-4">Human-Likeness Benchmark</p>
+      <h2 class="text-3xl md:text-4xl font-black leading-tight mb-4">
+        <span class="grad-text">Closing the gap between AI and human</span>
+      </h2>
+      <p class="text-white/45 text-base max-w-xl mx-auto leading-relaxed">
+        Each dot is one interview session. Participants judged whether the interviewer felt human or AI — without being told in advance.
+      </p>
+    </div>
+
+    <!-- Chart card -->
+    <div class="glass rounded-2xl overflow-hidden max-w-4xl mx-auto">
+
+      <!-- Top bar -->
+      <div class="px-6 md:px-8 pt-6 pb-3 flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b" style="border-color:rgba(65,104,175,0.12);">
+        <p class="text-xs font-bold tracking-widest uppercase" style="color:var(--accent-text);">
+          Proby AI &nbsp;·&nbsp; Human-Likeness Benchmark &nbsp;·&nbsp; 2026
+        </p>
+        <div class="flex items-center gap-5 flex-wrap">
+          <div class="flex items-center gap-2">
+            <span class="inline-block w-2.5 h-2.5 rounded-full flex-shrink-0" style="background:#7DA3E0;box-shadow:0 0 8px rgba(125,163,224,0.6);"></span>
+            <span class="text-xs text-white/50 font-medium">Human moderator</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <span class="inline-block w-2.5 h-2.5 rounded-full flex-shrink-0" style="background:#FB923C;box-shadow:0 0 8px rgba(251,146,60,0.5);"></span>
+            <span class="text-xs text-white/50 font-medium">Proby (AI moderator)</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Canvas -->
+      <div class="px-4 pt-4 pb-2">
+        <canvas id="bm-cvs" style="width:100%;display:block;"></canvas>
+      </div>
+
+      <!-- Footer note -->
+      <div class="px-6 md:px-8 py-4 border-t" style="border-color:rgba(65,104,175,0.10);">
+        <p class="text-white/25 text-xs">
+          Evaluation period: Jan – Mar 2026 &nbsp;·&nbsp; n = 28 human sessions, 120 Proby sessions &nbsp;·&nbsp; Blind evaluation — participants unaware of interviewer type
+        </p>
+      </div>
+    </div>
+
+  </div>
+</section>
+<script>
+(function () {
+  var cvs = document.getElementById('bm-cvs');
+  if (!cvs) return;
+
+  /* Reproducible PRNG (LCG) */
+  var _s = 7919;
+  function rnd() { _s = (_s * 1664525 + 1013904223) >>> 0; return _s / 4294967296; }
+
+  /* Generate dots */
+  var dots = [];
+  function mkDots(x0, x1, n, zone, type) {
+    for (var i = 0; i < n; i++) {
+      dots.push({ x: x0 + rnd() * (x1 - x0), jy: rnd(), zone: zone, type: type });
+    }
+  }
+  // Human moderator — always in human zone
+  mkDots(1,  30, 8,  'h', 'human');
+  mkDots(31, 58, 17, 'h', 'human');
+  mkDots(59, 71, 3,  'h', 'human');
+  // Proby — Jan/Feb: AI zone; Mar: mostly AI, 6 breakthrough above line
+  mkDots(1,  30, 40, 'a', 'proby');
+  mkDots(31, 58, 70, 'a', 'proby');
+  mkDots(59, 71, 4,  'a', 'proby');
+  mkDots(59, 71, 6,  'h', 'proby'); // the breakthrough
+
+  function draw() {
+    var dpr = window.devicePixelRatio || 1;
+    var W   = cvs.offsetWidth;
+    var H   = Math.round(Math.min(W * 0.5, 370));
+    cvs.width  = W * dpr;
+    cvs.height = H * dpr;
+    cvs.style.height = H + 'px';
+    var ctx = cvs.getContext('2d');
+    ctx.scale(dpr, dpr);
+
+    var ml = 12, mr = 12, mt = 22, mb = 38;
+    var cw = W - ml - mr;
+    var ch = H - mt - mb;
+    var DAYS = 73; // Jan 1 (0) → Mar 15 (73)
+
+    function px(d) { return ml + (d / DAYS) * cw; }
+    function py(n) { return mt + (1 - n) * ch; }  // n=0 bottom, 1 top
+
+    function dotY(d) {
+      var base = d.zone === 'h' ? 0.57 : 0.11;
+      return py(base + d.jy * 0.30);
+    }
+
+    /* Subtle zone tint */
+    var grad = ctx.createLinearGradient(0, mt, 0, mt + ch);
+    grad.addColorStop(0,    'rgba(125,163,224,0.05)');
+    grad.addColorStop(0.48, 'rgba(125,163,224,0.02)');
+    grad.addColorStop(0.52, 'rgba(0,0,0,0)');
+    grad.addColorStop(1,    'rgba(0,0,0,0)');
+    ctx.fillStyle = grad;
+    ctx.fillRect(ml, mt, cw, ch);
+
+    /* Month dividers */
+    ctx.strokeStyle = 'rgba(65,104,175,0.14)';
+    ctx.lineWidth = 1;
+    [30, 58].forEach(function(d) {
+      ctx.beginPath();
+      ctx.moveTo(px(d), mt);
+      ctx.lineTo(px(d), mt + ch);
+      ctx.stroke();
+    });
+
+    /* Dashed separator */
+    ctx.save();
+    ctx.setLineDash([6, 4]);
+    ctx.strokeStyle = 'rgba(255,255,255,0.20)';
+    ctx.lineWidth = 1.5;
+    ctx.beginPath();
+    ctx.moveTo(ml, py(0.5));
+    ctx.lineTo(W - mr, py(0.5));
+    ctx.stroke();
+    ctx.restore();
+
+    /* Zone labels */
+    var fs = Math.max(9, Math.min(11, W * 0.013));
+    ctx.font = '600 ' + fs + 'px -apple-system,BlinkMacSystemFont,sans-serif';
+    ctx.textAlign = 'left';
+    ctx.fillStyle = 'rgba(125,163,224,0.52)';
+    ctx.fillText('Evaluated as Human  ↑', ml + 4, mt + fs + 3);
+    ctx.fillStyle = 'rgba(251,146,60,0.40)';
+    ctx.fillText('Evaluated as AI  ↓', ml + 4, mt + ch - 6);
+
+    /* Month labels */
+    ctx.fillStyle = 'rgba(255,255,255,0.38)';
+    ctx.font = '600 ' + fs + 'px -apple-system,BlinkMacSystemFont,sans-serif';
+    ctx.textAlign = 'center';
+    ctx.fillText('Jan', px(15), mt + ch + 20);
+    ctx.fillText('Feb', px(44), mt + ch + 20);
+    ctx.fillText('Mar', px(65), mt + ch + 20);
+    ctx.fillStyle = 'rgba(255,255,255,0.20)';
+    ctx.font = '500 9px -apple-system,BlinkMacSystemFont,sans-serif';
+    ctx.fillText('Evaluation Period (2026)', ml + cw / 2, mt + ch + 34);
+
+    /* Proby dots (drawn first, human on top) */
+    dots.forEach(function(d) {
+      if (d.type !== 'proby') return;
+      var bt = d.zone === 'h';
+      ctx.beginPath();
+      ctx.arc(px(d.x), dotY(d), bt ? 4.5 : 3.2, 0, Math.PI * 2);
+      ctx.fillStyle = bt ? 'rgba(253,186,116,0.95)' : 'rgba(249,115,22,0.68)';
+      ctx.fill();
+    });
+
+    /* Human dots */
+    dots.forEach(function(d) {
+      if (d.type !== 'human') return;
+      ctx.beginPath();
+      ctx.arc(px(d.x), dotY(d), 4.5, 0, Math.PI * 2);
+      ctx.fillStyle = 'rgba(125,163,224,0.92)';
+      ctx.fill();
+    });
+
+    /* Annotation arrow → breakthrough cluster */
+    if (W < 300) return;
+    var tipX  = px(63), tipY  = py(0.71);
+    var baseX = px(71), baseY = py(0.38);
+
+    ctx.strokeStyle = 'rgba(255,255,255,0.50)';
+    ctx.lineWidth = 1.5;
+    ctx.beginPath();
+    ctx.moveTo(baseX, baseY);
+    ctx.lineTo(tipX, tipY);
+    ctx.stroke();
+    var ang = Math.atan2(tipY - baseY, tipX - baseX);
+    ctx.beginPath();
+    ctx.moveTo(tipX, tipY);
+    ctx.lineTo(tipX - 9 * Math.cos(ang - 0.4), tipY - 9 * Math.sin(ang - 0.4));
+    ctx.moveTo(tipX, tipY);
+    ctx.lineTo(tipX - 9 * Math.cos(ang + 0.4), tipY - 9 * Math.sin(ang + 0.4));
+    ctx.stroke();
+
+    var af = Math.max(8, Math.min(10, W * 0.013));
+    ctx.font = '600 ' + af + 'px -apple-system,BlinkMacSystemFont,sans-serif';
+    ctx.textAlign = 'right';
+
+    if (W >= 480) {
+      ctx.fillStyle = 'rgba(255,255,255,0.60)';
+      ctx.fillText('Mar: Significant performance', baseX - 2, baseY - 17);
+      ctx.fillText('improvement — Proby', baseX - 2, baseY - 4);
+      ctx.fillStyle = 'rgba(163,194,239,0.85)';
+      ctx.fillText('evaluated as Human', baseX - 2, baseY + 9);
+    } else {
+      ctx.fillStyle = 'rgba(163,194,239,0.80)';
+      ctx.fillText('Proby → Human', baseX - 2, baseY - 4);
+    }
+  }
+
+  draw();
+  var timer;
+  window.addEventListener('resize', function () {
+    clearTimeout(timer);
+    timer = setTimeout(draw, 80);
+  });
+})();
+</script>
+
 <!-- ─── MISSION ───────────────────────────────────────────────────── -->
 <section class="relative z-10 py-24">
   <div class="blob w-[500px] h-[500px] right-[-100px] top-0" style="background:#1E3050;opacity:0.12;"></div>
