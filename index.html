@@ -219,13 +219,13 @@
 <!-- ─── HEADER ───────────────────────────────────────────────────── -->
 <header class="fixed top-0 left-0 right-0 z-50" style="background:rgba(10,10,11,0.7);backdrop-filter:blur(20px);border-bottom:1px solid rgba(21,34,56,0.8);">
   <div class="max-w-[1600px] mx-auto px-6 md:px-16 py-4 flex items-center justify-between">
-    <a href="work.html"><img alt="Proby" class="h-7 w-auto" src="assets/header-white.png"/></a>
+    <a href="index.html"><img alt="Proby" class="h-7 w-auto" src="assets/header-white.png"/></a>
     <nav class="hidden md:flex items-center gap-8"></nav>
-    <a href="https://www.proby.io/landing/contact" target="_blank" rel="noopener"
-       class="text-sm font-bold px-5 py-2.5 rounded-full transition-all"
-       style="border:1px solid rgba(65,104,175,0.35);color:var(--accent-lt);">
-      Contact
-    </a>
+    <button onclick="openSampleForm()"
+       class="text-sm font-bold px-5 py-2.5 rounded-full transition-all cursor-pointer"
+       style="border:1px solid rgba(65,104,175,0.35);color:var(--accent-lt);background:transparent;">
+      Receive a sample
+    </button>
   </div>
 </header>
 
@@ -265,12 +265,12 @@
 
     <!-- CTA -->
     <div class="fade-up delay-3 flex flex-col sm:flex-row items-center justify-center gap-4">
-      <a href="https://www.proby.io/landing/contact" target="_blank" rel="noopener"
-         class="btn-primary inline-flex items-center gap-2 px-8 py-4 rounded-full font-bold text-white text-sm">
-        Start a Project
+      <button onclick="openSampleForm()"
+         class="btn-primary inline-flex items-center gap-2 px-8 py-4 rounded-full font-bold text-white text-sm cursor-pointer">
+        Receive a sample
         <span class="material-symbols-outlined text-xl">arrow_forward</span>
-      </a>
-      <a href="work.html"
+      </button>
+      <a href="index.html"
          class="inline-flex items-center gap-2 px-8 py-4 rounded-full font-bold text-sm transition-all"
          style="color:var(--accent-lt);border:1px solid rgba(21,34,56,0.9);">
         View Case Studies
@@ -785,12 +785,12 @@
       We welcome project inquiries and collaboration proposals. Experience deeper user insights with AI-powered interviews.
     </p>
     <div class="flex flex-col sm:flex-row gap-4 justify-center">
-      <a href="https://www.proby.io/landing/contact" target="_blank" rel="noopener"
-         class="btn-primary inline-flex items-center gap-2 px-10 py-4 rounded-full font-bold text-white text-sm">
+      <button onclick="openSampleForm()"
+         class="btn-primary inline-flex items-center gap-2 px-10 py-4 rounded-full font-bold text-white text-sm cursor-pointer">
         <span class="material-symbols-outlined">mail</span>
-        Send an Email
-      </a>
-      <a href="work.html"
+        Receive a sample
+      </button>
+      <a href="index.html"
          class="inline-flex items-center gap-2 px-10 py-4 rounded-full font-bold text-sm transition-all"
          style="color:var(--accent-lt);border:1px solid rgba(21,34,56,0.9);">
         View Our Work
@@ -798,6 +798,131 @@
     </div>
   </div>
 </section>
+
+<!-- ─── SAMPLE FORM MODAL ─────────────────────────────────────────── -->
+<div id="sample-form-modal" style="display:none;position:fixed;inset:0;z-index:1000;align-items:center;justify-content:center;padding:1rem;">
+  <div id="sample-form-backdrop" onclick="closeSampleForm()" style="position:absolute;inset:0;background:rgba(0,0,0,0.7);backdrop-filter:blur(6px);"></div>
+  <div style="position:relative;z-index:1;background:#0f1117;border:1px solid rgba(255,255,255,0.08);border-radius:1.25rem;width:100%;max-width:540px;max-height:90vh;overflow-y:auto;padding:2.5rem;">
+    <!-- close -->
+    <button onclick="closeSampleForm()" style="position:absolute;top:1.25rem;right:1.25rem;background:rgba(255,255,255,0.06);border:none;border-radius:50%;width:2rem;height:2rem;display:flex;align-items:center;justify-content:center;cursor:pointer;color:rgba(255,255,255,0.5);">
+      <span class="material-symbols-outlined" style="font-size:1.1rem;">close</span>
+    </button>
+
+    <!-- header -->
+    <div style="margin-bottom:2rem;">
+      <p style="color:var(--accent-lt);font-size:0.75rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.5rem;">Sample Request</p>
+      <h2 style="color:#fff;font-size:1.5rem;font-weight:800;line-height:1.3;margin-bottom:0.5rem;">프로젝트 샘플을 받아보세요</h2>
+      <p style="color:rgba(255,255,255,0.45);font-size:0.875rem;line-height:1.6;">조사 목적과 대상을 알려주시면 맞춤형 샘플 리포트를 보내드립니다.</p>
+    </div>
+
+    <!-- success state (hidden by default) -->
+    <div id="sample-form-success" style="display:none;text-align:center;padding:2rem 0;">
+      <div style="width:3.5rem;height:3.5rem;background:rgba(65,104,175,0.15);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 1.25rem;">
+        <span class="material-symbols-outlined" style="color:var(--accent-lt);font-size:1.75rem;">check_circle</span>
+      </div>
+      <h3 style="color:#fff;font-size:1.25rem;font-weight:700;margin-bottom:0.5rem;">신청이 완료됐습니다!</h3>
+      <p style="color:rgba(255,255,255,0.45);font-size:0.875rem;">빠르게 확인 후 샘플 리포트를 보내드릴게요.</p>
+    </div>
+
+    <!-- form -->
+    <form id="sample-form" onsubmit="submitSampleForm(event)" style="display:flex;flex-direction:column;gap:1.25rem;">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;">
+        <div>
+          <label style="display:block;color:rgba(255,255,255,0.6);font-size:0.8rem;font-weight:600;margin-bottom:0.4rem;">이름 <span style="color:var(--accent-lt);">*</span></label>
+          <input type="text" name="name" required placeholder="홍길동"
+            style="width:100%;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);border-radius:0.6rem;padding:0.65rem 0.9rem;color:#fff;font-size:0.875rem;outline:none;box-sizing:border-box;"
+            onfocus="this.style.borderColor='rgba(65,104,175,0.6)'" onblur="this.style.borderColor='rgba(255,255,255,0.1)'"/>
+        </div>
+        <div>
+          <label style="display:block;color:rgba(255,255,255,0.6);font-size:0.8rem;font-weight:600;margin-bottom:0.4rem;">전화번호 <span style="color:var(--accent-lt);">*</span></label>
+          <input type="tel" name="phone" required placeholder="010-0000-0000"
+            style="width:100%;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);border-radius:0.6rem;padding:0.65rem 0.9rem;color:#fff;font-size:0.875rem;outline:none;box-sizing:border-box;"
+            onfocus="this.style.borderColor='rgba(65,104,175,0.6)'" onblur="this.style.borderColor='rgba(255,255,255,0.1)'"/>
+        </div>
+      </div>
+      <div>
+        <label style="display:block;color:rgba(255,255,255,0.6);font-size:0.8rem;font-weight:600;margin-bottom:0.4rem;">이메일 <span style="color:var(--accent-lt);">*</span></label>
+        <input type="email" name="email" required placeholder="name@company.com"
+          style="width:100%;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);border-radius:0.6rem;padding:0.65rem 0.9rem;color:#fff;font-size:0.875rem;outline:none;box-sizing:border-box;"
+          onfocus="this.style.borderColor='rgba(65,104,175,0.6)'" onblur="this.style.borderColor='rgba(255,255,255,0.1)'"/>
+      </div>
+      <div>
+        <label style="display:block;color:rgba(255,255,255,0.6);font-size:0.8rem;font-weight:600;margin-bottom:0.4rem;">조사 목적 <span style="color:var(--accent-lt);">*</span></label>
+        <textarea name="purpose" required placeholder="예) 신규 서비스 론칭 전 타깃 유저의 니즈 파악" rows="3"
+          style="width:100%;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);border-radius:0.6rem;padding:0.65rem 0.9rem;color:#fff;font-size:0.875rem;outline:none;resize:vertical;box-sizing:border-box;font-family:inherit;"
+          onfocus="this.style.borderColor='rgba(65,104,175,0.6)'" onblur="this.style.borderColor='rgba(255,255,255,0.1)'"></textarea>
+      </div>
+      <div>
+        <label style="display:block;color:rgba(255,255,255,0.6);font-size:0.8rem;font-weight:600;margin-bottom:0.4rem;">핵심 가설/질문 <span style="color:var(--accent-lt);">*</span></label>
+        <textarea name="hypothesis" required placeholder="예) 20대 여성 유저는 가격보다 UX를 더 중요하게 여길 것이다" rows="3"
+          style="width:100%;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);border-radius:0.6rem;padding:0.65rem 0.9rem;color:#fff;font-size:0.875rem;outline:none;resize:vertical;box-sizing:border-box;font-family:inherit;"
+          onfocus="this.style.borderColor='rgba(65,104,175,0.6)'" onblur="this.style.borderColor='rgba(255,255,255,0.1)'"></textarea>
+      </div>
+      <div>
+        <label style="display:block;color:rgba(255,255,255,0.6);font-size:0.8rem;font-weight:600;margin-bottom:0.4rem;">타겟 조건 <span style="color:rgba(255,255,255,0.3);font-weight:400;">(선택)</span></label>
+        <textarea name="target" placeholder="예) 최근 6개월 내 온라인 쇼핑 경험이 있는 25-35세 직장인" rows="2"
+          style="width:100%;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);border-radius:0.6rem;padding:0.65rem 0.9rem;color:#fff;font-size:0.875rem;outline:none;resize:vertical;box-sizing:border-box;font-family:inherit;"
+          onfocus="this.style.borderColor='rgba(65,104,175,0.6)'" onblur="this.style.borderColor='rgba(255,255,255,0.1)'"></textarea>
+      </div>
+      <button type="submit" id="sample-submit-btn"
+        class="btn-primary"
+        style="width:100%;padding:0.9rem;border-radius:0.75rem;border:none;font-weight:700;font-size:0.9rem;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:0.5rem;color:#fff;">
+        샘플 받기
+        <span class="material-symbols-outlined" style="font-size:1.1rem;">arrow_forward</span>
+      </button>
+    </form>
+  </div>
+</div>
+
+<script>
+  function openSampleForm() {
+    const modal = document.getElementById('sample-form-modal');
+    modal.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+  }
+  function closeSampleForm() {
+    const modal = document.getElementById('sample-form-modal');
+    modal.style.display = 'none';
+    document.body.style.overflow = '';
+    // reset form & success state
+    document.getElementById('sample-form').style.display = 'flex';
+    document.getElementById('sample-form-success').style.display = 'none';
+    document.getElementById('sample-form').reset();
+  }
+  function submitSampleForm(e) {
+    e.preventDefault();
+    const btn = document.getElementById('sample-submit-btn');
+    btn.textContent = '전송 중...';
+    btn.disabled = true;
+    const data = new FormData(e.target);
+    const body = {
+      name: data.get('name'),
+      phone: data.get('phone'),
+      email: data.get('email'),
+      purpose: data.get('purpose'),
+      hypothesis: data.get('hypothesis'),
+      target: data.get('target') || '(미입력)',
+    };
+    fetch('https://formspree.io/f/xrbgpwol', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify(body),
+    })
+    .then(r => r.ok ? r.json() : Promise.reject())
+    .then(() => {
+      document.getElementById('sample-form').style.display = 'none';
+      document.getElementById('sample-form-success').style.display = 'block';
+    })
+    .catch(() => {
+      btn.textContent = '샘플 받기';
+      btn.disabled = false;
+      alert('전송 중 오류가 발생했습니다. 다시 시도해주세요.');
+    });
+  }
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeSampleForm();
+  });
+</script>
 
 <!-- ─── INTERVIEW MODAL ───────────────────────────────────────────── -->
 <div id="interview-modal" role="dialog" aria-modal="true" aria-label="Try AI Interview">
