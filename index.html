@@ -4,7 +4,10 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-dynamic-subset.css"/>
+<link rel="stylesheet" as="style"
+  href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-dynamic-subset.css"
+  integrity="sha384-y9k2lBaj/ETgBd4674Kql3098euvZU5fWlBcBBrlROBI6c2KDmjWhd508Rfsx9R/"
+  crossorigin="anonymous"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
 <title>About - Proby | AI Interview Agent</title>
 <meta name="description" content="Proby is the most sophisticated AI interview agent. Get deeper user insights through AI-powered qualitative research."/>
@@ -12,6 +15,18 @@
 <meta property="og:description" content="The most intelligent and human-like AI interview agent for user research."/>
 <meta property="og:type" content="website"/>
 <link rel="canonical" href="https://casestudy-296p.onrender.com/"/>
+<meta http-equiv="Content-Security-Policy" content="
+  default-src 'self';
+  script-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com;
+  style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://fonts.googleapis.com;
+  font-src https://cdn.jsdelivr.net https://fonts.gstatic.com;
+  img-src 'self' data:;
+  media-src 'self';
+  connect-src https://script.google.com;
+  frame-src https://www.proby.io;
+  object-src 'none';
+  base-uri 'self';
+"/>
 <style>
   /* ── Color Tokens (Black + Dark Navy series from color.md) ─────
      Backgrounds/Surfaces → Black series (neutral cool dark)
@@ -511,7 +526,7 @@
 
   /* ── SVG: gradient lines + animated moving dots ── */
   function buildSVG(){
-    svg.innerHTML='';
+    while(svg.firstChild) svg.removeChild(svg.firstChild);
     var ns='http://www.w3.org/2000/svg';
     var defs=document.createElementNS(ns,'defs');
 
@@ -562,19 +577,44 @@
 
   /* ── HTML nodes ── */
   function buildNodes(){
-    nodesEl.innerHTML='';
+    while(nodesEl.firstChild) nodesEl.removeChild(nodesEl.firstChild);
     B.forEach(function(b){
       var pos=npos(b.angle);
+
+      // outer node div
       var n=document.createElement('div');
       n.className='rmnode';n.style.left=pos.x+'px';n.style.top=pos.y+'px';
-      n.innerHTML=
-        '<div class="rmnode-inner">'+
-          '<div class="rmnode-dot"></div>'+
-          '<div class="rmnode-lbl">'+b.lbl.split('\n').join('<br/>')+'</div>'+
-          '<div class="rmnode-cases">'+
-            b.cases.map(function(c){return'<span class="rmchip">'+c+'</span>';}).join('')+
-          '</div>'+
-        '</div>';
+
+      // inner wrapper
+      var inner=document.createElement('div');
+      inner.className='rmnode-inner';
+
+      // dot
+      var dot=document.createElement('div');
+      dot.className='rmnode-dot';
+      inner.appendChild(dot);
+
+      // label (split on \n → <br> via text nodes + br elements)
+      var lbl=document.createElement('div');
+      lbl.className='rmnode-lbl';
+      b.lbl.split('\n').forEach(function(line,i){
+        if(i>0) lbl.appendChild(document.createElement('br'));
+        lbl.appendChild(document.createTextNode(line));
+      });
+      inner.appendChild(lbl);
+
+      // cases chips
+      var cases=document.createElement('div');
+      cases.className='rmnode-cases';
+      b.cases.forEach(function(c){
+        var chip=document.createElement('span');
+        chip.className='rmchip';
+        chip.textContent=c;
+        cases.appendChild(chip);
+      });
+      inner.appendChild(cases);
+
+      n.appendChild(inner);
       nodesEl.appendChild(n);
     });
   }
@@ -861,6 +901,8 @@
 
     <!-- form -->
     <form id="sample-form" style="display:flex;flex-direction:column;gap:1.25rem;">
+      <!-- honeypot: hidden field, bots fill this, humans don't -->
+      <input type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;opacity:0;height:0;width:0;" value=""/>
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;">
         <div>
           <label class="sf-label">Name <span style="color:var(--accent-lt);">*</span></label>
@@ -942,27 +984,75 @@
     document.body.style.overflow = '';
   }
 
+  // ── Input validation helpers ──────────────────────────────────
+  function sanitizeText(str) {
+    return String(str).trim().slice(0, 500);
+  }
+  function isValidEmail(str) {
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(str.trim());
+  }
+  function isValidPhone(str) {
+    return /^\+?[\d\s\-().]{7,25}$/.test(str.trim());
+  }
+
   // ── Form submission ───────────────────────────────────────────
   document.getElementById('sample-form').addEventListener('submit', function(e) {
     e.preventDefault();
-    const btn = document.getElementById('sample-submit-btn');
+    const btn   = document.getElementById('sample-submit-btn');
     const label = document.getElementById('sf-btn-label');
     const icon  = document.getElementById('sf-btn-icon');
+    const data  = new FormData(e.target);
+
+    // 1. Honeypot check — bots fill the hidden "website" field
+    if (data.get('website')) return;
+
+    // 2. Client-side rate limit — 60s between submissions
+    const RATE_KEY = 'sf_last_submit';
+    const last = parseInt(localStorage.getItem(RATE_KEY) || '0', 10);
+    if (Date.now() - last < 60000) {
+      alert('Please wait a moment before submitting again.');
+      return;
+    }
+
+    // 3. Input validation
+    const name  = sanitizeText(data.get('name'));
+    const phone = sanitizeText(data.get('phone'));
+    const email = sanitizeText(data.get('email'));
+    const purpose    = sanitizeText(data.get('purpose'));
+    const hypothesis = sanitizeText(data.get('hypothesis'));
+    const target     = sanitizeText(data.get('target'));
+
+    if (name.length < 1 || name.length > 100) {
+      alert('Please enter a valid name (1–100 characters).');
+      return;
+    }
+    if (!isValidEmail(email)) {
+      alert('Please enter a valid email address.');
+      return;
+    }
+    if (!isValidPhone(phone)) {
+      alert('Please enter a valid phone number.');
+      return;
+    }
+    if (purpose.length < 5) {
+      alert('Please describe your research purpose (at least 5 characters).');
+      return;
+    }
+
     label.textContent = 'Submitting...';
     icon.style.display = 'none';
     btn.disabled = true;
-    const data = new FormData(e.target);
+
     const body = {
-      name:       data.get('name'),
-      phone:      data.get('phone'),
-      email:      data.get('email'),
-      purpose:    data.get('purpose'),
-      hypothesis: data.get('hypothesis'),
-      target:     data.get('target') || '(not provided)',
+      name, phone, email, purpose, hypothesis,
+      target:  target || '(not provided)',
+      origin:  window.location.origin,  // for GAS server-side origin check
     };
+
     const SHEET_URL = 'https://script.google.com/macros/s/AKfycbzaNfK-o2mR3aoZYsGISdxC5cNWl4AQT9I5LgspdgO0tgWO59i5t_mtZ0Vsu6qkNlVnKA/exec';
     fetch(SHEET_URL, { method: 'POST', mode: 'no-cors', body: new URLSearchParams(body) })
       .then(() => {
+        localStorage.setItem(RATE_KEY, Date.now().toString());
         document.getElementById('sample-form').style.display = 'none';
         document.getElementById('sample-form-success').style.display = 'block';
       })
