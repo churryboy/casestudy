@@ -388,18 +388,23 @@ body::before {
 .sf-submit-btn:disabled { opacity: 0.6; cursor: not-allowed; }
 .sf-input, .sf-textarea {
   width: 100%;
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.1);
+  background: rgba(255,255,255,0.04) !important;
+  border: 1px solid rgba(255,255,255,0.1) !important;
   border-radius: 0.6rem;
   padding: 0.65rem 0.9rem;
-  color: #fff;
+  color: #fff !important;
   font-size: 0.875rem;
   outline: none;
   box-sizing: border-box;
   transition: border-color 0.2s;
   font-family: inherit;
+  box-shadow: none !important;
 }
-.sf-input:focus, .sf-textarea:focus { border-color: rgba(65,104,175,0.6); }
+.sf-input:focus, .sf-textarea:focus {
+  border-color: rgba(65,104,175,0.6) !important;
+  background: rgba(255,255,255,0.06) !important;
+  box-shadow: none !important;
+}
 .sf-textarea { resize: vertical; }
 .sf-label {
   display: block;
