@@ -220,11 +220,7 @@
 <header class="fixed top-0 left-0 right-0 z-50" style="background:rgba(10,10,11,0.7);backdrop-filter:blur(20px);border-bottom:1px solid rgba(21,34,56,0.8);">
   <div class="max-w-[1600px] mx-auto px-6 md:px-16 py-4 flex items-center justify-between">
     <a href="index.html"><img alt="Proby" class="h-7 w-auto" src="assets/header-white.png"/></a>
-    <nav class="hidden md:flex items-center gap-8">
-      <a class="text-sm font-medium" style="color:var(--accent-lt)" href="about.html">About</a>
-      <a class="text-sm font-medium text-white/50 hover:text-white transition-colors" href="index.html">Work</a>
-      <a class="text-sm font-medium text-white/50 hover:text-white transition-colors" href="https://www.proby.io" target="_blank" rel="noopener">Our product</a>
-    </nav>
+    <nav class="hidden md:flex items-center gap-8"></nav>
     <a href="https://www.proby.io/landing/contact" target="_blank" rel="noopener"
        class="text-sm font-bold px-5 py-2.5 rounded-full transition-all"
        style="border:1px solid rgba(65,104,175,0.35);color:var(--accent-lt);">
@@ -496,21 +492,10 @@
 </section>
 
 <!-- ─── TRUSTED BY + OUR CLIENT ──────────────────────────────────── -->
-<section class="relative z-10">
-
-  <!-- Trusted by — fixed band -->
-  <div class="py-10 border-y" style="border-color:#e5e7eb;background:#ffffff;">
-    <div class="max-w-[1600px] mx-auto px-6 md:px-16 flex flex-col items-center gap-5">
-      <span class="section-label text-center" style="color:#6b7280;">Trusted by</span>
-      <div class="flex items-center gap-10">
-        <img src="assets/logo/fastventures.png" alt="Fastventures" class="h-8 w-auto object-contain" style="opacity:0.85;"/>
-        <img src="assets/logo/TIPS.png"         alt="TIPS"         class="h-8 w-auto object-contain" style="opacity:0.85;"/>
-      </div>
-    </div>
-  </div>
+<section class="relative z-10" style="background:#ffffff;border-top:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;">
 
   <!-- Our Client — infinite scrolling marquee -->
-  <div class="py-12" style="background:#ffffff;">
+  <div class="pt-8 pb-10">
     <div class="w-full text-center mb-6">
       <span class="section-label" style="color:#6b7280;">Our Clients</span>
     </div>
@@ -526,9 +511,9 @@
       <!-- marquee inner: duplicated for seamless loop -->
       <div class="marquee-track flex items-center gap-14 w-max">
         <!-- set A -->
-        <img src="assets/logo/ridibooks.png"      alt="Ridi Books"       class="marquee-logo"/>
+        <img src="assets/logo/ridi.svg"            alt="Ridi Books"       class="marquee-logo"/>
         <img src="assets/logo/musinsa.png"         alt="Musinsa"          class="marquee-logo"/>
-        <img src="assets/logo/skt.jpg"             alt="SKT"              class="marquee-logo"/>
+        <img src="assets/logo/skt1.svg"            alt="SKT"              class="marquee-logo"/>
         <img src="assets/logo/cjenm.png"           alt="CJ ENM"           class="marquee-logo"/>
         <img src="assets/logo/nicednr.png"         alt="Nice D&R"         class="marquee-logo"/>
         <img src="assets/logo/woowa.png"           alt="Woowa Brothers"   class="marquee-logo"/>
@@ -538,9 +523,9 @@
         <img src="assets/logo/gangnamunni.png"     alt="Gangnam Unni"     class="marquee-logo"/>
         <img src="assets/logo/researchlab.png"     alt="Research Lab"     class="marquee-logo"/>
         <!-- set B (duplicate for seamless) -->
-        <img src="assets/logo/ridibooks.png"      alt="Ridi Books"       class="marquee-logo"/>
+        <img src="assets/logo/ridi.svg"            alt="Ridi Books"       class="marquee-logo"/>
         <img src="assets/logo/musinsa.png"         alt="Musinsa"          class="marquee-logo"/>
-        <img src="assets/logo/skt.jpg"             alt="SKT"              class="marquee-logo"/>
+        <img src="assets/logo/skt1.svg"            alt="SKT"              class="marquee-logo"/>
         <img src="assets/logo/cjenm.png"           alt="CJ ENM"           class="marquee-logo"/>
         <img src="assets/logo/nicednr.png"         alt="Nice D&R"         class="marquee-logo"/>
         <img src="assets/logo/woowa.png"           alt="Woowa Brothers"   class="marquee-logo"/>
@@ -787,58 +772,6 @@
   </div>
 </section>
 
-<!-- ─── TEAM ───────────────────────────────────────────────────────── -->
-<section class="relative z-10 py-24">
-  <div class="blob w-[500px] h-[500px] left-[-100px] top-0" style="background:#25252D;opacity:0.15;"></div>
-  <div class="max-w-[1600px] mx-auto px-6 md:px-16">
-    <p class="section-label mb-4 text-center">Our Team</p>
-    <h2 class="text-4xl md:text-5xl font-black text-center mb-3">
-      <span class="grad-text">The Team Behind Proby</span>
-    </h2>
-    <p class="text-white/65 text-2xl md:text-3xl font-bold text-center mb-14">Building the future of research</p>
-    <div class="grid md:grid-cols-3 gap-6">
-      <div class="glass rounded-2xl overflow-hidden group">
-        <div class="relative h-72 overflow-hidden">
-          <img alt="Yubin Kim" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="assets/team/kim-yubin.png"/>
-          <div class="absolute inset-0" style="background:linear-gradient(to top, #0A0A0B, rgba(10,10,11,0.2) 60%, transparent)"></div>
-        </div>
-        <div class="p-7">
-          <div class="flex items-center gap-3 mb-3">
-            <h3 class="text-xl font-bold">Yubin Kim</h3>
-            <span class="text-xs font-bold px-2.5 py-1 rounded-full badge" style="color:var(--accent-lt)">CEO</span>
-          </div>
-          <p class="text-white/40 text-sm leading-relaxed">Sets the strategic vision and drives the growth of our AI-powered user research platform.</p>
-        </div>
-      </div>
-      <div class="glass rounded-2xl overflow-hidden group">
-        <div class="relative h-72 overflow-hidden">
-          <img alt="Chulhee Lee" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="assets/team/lee-chulhee.png"/>
-          <div class="absolute inset-0" style="background:linear-gradient(to top, #0A0A0B, rgba(10,10,11,0.2) 60%, transparent)"></div>
-        </div>
-        <div class="p-7">
-          <div class="flex items-center gap-3 mb-3">
-            <h3 class="text-xl font-bold">Chulhee Lee</h3>
-            <span class="text-xs font-bold px-2.5 py-1 rounded-full badge" style="color:var(--accent-lt)">CBO</span>
-          </div>
-          <p class="text-white/40 text-sm leading-relaxed">Leads business expansion through strategic development and key partnership building.</p>
-        </div>
-      </div>
-      <div class="glass rounded-2xl overflow-hidden group">
-        <div class="relative h-72 overflow-hidden">
-          <img alt="Hyunwoo Jin" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="assets/team/jin-hyunwoo.png"/>
-          <div class="absolute inset-0" style="background:linear-gradient(to top, #0A0A0B, rgba(10,10,11,0.2) 60%, transparent)"></div>
-        </div>
-        <div class="p-7">
-          <div class="flex items-center gap-3 mb-3">
-            <h3 class="text-xl font-bold">Hyunwoo Jin</h3>
-            <span class="text-xs font-bold px-2.5 py-1 rounded-full badge" style="color:var(--accent-lt)">CTO</span>
-          </div>
-          <p class="text-white/40 text-sm leading-relaxed">Oversees technical strategy and product development, ensuring the platform's technical excellence.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
 
 <!-- ─── CTA ───────────────────────────────────────────────────────── -->
 <section class="relative z-10 py-32">
@@ -846,7 +779,7 @@
   <div class="max-w-[1600px] mx-auto px-6 md:px-16 text-center relative z-10">
     <p class="section-label mb-6">Get Started</p>
     <h2 class="text-5xl md:text-7xl font-black leading-tight mb-6">
-      <span class="grad-text">Ready to Get<br/>Started Together?</span>
+      <span class="grad-text">Wish to collect real user's voices?</span>
     </h2>
     <p class="text-white/50 text-lg max-w-xl mx-auto mb-12 leading-relaxed">
       We welcome project inquiries and collaboration proposals. Experience deeper user insights with AI-powered interviews.
@@ -876,7 +809,7 @@
     <iframe
       id="interview-iframe"
       src=""
-      data-src="https://www.proby.io/interview?t=zNuzR2NC&is_preview=true"
+      data-src="https://www.proby.io/interview?t=xJsMuEEV&is_preview=true"
       allow="microphone; camera"
       allowfullscreen
     ></iframe>
@@ -910,12 +843,8 @@
 <!-- ─── FOOTER ────────────────────────────────────────────────────── -->
 <footer class="relative z-10 border-t border-white/5 py-10">
   <div class="max-w-[1600px] mx-auto px-6 md:px-16 flex flex-col md:flex-row justify-between items-center gap-6">
-    <div class="flex items-center gap-3">
-      <div class="w-8 h-8 rounded-lg flex items-center justify-center"
-           style="background:var(--accent-hi);">
-        <span class="material-symbols-outlined text-white text-sm">biotech</span>
-      </div>
-      <span class="font-bold text-lg">Proby</span>
+    <div class="flex items-center">
+      <img src="assets/header-white.png" alt="Proby" class="h-7 w-auto"/>
     </div>
     <p class="text-white/25 text-sm">© 2026 Proby. AI-powered user research platform.</p>
     <div class="flex gap-5">
