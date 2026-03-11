@@ -17,16 +17,25 @@
 <link rel="canonical" href="https://casestudy-tan.vercel.app/"/>
 <meta http-equiv="Content-Security-Policy" content="
   default-src 'self';
-  script-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com;
+  script-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com https://cdn4.mxpnl.com https://cdn.mxpnl.com;
   style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://fonts.googleapis.com https://fonts.gstatic.com;
   font-src https://cdn.jsdelivr.net https://fonts.gstatic.com;
-  img-src 'self' data:;
+  img-src 'self' data: https://api.mixpanel.com;
   media-src 'self';
-  connect-src https://script.google.com https://script.googleusercontent.com;
+  connect-src https://script.google.com https://script.googleusercontent.com https://api.mixpanel.com https://api-js.mixpanel.com;
   frame-src https://www.proby.io;
   object-src 'none';
   base-uri 'self';
 "/>
+<!-- Mixpanel async loader -->
+<script>
+(function(f,b){if(!b.__SV){var e,g,i,h;window.mixpanel=b;b._i=[];b.init=function(e,f,c){function g(a,d){var b=d.split(".");2==b.length&&(a=a[b[0]],d=b[1]);a[d]=function(){a.push([d].concat(Array.prototype.slice.call(arguments,0)))}}var a=b;"undefined"!==typeof c?a=b[c]=[]:c="mixpanel";a.people=a.people||[];a.toString=function(a){var d="mixpanel";"mixpanel"!==c&&(d+="."+c);a||(d+=" (stub)");return d};a.people.toString=function(){return a.toString(1)+".people (stub)"};i="disable time_event track track_pageview track_links track_forms track_with_groups add_group set_group remove_group register register_once alias unregister identify name_tag set_config reset opt_in_tracking opt_out_tracking has_opted_in_tracking has_opted_out_tracking clear_opt_in_out_tracking start_batch_senders people.set people.set_once people.unset people.increment people.append people.union people.track_charge people.clear_charges people.delete_user people.remove".split(" ");for(h=0;h<i.length;h++)g(a,i[h]);var j="set set_once union unset remove delete".split(" ");a.get_group=function(){function b(c){d[c]=function(){call2_args=arguments;call2=[c].concat(Array.prototype.slice.call(call2_args,0));a.push([e].concat(call2))}}for(var d={},e=["get_group"].concat(Array.prototype.slice.call(arguments,0)),c=0;c<j.length;c++)b(j[c]);return d};b._i.push([e,f,c])};b.__SV=1.2;e=f.createElement("script");e.type="text/javascript";e.async=!0;e.src="undefined"!==typeof MIXPANEL_CUSTOM_LIB_URL?MIXPANEL_CUSTOM_LIB_URL:"file:"===f.location.protocol&&"//cdn4.mxpnl.com/libs/mixpanel-2-latest.min.js".match(/^\/\//)?"https://cdn4.mxpnl.com/libs/mixpanel-2-latest.min.js":"//cdn4.mxpnl.com/libs/mixpanel-2-latest.min.js";g=f.getElementsByTagName("script")[0];g.parentNode.insertBefore(e,g)}})(document,window.mixpanel||[]);
+mixpanel.init('cd8d2e1adc8fee540508877a52480180', {
+  track_pageview: false,
+  persistence: 'localStorage',
+  ip: true
+});
+</script>
 <link rel="stylesheet" href="styles.css"/>
 </head>
 <body class="font-display text-white antialiased overflow-x-hidden">
@@ -36,7 +45,7 @@
   <div class="max-w-[1600px] mx-auto px-6 md:px-16 py-4 flex items-center justify-between">
     <a href="index.html"><img alt="Proby" class="h-7 w-auto" src="assets/header-white.png"/></a>
     <nav class="hidden md:flex items-center gap-8"></nav>
-    <button data-open-sample
+    <button data-open-sample data-trigger-section="header__cta_receive_sample"
        class="text-sm font-bold px-5 py-2.5 rounded-full transition-all cursor-pointer"
        style="border:1px solid rgba(65,104,175,0.35);color:var(--accent-lt);background:transparent;">
       Receive a sample
@@ -80,7 +89,7 @@
 
     <!-- CTA -->
     <div class="fade-up delay-3 flex flex-col sm:flex-row items-center justify-center gap-4">
-      <button data-open-sample
+      <button data-open-sample data-trigger-section="hero__cta_start_sample_project"
          class="btn-primary inline-flex items-center justify-center gap-2 w-56 py-4 rounded-full font-bold text-white text-sm cursor-pointer">
         Start a sample project
         <span class="material-symbols-outlined text-xl">arrow_forward</span>
@@ -734,7 +743,7 @@
           <li><span class="material-symbols-outlined">check_circle</span>Analysis report</li>
           <li><span class="material-symbols-outlined">check_circle</span>Email support</li>
         </ul>
-        <button data-open-sample class="pricing-cta pricing-cta-ghost">Get started</button>
+        <button data-open-sample data-trigger-section="pricing__standard__get_started" class="pricing-cta pricing-cta-ghost">Get started</button>
       </div>
 
       <!-- Active -->
@@ -755,7 +764,7 @@
           <li><span class="material-symbols-outlined">check_circle</span>Dedicated account manager</li>
           <li><span class="material-symbols-outlined">check_circle</span>Custom interview script</li>
         </ul>
-        <button data-open-sample class="pricing-cta pricing-cta-ghost">Get started</button>
+        <button data-open-sample data-trigger-section="pricing__active__get_started" class="pricing-cta pricing-cta-ghost">Get started</button>
       </div>
 
       <!-- Premium — highlighted -->
@@ -777,7 +786,7 @@
           <li><span class="material-symbols-outlined">check_circle</span>Panel recruitment support</li>
           <li><span class="material-symbols-outlined">check_circle</span>Advanced insight dashboard</li>
         </ul>
-        <button data-open-sample class="pricing-cta pricing-cta-solid">Get started</button>
+        <button data-open-sample data-trigger-section="pricing__premium__get_started" class="pricing-cta pricing-cta-solid">Get started</button>
       </div>
 
       <!-- Expert -->
@@ -798,7 +807,7 @@
           <li><span class="material-symbols-outlined">check_circle</span>SLA guarantee</li>
           <li><span class="material-symbols-outlined">check_circle</span>Dedicated success team</li>
         </ul>
-        <button data-open-sample class="pricing-cta pricing-cta-ghost">Contact us</button>
+        <button data-open-sample data-trigger-section="pricing__expert__contact_us" class="pricing-cta pricing-cta-ghost">Contact us</button>
       </div>
 
     </div>
@@ -821,7 +830,7 @@
       We welcome project inquiries and collaboration proposals. Experience deeper user insights with AI-powered interviews.
     </p>
     <div class="flex flex-col sm:flex-row gap-4 justify-center">
-      <button data-open-sample
+      <button data-open-sample data-trigger-section="cta_section__send_research_brief"
          class="btn-primary inline-flex items-center gap-2 px-10 py-4 rounded-full font-bold text-white text-sm cursor-pointer">
         <span class="material-symbols-outlined">mail</span>
         Send a sample research brief
@@ -911,6 +920,29 @@
 </div>
 
 <script>
+  // ── Mixpanel: base properties (UTM + referrer, computed once) ─
+  const _mpBase = (() => {
+    const p = new URLSearchParams(window.location.search);
+    return {
+      page_path:    window.location.pathname,
+      page_url:     window.location.href,
+      referrer:     document.referrer || 'direct',
+      utm_source:   p.get('utm_source')   || '',
+      utm_medium:   p.get('utm_medium')   || '',
+      utm_campaign: p.get('utm_campaign') || '',
+      utm_content:  p.get('utm_content')  || '',
+      utm_term:     p.get('utm_term')     || '',
+    };
+  })();
+
+  function mpTrack(event, props) {
+    if (typeof mixpanel === 'undefined') return;
+    mixpanel.track(event, Object.assign({}, _mpBase, props || {}));
+  }
+
+  // ── Page view ─────────────────────────────────────────────────
+  mpTrack('page__view', { page_title: document.title });
+
   // ── Modal helpers ─────────────────────────────────────────────
   function openSampleForm() {
     document.getElementById('sample-form-modal').classList.add('open');
@@ -959,10 +991,8 @@
     const icon  = document.getElementById('sf-btn-icon');
     const data  = new FormData(e.target);
 
-    // 1. Honeypot check — bots fill the hidden "website" field
-    if (data.get('website')) return;
+    if (data.get('website')) return; // honeypot
 
-    // 2. Client-side rate limit — 60s between submissions
     const RATE_KEY = 'sf_last_submit';
     const last = parseInt(localStorage.getItem(RATE_KEY) || '0', 10);
     if (Date.now() - last < 60000) {
@@ -970,31 +1000,35 @@
       return;
     }
 
-    // 3. Input validation
-    const name  = sanitizeText(data.get('name'));
-    const phone = sanitizeText(data.get('phone'));
-    const email = sanitizeText(data.get('email'));
+    const name       = sanitizeText(data.get('name'));
+    const phone      = sanitizeText(data.get('phone'));
+    const email      = sanitizeText(data.get('email'));
     const purpose    = sanitizeText(data.get('purpose'));
     const hypothesis = sanitizeText(data.get('hypothesis'));
     const target     = sanitizeText(data.get('target'));
 
     if (name.length < 1 || name.length > 100) {
+      mpTrack('sample_form__validation_error', { failed_field: 'name' });
       alert('Please enter a valid name (1–100 characters).');
       return;
     }
     if (!isValidEmail(email)) {
+      mpTrack('sample_form__validation_error', { failed_field: 'email' });
       alert('Please enter a valid email address.');
       return;
     }
     if (!isValidPhone(phone)) {
+      mpTrack('sample_form__validation_error', { failed_field: 'phone' });
       alert('Please enter a valid phone number.');
       return;
     }
     if (purpose.length < 5) {
+      mpTrack('sample_form__validation_error', { failed_field: 'research_purpose' });
       alert('Please describe your research purpose (at least 5 characters).');
       return;
     }
 
+    mpTrack('sample_form__submit_attempt');
     label.textContent = 'Submitting...';
     icon.style.display = 'none';
     btn.disabled = true;
@@ -1002,17 +1036,23 @@
     const body = {
       name, phone, email, purpose, hypothesis,
       target:  target || '(not provided)',
-      origin:  window.location.origin,  // for GAS server-side origin check
+      origin:  window.location.origin,
     };
 
     const SHEET_URL = 'https://script.google.com/macros/s/AKfycbzaNfK-o2mR3aoZYsGISdxC5cNWl4AQT9I5LgspdgO0tgWO59i5t_mtZ0Vsu6qkNlVnKA/exec';
     fetch(SHEET_URL, { method: 'POST', mode: 'no-cors', body: new URLSearchParams(body) })
       .then(() => {
         localStorage.setItem(RATE_KEY, Date.now().toString());
+        mpTrack('sample_form__submit_success', {
+          email_domain: email.split('@')[1] || 'unknown',
+        });
+        mixpanel.identify(email);
+        mixpanel.people.set({ $email: email, $name: name });
         document.getElementById('sample-form').style.display = 'none';
         document.getElementById('sample-form-success').style.display = 'block';
       })
       .catch(() => {
+        mpTrack('sample_form__submit_error');
         label.textContent = 'Request a sample';
         icon.style.display = '';
         btn.disabled = false;
@@ -1020,21 +1060,74 @@
       });
   });
 
-  // ── Event listeners (replaces inline onclick) ─────────────────
-  document.getElementById('sf-close-btn').addEventListener('click', closeSampleForm);
-  document.getElementById('sample-form-backdrop').addEventListener('click', closeSampleForm);
-  document.getElementById('modal-backdrop').addEventListener('click', closeInterviewModal);
-  document.getElementById('modal-close').addEventListener('click', closeInterviewModal);
-  document.getElementById('mic-btn').addEventListener('click', openInterviewModal);
-  document.querySelectorAll('[data-open-sample]').forEach(el => {
-    el.addEventListener('click', openSampleForm);
+  // ── Event listeners ───────────────────────────────────────────
+
+  // Sample form: close
+  document.getElementById('sf-close-btn').addEventListener('click', () => {
+    mpTrack('sample_form__close', { trigger: 'close_button' });
+    closeSampleForm();
+  });
+  document.getElementById('sample-form-backdrop').addEventListener('click', () => {
+    mpTrack('sample_form__close', { trigger: 'backdrop_click' });
+    closeSampleForm();
   });
 
-  // ── Single ESC handler for both modals ────────────────────────
+  // Interview modal: close
+  document.getElementById('modal-backdrop').addEventListener('click', () => {
+    mpTrack('interview_modal__close', { trigger: 'backdrop_click' });
+    closeInterviewModal();
+  });
+  document.getElementById('modal-close').addEventListener('click', () => {
+    mpTrack('interview_modal__close', { trigger: 'close_button' });
+    closeInterviewModal();
+  });
+
+  // Mic button → interview modal
+  document.getElementById('mic-btn').addEventListener('click', () => {
+    mpTrack('hero__mic_button__click');
+    mpTrack('interview_modal__open', { trigger_section: 'hero__mic_button' });
+    openInterviewModal();
+  });
+
+  // All [data-open-sample] buttons — includes trigger_section from data attr
+  document.querySelectorAll('[data-open-sample]').forEach(el => {
+    el.addEventListener('click', function() {
+      const section = this.dataset.triggerSection || 'unknown';
+      mpTrack('sample_form__open', { trigger_section: section });
+      openSampleForm();
+    });
+  });
+
+  // Hero "View Case Studies" link
+  const viewCsLink = document.querySelector('a[href="work.html"]');
+  if (viewCsLink) {
+    viewCsLink.addEventListener('click', () => {
+      mpTrack('hero__cta_view_case_studies__click');
+    });
+  }
+
+  // Footer links
+  document.querySelectorAll('footer a').forEach(el => {
+    el.addEventListener('click', function() {
+      const href = this.getAttribute('href') || '';
+      mpTrack('footer__link__click', {
+        link_type: href.startsWith('mailto:') ? 'email' : 'website',
+        link_href: href,
+      });
+    });
+  });
+
+  // ESC key handler
   document.addEventListener('keydown', (e) => {
     if (e.key !== 'Escape') return;
-    if (document.getElementById('sample-form-modal').classList.contains('open')) closeSampleForm();
-    if (document.getElementById('interview-modal').classList.contains('open')) closeInterviewModal();
+    if (document.getElementById('sample-form-modal').classList.contains('open')) {
+      mpTrack('sample_form__close', { trigger: 'esc_key' });
+      closeSampleForm();
+    }
+    if (document.getElementById('interview-modal').classList.contains('open')) {
+      mpTrack('interview_modal__close', { trigger: 'esc_key' });
+      closeInterviewModal();
+    }
   });
 
   // ── Canvas IntersectionObserver (stop RAF when off-screen) ────
