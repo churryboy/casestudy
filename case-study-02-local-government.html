@@ -1,249 +1,245 @@
 <!DOCTYPE html>
-<html lang="ko"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-dynamic-subset.css" />
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<script id="tailwind-config">
-        tailwind.config = {
-            darkMode: "class",
-            theme: {
-                extend: {
-                    colors: {
-                        "primary": "#000000",
-                        "background-light": "#f7f7f7",
-                        "background-dark": "#191919",
-                    },
-                    fontFamily: {
-                        "display": ["Pretendard", "-apple-system", "BlinkMacSystemFont", "system-ui", "Roboto", "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "sans-serif"]
-                    },
-                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
-                },
-            },
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>Case Study #2 – Civic Participation in Local Government Events | Proby</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-dynamic-subset.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="styles.css"/>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            display: ["Pretendard","-apple-system","BlinkMacSystemFont","system-ui","Roboto","Helvetica Neue","Segoe UI","sans-serif"]
+          }
         }
-    </script>
-<title>Case Study #2 - 지자체 행사 참여 경험 조사 | Proby</title>
+      }
+    }
+  </script>
 </head>
-<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 antialiased">
-<div class="relative flex h-auto min-h-screen w-full flex-col overflow-x-hidden">
-<header class="sticky top-0 z-50 w-full border-b border-slate-200 dark:border-slate-800 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md px-6 md:px-20 lg:px-16 py-4">
-<div class="flex items-center justify-between max-w-[1600px] mx-auto">
-<div class="flex items-center gap-3">
-<a href="work.html"><img alt="Proby Logo" class="h-8 w-auto object-contain" src="assets/header.png"/></a>
-</div>
-<div class="flex items-center gap-8">
-<nav class="hidden md:flex items-center gap-8">
-<a class="text-slate-600 dark:text-slate-400 hover:text-primary transition-colors text-sm font-medium" href="index.html">About</a>
-<a class="text-slate-600 dark:text-slate-400 hover:text-primary transition-colors text-sm font-medium" href="work.html">Work</a>
-<a class="text-slate-600 dark:text-slate-400 hover:text-primary transition-colors text-sm font-medium" href="https://www.proby.io" target="_blank" rel="noopener noreferrer">Our product</a>
-</nav>
-<a href="https://www.proby.io/landing/contact" target="_blank" rel="noopener noreferrer" class="bg-primary hover:bg-slate-800 text-white h-12 px-8 rounded-lg font-bold transition-all flex items-center justify-center">
-                    Get in Touch
-                </a>
-</div>
-</div>
+<body class="csd-body font-display antialiased overflow-x-hidden">
+
+<!-- ── HEADER ───────────────────────────────────────────────── -->
+<header class="sticky top-0 z-50 w-full backdrop-blur-md border-b border-white/5 bg-black/60 px-6 md:px-16 py-4">
+  <div class="flex items-center justify-between max-w-7xl mx-auto">
+    <a href="work.html"><img src="assets/images/header-white.png" alt="Proby" class="h-7 w-auto"/></a>
+    <div class="flex items-center gap-6">
+      <nav class="hidden md:flex items-center gap-7">
+        <a href="index.html" class="text-sm font-medium text-white/50 hover:text-white transition-colors">About</a>
+        <a href="work.html" class="text-sm font-medium text-white/50 hover:text-white transition-colors">Work</a>
+      </nav>
+      <a href="index.html#pricing" class="text-sm font-bold px-5 py-2 rounded-full border border-white/15 text-white/70 hover:border-white/35 hover:text-white transition-all">View Pricing</a>
+    </div>
+  </div>
 </header>
-<main class="flex-1 max-w-[1600px] mx-auto w-full px-6 md:px-20 lg:px-16 py-10">
-<div class="w-full mb-12">
-<div class="relative w-full h-[400px] rounded-xl overflow-hidden shadow-2xl group">
-<div class="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/40 to-transparent z-10"></div>
-<div class="absolute inset-0 bg-primary/10 mix-blend-overlay z-10"></div>
-<img alt="Case Study 2 Hero" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="assets/case%232.jpeg"/>
-<div class="absolute bottom-0 left-0 p-8 md:p-12 z-20">
-<span class="px-3 py-1 bg-primary text-white text-[10px] font-black rounded-full mb-4 inline-block tracking-widest uppercase">지자체 · 광고 주체 리서치</span>
-<h1 class="text-white text-3xl md:text-5xl font-extrabold leading-tight max-w-2xl">지자체 주관 행사 참여 경험 조사</h1>
-<p class="text-slate-200 mt-4 text-lg max-w-xl">시민의 행사 인지 경로, 참여 동기, 만족도·재방문 의사를 파악하고 향후 캠페인을 위한 제언 도출</p>
-</div>
-</div>
-</div>
-<div class="flex flex-col lg:flex-row gap-12">
-<aside class="lg:w-1/4">
-<div class="sticky top-28 flex flex-col gap-6">
-<div class="p-5 bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm">
-<p class="text-slate-400 dark:text-slate-500 text-xs font-bold uppercase tracking-widest mb-4">케이스 스터디 섹션</p>
-<nav class="flex flex-col gap-1">
-<a class="flex items-center gap-3 px-3 py-2 rounded-lg bg-slate-100 dark:bg-slate-800 text-primary font-bold" href="#overview">
-<span class="material-symbols-outlined text-xl">info</span>
-<span class="text-sm">개요</span>
-</a>
-<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" href="#methodology">
-<span class="material-symbols-outlined text-xl">science</span>
-<span class="text-sm">연구 방법론</span>
-</a>
-<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" href="#findings">
-<span class="material-symbols-outlined text-xl">insights</span>
-<span class="text-sm">주요 발견사항</span>
-</a>
-<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" href="#impact">
-<span class="material-symbols-outlined text-xl">star</span>
-<span class="text-sm">제언 및 시사점</span>
-</a>
-</nav>
-</div>
-</div>
-</aside>
-<div class="lg:w-3/4 flex flex-col gap-16">
-<section class="scroll-mt-32" id="overview">
-<div class="mb-8">
-<h2 class="text-3xl font-extrabold mb-4">프로젝트 개요</h2>
-<p class="text-slate-600 dark:text-slate-400 text-lg leading-relaxed">지자체(지방자치단체)가 주관하는 축제·행사에 대한 시민의 참여 경험을 심층적으로 파악하기 위한 조사입니다. 행사 인지 경로, 참여 결심 요인, 참여 후 만족도, 재방문 의사를 수집하고, 지자체·광고 주체를 위한 홍보 전략·행사 기획·정보 제공 방식에 대한 정성적 인사이트를 도출하는 것을 목표로 했습니다.</p>
-</div>
-<div class="grid grid-cols-1 gap-6">
-<div class="bg-white dark:bg-slate-900 p-8 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-md transition-shadow">
-<span class="material-symbols-outlined text-primary mb-3 text-2xl">report_problem</span>
-<h4 class="font-bold text-slate-900 dark:text-white mb-2">조사 목적</h4>
-<p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">행사 인지 경로, "한번 가볼까?" 결심 요인, 만족·불만, 재방문 의사 및 광고·홍보 시사점 도출</p>
-</div>
-<div class="bg-white dark:bg-slate-900 p-8 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-md transition-shadow">
-<span class="material-symbols-outlined text-primary mb-3 text-2xl">person</span>
-<h4 class="font-bold text-slate-900 dark:text-white mb-2">참여자 조건</h4>
-<p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">최근 또는 과거에 지자체 주관 행사/축제를 1회 이상 참여한 경험이 있는 사람, 총 7명(인터뷰 1~7)</p>
-</div>
-<div class="bg-white dark:bg-slate-900 p-8 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-md transition-shadow">
-<span class="material-symbols-outlined text-primary mb-3 text-2xl">celebration</span>
-<h4 class="font-bold text-slate-900 dark:text-white mb-2">참석 행사 (인터뷰별)</h4>
-<p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">북평 풍물 대잔치, 부평풍물대잔치·뚝섬 K-pop 드론 축제, 구미 라면 축제, 공주 군밤 축제, 고양 꽃박람회, 새벽눈·여의도 불꽃축제, 화천 산천어 낚시축제, 고양 호수공원 행사 등</p>
-</div>
-</div>
-</section>
-<section class="scroll-mt-32" id="methodology">
-<h2 class="text-3xl font-extrabold mb-8">연구 방법론</h2>
-<div class="flex flex-col gap-8 mb-12">
-<div class="flex gap-6 items-start">
-<div class="size-12 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center shrink-0">
-<span class="material-symbols-outlined text-primary text-2xl">smart_toy</span>
-</div>
-<div>
-<h4 class="text-lg font-bold mb-1">AI 인터뷰 (Proby)</h4>
-<p class="text-slate-600 dark:text-slate-400 leading-relaxed mb-3">1:1 대화형 AI 인터뷰 플랫폼을 통해 시민의 진솔한 경험담과 의견을 수집했습니다. 사례비 지급 후 진행되었으며, 응답자의 맥락에 맞는 후속 질문을 통해 인지 경로·참여 동기·만족·불만·재방문 의사 및 AI 인터뷰 경험에 대한 피드백까지 종합적으로 수집했습니다.</p>
-<p class="text-sm text-slate-500 dark:text-slate-500 italic border-l-2 border-primary pl-4">AI 인터뷰는 압박감 없이 편하게 답변할 수 있다는 긍정 반응과, 질문 간 텀·말 인식 오류 등 개선점이 함께 도출되었습니다.</p>
-</div>
-</div>
-</div>
-</section>
-<section class="scroll-mt-32" id="findings">
-<h2 class="text-3xl font-extrabold mb-8">주요 발견사항</h2>
-<div class="bg-primary p-8 md:p-12 rounded-2xl text-white mb-12 relative overflow-hidden shadow-2xl">
-<div class="relative z-10">
-<p class="text-xl md:text-2xl font-light italic leading-relaxed">"홍보 영상을 보고 관심이 가서 구글이나 네이버, 유튜브를 통해서 찾아봤거든요. 꽤 착한 가격과 퀄리티가 높은 요리로 호평을 받은 축제이기 때문에 다양한 사람들의 리뷰·평가를 바탕으로 관심이 가서 가게 됐거든요."</p>
-<p class="mt-4 text-sm font-bold text-white/70">— 인터뷰 2</p>
-</div>
-<div class="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full -mr-20 -mt-20 blur-3xl"></div>
-</div>
-<div class="space-y-6">
-<div class="p-8 bg-white dark:bg-slate-900 border-l-4 border-primary rounded-r-xl shadow-sm hover:shadow-md transition-shadow">
-<h4 class="font-bold text-lg mb-3 text-slate-900 dark:text-white">1. 행사 인지 채널: 채널별 언급 빈도와 복합 경로</h4>
-<p class="text-slate-600 dark:text-slate-400 leading-relaxed mb-3">채널별 언급 인원은 네이버·구글 3명, 유튜브 2명, 인스타그램 2명, 입소문 2명, 현수막·포스터·전단지 1명, 방송·버스 광고 1명, 뉴스 1명, SNS 1명이었습니다. 한 채널만이 아니라 <strong>홍보 영상(유튜브/인스타) → 검색·후기 확인</strong>으로 이어지는 경로가 자주 나타났고, 지역 주민의 경우 길거리 현수막·포스터·주민센터 등 일상 동선에서의 반복 노출과 "매년 이때쯤 한다"는 습관적 인지가 "가볼까?"로 이어졌습니다.</p>
-<p class="text-sm text-slate-500 dark:text-slate-500 italic">"일단은 제가 부평에 산지 오래되기도 했고 지나다니면서 길거리에 현수막이나 포스터 전단지도 많이 본 것 같아요." (인터뷰 1)</p>
-<p class="text-sm text-slate-500 dark:text-slate-500 italic mt-2 mb-4">"일단 홍보를 많이 하는 게 중요한 것 같아요. 현수막이 한두 군데만 비치해 있는 게 아니라 중심가에 여기저기 배치를 하기도 하고 포스터도 많이 배치한 걸로 알고 있어요." (인터뷰 1)</p>
-<div class="mt-4">
-<h5 class="font-semibold text-sm text-slate-900 dark:text-slate-100 mb-2">행사 인지 경로 하이라이트 영상</h5>
-<video class="w-full rounded-lg border border-slate-200 dark:border-slate-700" controls>
-<source src="assets/video/case2-1.mp4" type="video/mp4"/>
-해당 브라우저에서 동영상 태그를 지원하지 않습니다.
-</video>
-</div>
-</div>
-<div class="p-8 bg-white dark:bg-slate-900 border-l-4 border-primary rounded-r-xl shadow-sm hover:shadow-md transition-shadow">
-<h4 class="font-bold text-lg mb-3 text-slate-900 dark:text-white">2. "가볼까?" 동기: 가성비·리뷰·이색 체험·관심사·홍보 노출량</h4>
-<p class="text-slate-600 dark:text-slate-400 leading-relaxed mb-3">참여 결심 요인으로 <strong>가성비·품질</strong>(착한 가격, 퀄리티, 바가지 없다는 후기), <strong>시각적·경험적 특이성</strong>(대형 화로 군밤, 불꽃 영상, 꽃·풍경), <strong>다른 사람 리뷰</strong>, <strong>주제·관심사 부합</strong>(꽃, 라면, 낚시, 전통문화), <strong>지역 대표성</strong>, <strong>홍보 노출량</strong>(현수막·포스터가 중심가·동네에 잘 배치될 때 신뢰·관심 상승), <strong>특별 프로그램</strong>("여기서만 할 수 있는" 경험)이 도출되었습니다. "관심 있는 아이템이 있으면 거리·시간은 염두에 두지 않고 가보게 된다"는 응답도 있었습니다.</p>
-<p class="text-sm text-slate-500 dark:text-slate-500 italic">"주말을 좀 색다르게 즐기고 싶은데 요즘은 좀 뻔하잖아요. 우연치 않게 홍보 영상을 보고 마침 일정이 주말이더라고요." (인터뷰 2)</p>
-<p class="text-sm text-slate-500 dark:text-slate-500 italic mt-2">"곰밤을 대형 화로에서 굽는 모습이 재밌어 보였어요. 대형화로에서 굽는 거는 특별한 경험 같아서 궁금했어요." (인터뷰 3)</p>
-</div>
-<div class="p-8 bg-white dark:bg-slate-900 border-l-4 border-primary rounded-r-xl shadow-sm hover:shadow-md transition-shadow">
-<h4 class="font-bold text-lg mb-3 text-slate-900 dark:text-white">3. 참여 후 만족: 가격·체험·기대 일치·편의 개선·전통 "힙하고 친근"</h4>
-<p class="text-slate-600 dark:text-slate-400 leading-relaxed mb-3">만족 요소로는 <strong>가격 대비 만족</strong>(물가 상승 속 부담 없는 가격, 반띵 메뉴 등), <strong>볼거리·체험 다양성</strong>(라면 요리대회, 면치기, 꽃, 산천어 낚시·요리, 풍물 거리 행진 등), <strong>실제 경험과 기대 일치</strong>(불꽃의 웅장함, "실물이 더 낫다"), <strong>개선된 편의</strong>(QR·키오스크로 결제 대기 감소 등 전년 피드백 반영), <strong>감성·분위기</strong>(전통문화가 "힙하고 친근하다"는 새로움)가 꼽혔습니다.</p>
-<p class="text-sm text-slate-500 dark:text-slate-500 italic">"반띵라면이라고 해서 라면을 반만 주는 메뉴가 있어요. 그런 메뉴를 다양하게 시켜서 친구들하고 나눠 먹기도 하고 되게 좋았던 것 같아요." (인터뷰 2)</p>
-<p class="text-sm text-slate-500 dark:text-slate-500 italic mt-2 mb-4">"보물 대잔치 같은 경우는 사실 보이타분해 보일 수도 있지만 실제로는 꽤나 힙하기도 하고 또 친하기도 하다는 점에 대해서 큰 인상을 받았던 것 같습니다." (인터뷰 1)</p>
-<div class="mt-4">
-<h5 class="font-semibold text-sm text-slate-900 dark:text-slate-100 mb-2">참여 후 만족도 하이라이트 영상</h5>
-<video class="w-full rounded-lg border border-slate-200 dark:border-slate-700" controls>
-<source src="assets/video/case2-2.mp4" type="video/mp4"/>
-해당 브라우저에서 동영상 태그를 지원하지 않습니다.
-</video>
-</div>
-</div>
-<div class="p-8 bg-white dark:bg-slate-900 border-l-4 border-primary rounded-r-xl shadow-sm hover:shadow-md transition-shadow">
-<h4 class="font-bold text-lg mb-3 text-slate-900 dark:text-white">4. 불만·아쉬움: 예고 불일치·정보 부족·테마 일관성·혼잡</h4>
-<p class="text-slate-600 dark:text-slate-400 leading-relaxed mb-3"><strong>예고와 실제 불일치</strong>: 드론 쇼 등 핵심 프로그램 당일 취소 시 실망이 컸고, 취소 가능성·대체 프로그램에 대한 사전 안내 부재가 불만으로 이어졌습니다. <strong>정보 부족</strong>: "어떤 가수가 온다" 등은 구체적이나 먹거리·편의시설 정보는 부족해 현장에서 고민한다는 의견이 있었습니다. <strong>테마 일관성</strong>: 매주 테마가 바뀌는 행사에서 "기대한 테마와 다른 쇼"를 보게 되는 경우 실망이 있었고, <strong>혼잡·질서</strong> 문제로 "질서 유지되면 다시 가고 싶다"는 조건부 재방문 응답이 나왔습니다.</p>
-<p class="text-sm text-slate-500 dark:text-slate-500 italic">"드론 쇼가 있다고 예고가 되어 있어서 참여하기도 했는데 갑자기 취소가 되더라고요. 취소될 수 있다는 가능성을 전혀 생각하지 않고 방문했기 때문에 많이 실망을 한 적이 있었고." (인터뷰 1)</p>
-<p class="text-sm text-slate-500 dark:text-slate-500 italic mt-2">"어떤 가수가 온다 하는 내용은 구체적으로 얘기하는데 먹거리 부분은 자세한 소개를 하지 않고 있어서, 축제에 참여했을 때 어떤 먹을 거리를 즐길 수 있는지에 대한 정보가 부족해서 좀 고민하게 됐어요." (인터뷰 1)</p>
-</div>
-<div class="p-8 bg-white dark:bg-slate-900 border-l-4 border-primary rounded-r-xl shadow-sm hover:shadow-md transition-shadow">
-<h4 class="font-bold text-lg mb-3 text-slate-900 dark:text-white">5. 재방문 의사: 긍정 + 조건부 "매력도가 높아야"</h4>
-<p class="text-slate-600 dark:text-slate-400 leading-relaxed mb-3">7명 중 다수가 "또 가고 싶다", "내년에 친구랑 갈 예정" 등 긍정적인 재방문 의사를 보였습니다. 동시에 "퀄리티·편의가 유지되면", "질서·혼잡 관리가 되면", "매력도가 높아야" 등 조건을 붙이는 응답도 있었고, 같은 행사의 지속적 개선(피드백 반영)과 동행 대상(연인·친구)과의 재방문 욕구가 재방문 동기로 언급되었습니다.</p>
-<p class="text-sm text-slate-500 dark:text-slate-500 italic">"또 다녀온 의사가 있습니다." (인터뷰 2) / "정말로 매력도가 높아야 참여할 수 있을 것 같습니다." (인터뷰 1)</p>
-</div>
-<div class="p-8 bg-white dark:bg-slate-900 border-l-4 border-primary rounded-r-xl shadow-sm hover:shadow-md transition-shadow">
-<h4 class="font-bold text-lg mb-3 text-slate-900 dark:text-white">6. 홍보 이중 구조·"특이함·직접 체험"·정보 투명성·전통 인식 전환</h4>
-<p class="text-slate-600 dark:text-slate-400 leading-relaxed mb-3"><strong>홍보 = 주목 끌기(비주얼) + 신뢰·검증(후기·실제 정보)</strong>: 첫 인지는 유튜브·인스타 등 비주얼이 담당하는 경우가 많으나, 홍보 영상이 축제 본연의 정보(메뉴·가격·프로그램)와는 거리가 있다는 지적도 있었고, 참여 결심 단계에서는 후기·리뷰가 중요한 역할을 했습니다. <strong>"특이함"과 "직접 체험"</strong>이 동기와 만족의 중심으로, 대형 화로 군밤, 산천어 낚시·요리, 반띵 라면, 전통 악기 거리 행진 등 "여기서만 할 수 있는" 경험이 반복 언급되었습니다. <strong>정보 투명성·기대 관리</strong>와 <strong>지역 오프라인 노출</strong>(현수막·포스터·주민센터)의 중요성, 그리고 <strong>전통·지역 문화에 대한 인식 전환</strong>—"전통을 멀게 느꼈는데 동네에서 참여하니 힙하고 친근하게 재인식했다"는 응답이 인상적이었습니다.</p>
-<p class="text-sm text-slate-500 dark:text-slate-500 italic">"홍보 영상하고 축제하고는 별개라고 말씀드리고 싶어요." (인터뷰 2)</p>
-<p class="text-sm text-slate-500 dark:text-slate-500 italic mt-2">"전통적인 것에 대해서 경험할 기회가 많지 않기 때문에 더 멀리만 느꼈었는데 이렇게 가까이서 동네에서 참여를 하다 보니 생각보다 재밌게 즐길 수 있어서 좀 새롭게 더 인식을 하게 된 것 같습니다." (인터뷰 1)</p>
-</div>
-</div>
-</section>
-<section class="scroll-mt-32" id="impact">
-<h2 class="text-3xl font-extrabold mb-8">향후 캠페인을 위한 제언</h2>
-<div class="space-y-8 mb-12">
-<div class="bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 p-8 shadow-sm">
-<h3 class="text-xl font-bold mb-6 text-slate-900 dark:text-white">채널·메시지·정보 제공</h3>
-<div class="space-y-6">
-<div class="p-6 bg-slate-50 dark:bg-slate-800 rounded-xl">
-<h4 class="font-bold text-slate-900 dark:text-white mb-2">채널: "첫 인지"와 "검증" 분리 설계</h4>
-<p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">유튜브·인스타에 짧고 강한 비주얼로 관심 유발 + 네이버·구글 검색 시 후기·가격·메뉴·프로그램 요약 노출. 홍보 영상과 실제 행사 정보 링크·요약을 같은 캠페인에 묶어 두는 것을 권장.</p>
-</div>
-<div class="p-6 bg-slate-50 dark:bg-slate-800 rounded-xl">
-<h4 class="font-bold text-slate-900 dark:text-white mb-2">메시지: "여기서만 할 수 있는 것" 명시</h4>
-<p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">구체적 체험 포인트(예: 대형 화로에서 군밤 굽기, 반띵 라면으로 여러 메뉴 시식)를 넣고, 가격·편의 개선이 있으면 "전년 피드백 반영" 같은 변화 스토리를 짧게 포함.</p>
-</div>
-<div class="p-6 bg-slate-50 dark:bg-slate-800 rounded-xl">
-<h4 class="font-bold text-slate-900 dark:text-white mb-2">정보: 기대 관리와 현장 니즈</h4>
-<p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">메인 이벤트 취소·변경 가능성과 대체 프로그램을 사전 안내. 먹거리·편의시설·테마별 프로그램을 "한눈에 보기" 형태로 홍보물·SNS에 추가.</p>
-</div>
-<div class="p-6 bg-slate-50 dark:bg-slate-800 rounded-xl">
-<h4 class="font-bold text-slate-900 dark:text-white mb-2">지역 오프라인과 온라인 연계</h4>
-<p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">현수막·포스터를 중심가·주민센터·일상 동선에 배치하고, QR·해시태그·검색어를 통일해 후기·상세 정보로 이어지게 설계.</p>
-</div>
-<div class="p-6 bg-slate-50 dark:bg-slate-800 rounded-xl">
-<h4 class="font-bold text-slate-900 dark:text-white mb-2">타깃·톤</h4>
-<p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">"주말을 색다르게", "지인·가족과 함께"를 타깃으로, "이색적이지만 부담 없이 즐길 수 있는", "함께 가면 더 좋은" 경험 톤. 전통·지역 문화는 "멀게 느껴지던 것을 가까이서 즐긴다"는 프레임 권장.</p>
-</div>
-</div>
-</div>
-</div>
-<div class="p-8 bg-slate-50 dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700">
-<p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">본 케이스는 지자체 조사 AI 인터뷰 7명(인터뷰 1~7) 내용을 종합하여 작성되었습니다.</p>
-</div>
-</section>
-<div class="mt-20 pt-10 border-t border-slate-200 dark:border-slate-800 flex flex-col md:flex-row items-center justify-between gap-6">
-<div>
-<h4 class="text-xl font-bold">다른 케이스 스터디</h4>
-<p class="text-slate-600 dark:text-slate-400">웹소설 플랫폼 연재형-단행본 교차 구매 동기 분석</p>
-</div>
-<a class="flex items-center gap-2 text-primary font-bold group" href="research-case-study-details.html">
-                        Case #1 보기
-                        <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
-</a>
-</div>
-</div>
-</div>
-</main>
-<footer class="w-full bg-primary text-white py-12 mt-20">
-<div class="max-w-[1600px] mx-auto px-6 md:px-20 lg:px-16 flex flex-col md:flex-row justify-between items-center gap-8">
-<div class="flex items-center gap-3">
-<div class="size-8 bg-primary rounded-lg flex items-center justify-center text-white">
-<span class="material-symbols-outlined text-xl">biotech</span>
-</div>
-<span class="font-bold text-lg">Proby</span>
-</div>
-<p class="text-slate-400 text-sm">© 2026 Proby. AI 기반 사용자 리서치 플랫폼.</p>
-<div class="flex gap-6">
-<a class="text-slate-400 hover:text-white transition-colors" href="#"><span class="material-symbols-outlined">public</span></a>
-<a class="text-slate-400 hover:text-white transition-colors" href="#"><span class="material-symbols-outlined">mail</span></a>
-<a class="text-slate-400 hover:text-white transition-colors" href="#"><span class="material-symbols-outlined">chat</span></a>
-</div>
-</div>
+
+<!-- ── MAIN CONTENT ──────────────────────────────────────────── -->
+<div class="max-w-7xl mx-auto px-6 md:px-16 py-10">
+
+  <!-- HERO -->
+  <div class="csd-hero">
+    <img src="assets/case%232.jpeg" alt="Local Government Event Research"/>
+    <div class="csd-hero-overlay"></div>
+    <div class="csd-hero-content">
+      <span class="csd-category-badge">Public Sector · Event Research</span>
+      <h1 class="csd-hero-title">Civic Participation in Local Government Events</h1>
+      <p class="csd-hero-subtitle">Mapping awareness channels, participation triggers, satisfaction, and revisit intent — with campaign recommendations for local governments</p>
+    </div>
+  </div>
+
+  <!-- LAYOUT -->
+  <div class="csd-layout">
+
+    <!-- SIDEBAR -->
+    <aside class="csd-sidebar">
+      <div class="csd-sidebar-inner">
+        <div class="csd-sidebar-card">
+          <p class="csd-sidebar-label">Case Study Sections</p>
+          <nav class="flex flex-col gap-0.5">
+            <a href="#overview" class="csd-nav-link active">
+              <span class="material-symbols-outlined">info</span>Overview
+            </a>
+            <a href="#methodology" class="csd-nav-link">
+              <span class="material-symbols-outlined">science</span>Methodology
+            </a>
+            <a href="#findings" class="csd-nav-link">
+              <span class="material-symbols-outlined">insights</span>Key Findings
+            </a>
+            <a href="#impact" class="csd-nav-link">
+              <span class="material-symbols-outlined">star</span>Recommendations
+            </a>
+          </nav>
+        </div>
+      </div>
+    </aside>
+
+    <!-- MAIN -->
+    <div class="csd-main">
+
+      <!-- OVERVIEW -->
+      <section id="overview" class="scroll-mt-28">
+        <h2 class="csd-section-title">Project Overview</h2>
+        <p class="csd-section-subtitle">An in-depth study of citizens' experiences attending festivals and events organized by local governments. The research identified awareness channels, decision-making triggers, post-attendance satisfaction, and revisit intentions — delivering qualitative insights for promotion strategy, event planning, and information design.</p>
+        <div class="flex flex-col gap-4">
+          <div class="csd-overview-card">
+            <span class="material-symbols-outlined">report_problem</span>
+            <h4 class="csd-overview-card-title">Research Objective</h4>
+            <p class="csd-overview-card-body">Identify how citizens discover events, what triggers the decision to attend, what drives satisfaction or dissatisfaction, revisit intent, and key implications for advertising and promotion strategy.</p>
+          </div>
+          <div class="csd-overview-card">
+            <span class="material-symbols-outlined">person</span>
+            <h4 class="csd-overview-card-title">Participant Criteria</h4>
+            <p class="csd-overview-card-body">Adults who had attended at least one local government-organized event or festival, recently or in the past. Total of 7 participants (Interviews 1–7).</p>
+          </div>
+          <div class="csd-overview-card">
+            <span class="material-symbols-outlined">celebration</span>
+            <h4 class="csd-overview-card-title">Events Attended (per interview)</h4>
+            <p class="csd-overview-card-body">Bukpyeong Folk Festival, Bupyeong Folk Festival & Ttukseom K-pop Drone Show, Gumi Ramen Festival, Gongju Chestnut Festival, Goyang Flower Expo, Yeouido Fireworks Festival, Hwacheon Trout Fishing Festival, Goyang Lake Park Events, and others.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- METHODOLOGY -->
+      <section id="methodology" class="scroll-mt-28">
+        <h2 class="csd-section-title">Research Methodology</h2>
+        <div class="flex gap-5 items-start">
+          <div class="csd-method-icon">
+            <span class="material-symbols-outlined">smart_toy</span>
+          </div>
+          <div class="flex-1">
+            <h4 class="text-base font-bold text-white/85 mb-2">AI Interview (Proby)</h4>
+            <p class="text-sm text-white/50 leading-relaxed mb-3">Participants were interviewed 1-on-1 through Proby's conversational AI interview platform. After an honorarium was provided, the AI collected candid accounts of event experiences, awareness channels, attendance triggers, satisfaction, dissatisfaction, revisit intent, and participants' own reflections on the AI interview experience itself.</p>
+            <p class="csd-method-note">Participants noted both the comfort of answering without pressure and areas for improvement, such as response delays and occasional speech-recognition errors.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- FINDINGS -->
+      <section id="findings" class="scroll-mt-28">
+        <h2 class="csd-section-title">Key Findings</h2>
+
+        <div class="csd-quote-block mb-8">
+          <p class="csd-quote-text">"I saw a promotional video and got interested, then searched on Google, Naver, and YouTube. It was a festival well-known for fair prices and high-quality food, and all the positive reviews and ratings made me want to go."</p>
+          <p class="csd-quote-source">— Interview 2</p>
+        </div>
+
+        <div class="flex flex-col gap-4">
+          <div class="csd-finding">
+            <h4 class="csd-finding-title">1. Awareness Channels: Multiple Channels, Compound Discovery Paths</h4>
+            <p class="csd-finding-body">Channel mentions: Naver/Google (3), YouTube (2), Instagram (2), word-of-mouth (2), banners/posters/flyers (1), TV/bus ads (1), news (1), SNS (1). A recurring pattern was promotional video on YouTube/Instagram → search + review check. For local residents, repeated passive exposure via streetside banners, posters, and community center notices combined with habitual "it's always around this time of year" awareness led to actual attendance.</p>
+            <p class="csd-finding-quote">"I've lived in Bupyeong a long time, and I saw a lot of banners and posters around the neighborhood." (Interview 1)</p>
+          </div>
+
+          <div class="csd-finding">
+            <h4 class="csd-finding-title">2. "Why Attend?" Triggers: Value, Reviews, Unique Experiences, Interest & Exposure Volume</h4>
+            <p class="csd-finding-body">Key triggers identified: price-to-quality ratio (fair prices, well-reviewed, no overcharging), visual and experiential novelty (giant brazier chestnuts, fireworks footage, flowers and scenery), peer reviews, topic alignment (flowers, ramen, fishing, traditional culture), regional identity, promotional density (more visible banners/posters = higher perceived trust), and exclusive activities only available at that event.</p>
+            <p class="csd-finding-quote">"I want to spend the weekend differently — things feel a bit predictable these days. I happened to see a promotional video and the date worked out." (Interview 2)</p>
+          </div>
+
+          <div class="csd-finding">
+            <h4 class="csd-finding-title">3. Post-Attendance Satisfaction: Value, Experience Variety, Met Expectations & Traditional Culture Feeling "Hip"</h4>
+            <p class="csd-finding-body">Satisfaction factors included: value for money (affordable prices amid rising costs, shareable menu items), variety of activities (ramen cooking contests, noodle challenge, flowers, trout fishing/cooking, folk street parades), real-world experience matching promotional expectations, improved convenience through QR/kiosk payments responding to prior feedback, and atmosphere — traditional culture described as "hip and approachable."</p>
+            <p class="csd-finding-quote">"There was a 'half-ramen' menu where you get half a bowl — we ordered different things and shared. It was a lot of fun." (Interview 2)</p>
+          </div>
+
+          <div class="csd-finding">
+            <h4 class="csd-finding-title">4. Dissatisfaction: Expectation Mismatch, Information Gaps, Theme Inconsistency & Crowding</h4>
+            <p class="csd-finding-body"><strong class="text-white/70">Expectation mismatch:</strong> Last-minute cancellation of key attractions (e.g., drone show) without prior notice caused significant disappointment. <strong class="text-white/70">Information gaps:</strong> Food and facilities were poorly communicated compared to headlining acts. <strong class="text-white/70">Theme inconsistency:</strong> Weekly rotating themes left some attendees watching a different show than they expected. <strong class="text-white/70">Crowding:</strong> Some gave conditional revisit intent — "I'll go back if crowd management improves."</p>
+            <p class="csd-finding-quote">"A drone show was advertised, but it got cancelled on the day. I had no idea cancellation was even possible, so I was very disappointed." (Interview 1)</p>
+          </div>
+
+          <div class="csd-finding">
+            <h4 class="csd-finding-title">5. Revisit Intent: Mostly Positive, Conditional on Quality Maintenance</h4>
+            <p class="csd-finding-body">Most of the 7 participants expressed positive revisit intent: "I want to go again," "planning to bring a friend next year." Conditions included maintaining quality and convenience, improving crowd management, and finding the event sufficiently appealing. Continuous improvement based on feedback and attending with a companion were both cited as revisit motivators.</p>
+            <p class="csd-finding-quote">"I would go again." (Interview 2) / "I'd need it to be genuinely appealing enough to justify attending." (Interview 1)</p>
+          </div>
+
+          <div class="csd-finding">
+            <h4 class="csd-finding-title">6. Dual-Structure Promotion, "Uniqueness & Direct Experience," Transparency & Shifting Perceptions of Tradition</h4>
+            <p class="csd-finding-body"><strong class="text-white/70">Promotion = attract attention (visual) + build trust (reviews + real info):</strong> Initial awareness often comes through YouTube/Instagram visuals, but promotional videos were noted as separate from actual event information. At the decision stage, reviews and peer feedback played a critical role. <strong class="text-white/70">"Uniqueness" and "direct experience"</strong> were central motivators and satisfaction drivers. <strong class="text-white/70">Information transparency and expectation management</strong> were key. Notably, one participant described a meaningful perception shift: "traditional culture felt distant, but experiencing it locally made it feel hip and relatable."</p>
+            <p class="csd-finding-quote">"The promotional video and the actual festival are two different things." (Interview 2)</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- RECOMMENDATIONS -->
+      <section id="impact" class="scroll-mt-28">
+        <h2 class="csd-section-title">Campaign Recommendations</h2>
+
+        <div class="csd-rec-section mb-6">
+          <h3 class="csd-rec-section-title">Channel, Messaging & Information Design</h3>
+          <div class="flex flex-col gap-4">
+            <div class="csd-rec-card">
+              <h4 class="csd-rec-card-title">Channel: Design Separate "Awareness" and "Validation" Touchpoints</h4>
+              <p class="csd-rec-card-body">Use YouTube/Instagram for short, visually striking attention-grabbers. Ensure Naver/Google search results surface reviews, pricing, menus, and program summaries. Link detailed information directly from the same campaign creative.</p>
+            </div>
+            <div class="csd-rec-card">
+              <h4 class="csd-rec-card-title">Message: Name the Exclusive Experience</h4>
+              <p class="csd-rec-card-body">Highlight specific experiential hooks (e.g., "roast chestnuts in a giant brazier," "share multiple ramen varieties with the half-bowl menu"). If there are convenience improvements from prior feedback, include a brief "we listened" story — e.g., "Updated based on last year's feedback."</p>
+            </div>
+            <div class="csd-rec-card">
+              <h4 class="csd-rec-card-title">Information: Expectation Management & On-Site Needs</h4>
+              <p class="csd-rec-card-body">Proactively communicate the possibility of cancellation or changes to key programs, along with backup options. Add a "quick overview" format to promotional materials and social posts covering food, facilities, and per-theme schedules.</p>
+            </div>
+            <div class="csd-rec-card">
+              <h4 class="csd-rec-card-title">Local Offline + Online Integration</h4>
+              <p class="csd-rec-card-body">Distribute banners and posters along main thoroughfares, community centers, and daily commute routes. Unify QR codes, hashtags, and search terms across all materials to guide audiences toward reviews and detailed information.</p>
+            </div>
+            <div class="csd-rec-card">
+              <h4 class="csd-rec-card-title">Target & Tone</h4>
+              <p class="csd-rec-card-body">Target "looking for a different kind of weekend" and "great with friends or family." Tone: "Unique but approachable and affordable — better with company." For traditional and local culture, frame as "something that felt distant, now close enough to enjoy."</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="csd-note">
+          <p>This case study is based on a synthesis of 7 AI interviews (Interviews 1–7) conducted for local government event participation research.</p>
+        </div>
+      </section>
+
+      <!-- NEXT CASE -->
+      <div class="csd-next">
+        <div>
+          <p class="csd-next-label">Next Case Study</p>
+          <p class="csd-next-desc">Preferred Fashion App UI Direction for Japanese Users</p>
+        </div>
+        <a href="case-study-03-japan-fashion.html" class="csd-next-link">
+          Case #3 <span class="material-symbols-outlined">arrow_forward</span>
+        </a>
+      </div>
+
+    </div><!-- /csd-main -->
+  </div><!-- /csd-layout -->
+</div><!-- /container -->
+
+<!-- ── FOOTER ────────────────────────────────────────────────── -->
+<footer class="w-full bg-black/80 border-t border-white/5 py-12 mt-16">
+  <div class="max-w-7xl mx-auto px-6 md:px-16 flex flex-col md:flex-row justify-between items-center gap-8">
+    <img src="assets/images/header-white.png" alt="Proby" class="h-6 w-auto opacity-60"/>
+    <p class="text-white/30 text-sm">© 2026 Proby. AI-powered user research platform.</p>
+    <div class="flex gap-6">
+      <a href="https://www.proby.io" class="text-white/30 hover:text-white transition-colors"><span class="material-symbols-outlined text-xl">public</span></a>
+      <a href="mailto:chris@proby.io" class="text-white/30 hover:text-white transition-colors"><span class="material-symbols-outlined text-xl">mail</span></a>
+    </div>
+  </div>
 </footer>
-</div>
-</body></html>
+
+<script>
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.csd-nav-link');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        navLinks.forEach(link => {
+          link.classList.toggle('active', link.getAttribute('href') === '#' + entry.target.id);
+        });
+      }
+    });
+  }, { rootMargin: '-20% 0px -70% 0px' });
+  sections.forEach(s => observer.observe(s));
+</script>
+</body>
+</html>

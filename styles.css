@@ -563,3 +563,490 @@ body::before {
   transition: filter 0.2s;
 }
 #mic-btn:hover { filter: brightness(1.2); }
+
+/* ── Case Study Detail Pages ─────────────────────────────────── */
+.csd-body {
+  background: var(--bg);
+  min-height: 100vh;
+}
+
+/* Hero */
+.csd-hero {
+  position: relative;
+  width: 100%;
+  height: 420px;
+  overflow: hidden;
+  border-radius: 1.25rem;
+  margin-bottom: 3rem;
+}
+@media (max-width: 767px) { .csd-hero { height: 300px; border-radius: 0.75rem; } }
+
+.csd-hero img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.7s ease;
+}
+.csd-hero:hover img { transform: scale(1.04); }
+
+.csd-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(10,10,11,0.92) 0%, rgba(10,10,11,0.45) 55%, rgba(10,10,11,0.1) 100%);
+}
+
+.csd-hero-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 2.5rem 3rem;
+  z-index: 10;
+}
+@media (max-width: 767px) { .csd-hero-content { padding: 1.5rem; } }
+
+.csd-category-badge {
+  display: inline-block;
+  font-size: 0.6rem;
+  font-weight: 900;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent-lt);
+  background: rgba(30,48,80,0.75);
+  border: 1px solid rgba(65,104,175,0.4);
+  border-radius: 999px;
+  padding: 4px 12px;
+  margin-bottom: 1rem;
+  backdrop-filter: blur(8px);
+}
+
+.csd-hero-title {
+  font-size: clamp(1.6rem, 4vw, 2.75rem);
+  font-weight: 900;
+  color: rgba(255,255,255,0.95);
+  line-height: 1.2;
+  max-width: 42rem;
+  margin-bottom: 0.75rem;
+}
+
+.csd-hero-subtitle {
+  font-size: 1rem;
+  color: var(--accent-lt);
+  max-width: 36rem;
+  line-height: 1.6;
+  opacity: 0.85;
+}
+
+/* Layout */
+.csd-layout {
+  display: flex;
+  gap: 3rem;
+  align-items: flex-start;
+}
+@media (max-width: 1023px) { .csd-layout { flex-direction: column; } }
+
+/* Sidebar */
+.csd-sidebar {
+  width: 260px;
+  flex-shrink: 0;
+}
+@media (max-width: 1023px) { .csd-sidebar { width: 100%; } }
+
+.csd-sidebar-inner {
+  position: sticky;
+  top: 7rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.csd-sidebar-card {
+  padding: 1.25rem;
+  background: rgba(25,25,30,0.85);
+  border: 1px solid rgba(40,64,110,0.3);
+  border-radius: 1rem;
+  backdrop-filter: blur(12px);
+}
+
+.csd-sidebar-label {
+  font-size: 0.6rem;
+  font-weight: 900;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.3);
+  margin-bottom: 1rem;
+}
+
+.csd-nav-link {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.6rem 0.75rem;
+  border-radius: 0.6rem;
+  font-size: 0.8125rem;
+  color: rgba(255,255,255,0.45);
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s;
+}
+.csd-nav-link:hover {
+  background: rgba(30,48,80,0.4);
+  color: var(--accent-lt);
+}
+.csd-nav-link.active {
+  background: rgba(30,48,80,0.6);
+  color: var(--accent-lt);
+  font-weight: 700;
+}
+.csd-nav-link .material-symbols-outlined {
+  font-size: 1.1rem;
+  color: var(--accent-text);
+}
+
+/* Main content */
+.csd-main {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4.5rem;
+}
+
+/* Section headings */
+.csd-section-title {
+  font-size: 1.75rem;
+  font-weight: 900;
+  color: rgba(255,255,255,0.92);
+  margin-bottom: 2rem;
+}
+.csd-section-subtitle {
+  font-size: 1rem;
+  color: rgba(255,255,255,0.45);
+  line-height: 1.75;
+  margin-bottom: 2rem;
+}
+
+/* Overview cards */
+.csd-overview-card {
+  background: rgba(25,25,30,0.85);
+  border: 1px solid rgba(40,64,110,0.3);
+  border-radius: 1rem;
+  padding: 1.75rem;
+  transition: border-color 0.25s, box-shadow 0.25s;
+}
+.csd-overview-card:hover {
+  border-color: rgba(65,104,175,0.5);
+  box-shadow: 0 8px 32px rgba(20,36,60,0.3);
+}
+.csd-overview-card .material-symbols-outlined {
+  color: var(--accent-text);
+  font-size: 1.5rem;
+  margin-bottom: 0.75rem;
+  display: block;
+}
+.csd-overview-card-title {
+  font-weight: 800;
+  color: rgba(255,255,255,0.85);
+  margin-bottom: 0.5rem;
+}
+.csd-overview-card-body {
+  font-size: 0.875rem;
+  color: rgba(255,255,255,0.45);
+  line-height: 1.75;
+}
+
+/* Methodology block */
+.csd-method-icon {
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: 50%;
+  background: rgba(30,48,80,0.5);
+  border: 1px solid rgba(65,104,175,0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.csd-method-icon .material-symbols-outlined {
+  color: var(--accent-text);
+  font-size: 1.35rem;
+}
+.csd-method-note {
+  font-size: 0.8125rem;
+  color: rgba(255,255,255,0.3);
+  font-style: italic;
+  border-left: 2px solid rgba(65,104,175,0.4);
+  padding-left: 1rem;
+  line-height: 1.7;
+  margin-top: 0.75rem;
+}
+
+/* Segment grid card */
+.csd-segment-card {
+  background: rgba(30,30,36,0.7);
+  border: 1px solid rgba(40,64,110,0.25);
+  border-radius: 0.875rem;
+  padding: 1.25rem 1.5rem;
+}
+.csd-segment-title {
+  font-weight: 800;
+  color: rgba(255,255,255,0.85);
+  margin-bottom: 0.25rem;
+}
+.csd-segment-pct {
+  font-size: 1.4rem;
+  font-weight: 900;
+  color: var(--accent-lt);
+}
+.csd-segment-body {
+  font-size: 0.8rem;
+  color: rgba(255,255,255,0.4);
+}
+
+/* Quote hero block */
+.csd-quote-block {
+  background: linear-gradient(135deg, rgba(28,48,80,0.75) 0%, rgba(10,16,28,0.95) 100%);
+  border: 1px solid rgba(65,104,175,0.3);
+  border-radius: 1.25rem;
+  padding: 2.5rem 3rem;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 2rem;
+  box-shadow: 0 12px 48px rgba(10,20,40,0.4);
+}
+.csd-quote-block::before {
+  content: '';
+  position: absolute;
+  top: -4rem;
+  right: -4rem;
+  width: 12rem;
+  height: 12rem;
+  background: rgba(65,104,175,0.12);
+  border-radius: 50%;
+  filter: blur(40px);
+}
+.csd-quote-text {
+  font-size: clamp(1rem, 2vw, 1.3rem);
+  font-style: italic;
+  font-weight: 300;
+  color: rgba(255,255,255,0.88);
+  line-height: 1.75;
+  position: relative;
+  z-index: 1;
+}
+.csd-quote-source {
+  margin-top: 1rem;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: rgba(163,194,239,0.6);
+  position: relative;
+  z-index: 1;
+}
+/* optional stat column inside quote block */
+.csd-quote-stat {
+  text-align: center;
+  flex-shrink: 0;
+}
+.csd-quote-stat-num {
+  font-size: 3.5rem;
+  font-weight: 900;
+  color: var(--accent-lt);
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
+.csd-quote-stat-label {
+  font-size: 0.65rem;
+  font-weight: 900;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(163,194,239,0.55);
+}
+
+/* Finding blocks */
+.csd-finding {
+  background: rgba(25,25,30,0.85);
+  border: 1px solid rgba(40,64,110,0.25);
+  border-left: 3px solid var(--accent-hi);
+  border-radius: 0 0.875rem 0.875rem 0;
+  padding: 2rem 2rem 2rem 1.75rem;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.csd-finding:hover {
+  border-left-color: var(--accent-lt);
+  box-shadow: 0 4px 24px rgba(20,36,60,0.3);
+}
+.csd-finding-title {
+  font-weight: 800;
+  font-size: 1rem;
+  color: rgba(255,255,255,0.88);
+  margin-bottom: 0.75rem;
+  line-height: 1.4;
+}
+.csd-finding-body {
+  font-size: 0.875rem;
+  color: rgba(255,255,255,0.45);
+  line-height: 1.8;
+  margin-bottom: 0.75rem;
+}
+.csd-finding-quote {
+  font-size: 0.8rem;
+  color: rgba(255,255,255,0.28);
+  font-style: italic;
+  border-left: 2px solid rgba(65,104,175,0.3);
+  padding-left: 0.875rem;
+  line-height: 1.65;
+  margin-top: 0.5rem;
+}
+
+/* Recommendation cards */
+.csd-rec-section {
+  background: rgba(25,25,30,0.85);
+  border: 1px solid rgba(40,64,110,0.3);
+  border-radius: 1.25rem;
+  padding: 2rem;
+}
+.csd-rec-section-title {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: rgba(255,255,255,0.88);
+  margin-bottom: 1.5rem;
+}
+.csd-rec-card {
+  background: rgba(30,30,38,0.7);
+  border: 1px solid rgba(40,64,110,0.25);
+  border-radius: 0.875rem;
+  padding: 1.25rem 1.5rem;
+}
+.csd-rec-card-title {
+  font-weight: 800;
+  color: rgba(255,255,255,0.85);
+  margin-bottom: 0.5rem;
+}
+.csd-rec-card-body {
+  font-size: 0.8125rem;
+  color: rgba(255,255,255,0.42);
+  line-height: 1.8;
+}
+.csd-rec-card ul { margin-top: 0.5rem; }
+.csd-rec-card li {
+  font-size: 0.8rem;
+  color: rgba(255,255,255,0.38);
+  line-height: 1.7;
+  list-style: disc;
+  margin-left: 1.25rem;
+}
+
+/* Stats row */
+.csd-stats-block {
+  background: rgba(28,48,80,0.2);
+  border: 2px solid rgba(65,104,175,0.2);
+  border-radius: 1.25rem;
+  padding: 2rem;
+  margin-bottom: 2rem;
+}
+.csd-stats-block-title {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: rgba(255,255,255,0.85);
+  margin-bottom: 1.5rem;
+}
+.csd-stat-item {
+  text-align: center;
+  background: rgba(25,25,30,0.85);
+  border: 1px solid rgba(40,64,110,0.25);
+  border-radius: 1rem;
+  padding: 1.5rem;
+}
+.csd-stat-num {
+  font-size: 2.25rem;
+  font-weight: 900;
+  color: var(--accent-lt);
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
+.csd-stat-label {
+  font-size: 0.6rem;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.35);
+  margin-bottom: 0.4rem;
+}
+.csd-stat-desc {
+  font-size: 0.75rem;
+  color: rgba(255,255,255,0.3);
+}
+
+/* Japan sentiment cards */
+.csd-sentiment-card {
+  background: rgba(25,25,30,0.85);
+  border: 1px solid rgba(40,64,110,0.25);
+  border-radius: 1.25rem;
+  padding: 1.5rem;
+  transition: border-color 0.25s, box-shadow 0.25s;
+}
+.csd-sentiment-card:hover {
+  border-color: rgba(65,104,175,0.5);
+  box-shadow: 0 8px 32px rgba(20,36,60,0.3);
+}
+
+/* Note / footnote block */
+.csd-note {
+  background: rgba(30,30,38,0.6);
+  border: 1px solid rgba(40,64,110,0.2);
+  border-radius: 0.875rem;
+  padding: 1.5rem;
+}
+.csd-note p {
+  font-size: 0.8125rem;
+  color: rgba(255,255,255,0.35);
+  line-height: 1.75;
+}
+
+/* Next case link */
+.csd-next {
+  margin-top: 4rem;
+  padding-top: 2.5rem;
+  border-top: 1px solid rgba(40,64,110,0.25);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+@media (min-width: 768px) {
+  .csd-next {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+.csd-next-label {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: rgba(255,255,255,0.85);
+}
+.csd-next-desc {
+  font-size: 0.875rem;
+  color: rgba(255,255,255,0.4);
+}
+.csd-next-link {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--accent-lt);
+  font-weight: 800;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: gap 0.2s, color 0.2s;
+  flex-shrink: 0;
+}
+.csd-next-link:hover {
+  gap: 0.875rem;
+  color: #fff;
+}
+
+/* video inside findings */
+.csd-video {
+  width: 100%;
+  border-radius: 0.625rem;
+  border: 1px solid rgba(40,64,110,0.3);
+  margin-top: 1rem;
+  background: #000;
+}
