@@ -1,208 +1,332 @@
 <!DOCTYPE html>
-<html lang="ko"><head>
+<html lang="en">
+<head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-dynamic-subset.css" />
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<script id="tailwind-config">
-        tailwind.config = {
-            darkMode: "class",
-            theme: {
-                extend: {
-                    colors: {
-                        "primary": "#000000",
-                        "background-light": "#f7f7f7",
-                        "background-dark": "#191919",
-                    },
-                    fontFamily: {
-                        "display": ["Pretendard", "-apple-system", "BlinkMacSystemFont", "system-ui", "Roboto", "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "sans-serif"]
-                    },
-                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
-                },
-            },
-        }
-    </script>
-<title>Work - Case Studies | Proby</title>
+<link rel="stylesheet" as="style"
+  href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-dynamic-subset.css"
+  integrity="sha384-y9k2lBaj/ETgBd4674Kql3098euvZU5fWlBcBBrlROBI6c2KDmjWhd508Rfsx9R/"
+  crossorigin="anonymous"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<title>Case Studies | Proby</title>
+<meta name="description" content="Explore real-world case studies powered by Proby AI interview agent — qualitative research at scale."/>
+<link rel="stylesheet" href="styles.css"/>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      fontFamily: {
+        display: ['Pretendard', '-apple-system', 'BlinkMacSystemFont', 'system-ui', 'sans-serif']
+      }
+    }
+  }
+}
+</script>
 </head>
-<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 antialiased">
-<div class="relative flex h-auto min-h-screen w-full flex-col overflow-x-hidden">
-<header class="sticky top-0 z-50 w-full border-b border-slate-200 dark:border-slate-800 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md px-6 md:px-20 lg:px-16 py-4">
-<div class="flex items-center justify-between max-w-[1600px] mx-auto">
-<div class="flex items-center gap-3">
-<a href="work.html"><img alt="Proby Logo" class="h-8 w-auto object-contain" src="assets/header.png"/></a>
-</div>
-<div class="flex items-center gap-8">
-<nav class="hidden md:flex items-center gap-8">
-<a class="text-slate-600 dark:text-slate-400 hover:text-primary transition-colors text-sm font-medium" href="index.html">About</a>
-<a class="text-slate-600 dark:text-slate-400 hover:text-primary transition-colors text-sm font-medium text-primary font-bold" href="work.html">Work</a>
-<a class="text-slate-600 dark:text-slate-400 hover:text-primary transition-colors text-sm font-medium" href="https://www.proby.io" target="_blank" rel="noopener noreferrer">Our product</a>
-</nav>
-<a href="https://www.proby.io/landing/contact" target="_blank" rel="noopener noreferrer" class="bg-primary hover:bg-slate-800 text-white h-12 px-8 rounded-lg font-bold transition-all flex items-center justify-center">
-                    Get in Touch
-                </a>
-</div>
-</div>
+<body class="font-display text-white antialiased overflow-x-hidden">
+
+<!-- ─── HEADER ───────────────────────────────────────────────────── -->
+<header class="fixed top-0 left-0 right-0 z-50" style="background:rgba(10,10,11,0.7);backdrop-filter:blur(20px);border-bottom:1px solid rgba(21,34,56,0.8);">
+  <div class="max-w-[1600px] mx-auto px-6 md:px-16 py-4 flex items-center justify-between">
+    <a href="index.html"><img alt="Proby" class="h-7 w-auto" src="assets/header-white.png"/></a>
+    <nav class="hidden md:flex items-center gap-8">
+      <a href="index.html" class="text-sm font-medium transition-colors" style="color:rgba(255,255,255,0.45);">About</a>
+      <a href="work.html" class="text-sm font-bold transition-colors" style="color:var(--accent-lt);">Work</a>
+    </nav>
+    <a href="index.html#pricing"
+       class="text-sm font-bold px-5 py-2.5 rounded-full transition-all cursor-pointer"
+       style="border:1px solid rgba(65,104,175,0.35);color:var(--accent-lt);background:transparent;">
+      View Pricing
+    </a>
+  </div>
 </header>
-<main class="flex-1 max-w-[1600px] mx-auto w-full px-6 md:px-20 lg:px-16 py-10">
-<!-- Hero Section -->
-<section class="mb-20">
-<div class="text-center mb-12">
-<h1 class="text-4xl md:text-6xl font-black mb-6 leading-tight">케이스 스터디</h1>
-<p class="text-slate-600 dark:text-slate-400 text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">AI 기반 사용자 리서치를 통해 도출한 인사이트와 솔루션을 공유합니다.</p>
-</div>
+
+<!-- ─── HERO ──────────────────────────────────────────────────────── -->
+<section class="relative pt-40 pb-20 overflow-hidden">
+  <div class="blob w-[600px] h-[600px] top-[-150px] left-[-150px]" style="background:#1E3050;opacity:0.18;"></div>
+  <div class="blob w-[500px] h-[500px] top-[-100px] right-[-200px]" style="background:#25252D;opacity:0.14;"></div>
+
+  <div class="max-w-[1600px] mx-auto px-6 md:px-16 relative z-10">
+    <p class="section-label mb-5">Case Studies</p>
+    <h1 class="text-4xl md:text-6xl font-black leading-tight mb-6 max-w-3xl">
+      <span class="grad-text">Real research.</span><br/>
+      <span class="text-white">Real insights.</span>
+    </h1>
+    <p class="text-white/50 text-lg md:text-xl max-w-xl leading-relaxed">
+      Every project below was conducted using Proby AI — deployed across diverse industries and research objectives.
+    </p>
+  </div>
 </section>
 
-<!-- Case Studies Grid -->
-<section class="mb-20">
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
-<!-- Case Study #1 -->
-<a href="research-case-study-details.html" class="group bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300">
-<div class="relative h-64 overflow-hidden">
-<img alt="Case Study 1" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" src="assets/hero.jpeg"/>
-<div class="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent"></div>
-<div class="absolute bottom-0 left-0 p-6">
-<span class="px-3 py-1 bg-primary text-white text-[10px] font-black rounded-full mb-2 inline-block tracking-widest uppercase">웹소설 플랫폼</span>
-</div>
-</div>
-<div class="p-8">
-<div class="flex items-start justify-between mb-4">
-<h3 class="text-2xl font-extrabold text-slate-900 dark:text-white group-hover:text-primary transition-colors">연재형-단행본 교차 구매 동기 분석</h3>
-<span class="material-symbols-outlined text-primary opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all ml-4 shrink-0">arrow_forward</span>
-</div>
-<p class="text-slate-600 dark:text-slate-400 mb-6 leading-relaxed">연재형 소장 유저의 단행본 추가 구매 시 기대 가치와 니즈를 파악하여 교차 구매 동기를 심층 분석했습니다.</p>
-<div class="flex flex-wrap gap-2 mb-6">
-<span class="px-3 py-1 bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 text-xs font-bold rounded-full">AI Moderated Survey</span>
-<span class="px-3 py-1 bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 text-xs font-bold rounded-full">정성 리서치</span>
-</div>
-</div>
-</a>
+<!-- ─── CASE STUDIES GRID ─────────────────────────────────────────── -->
+<section class="relative z-10 pb-24">
+  <div class="max-w-[1600px] mx-auto px-6 md:px-16">
 
-<!-- Case Study #2 -->
-<a href="case-study-02-local-government.html" class="group bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300">
-<div class="relative h-64 overflow-hidden">
-<img alt="Case Study 2" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" src="assets/case%232.jpeg"/>
-<div class="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent"></div>
-<div class="absolute bottom-0 left-0 p-6">
-<span class="px-3 py-1 bg-primary text-white text-[10px] font-black rounded-full mb-2 inline-block tracking-widest uppercase">지자체 · 광고</span>
-</div>
-</div>
-<div class="p-8">
-<div class="flex items-start justify-between mb-4">
-<h3 class="text-2xl font-extrabold text-slate-900 dark:text-white group-hover:text-primary transition-colors">지자체 주관 행사 참여 경험 조사</h3>
-<span class="material-symbols-outlined text-primary opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all ml-4 shrink-0">arrow_forward</span>
-</div>
-<p class="text-slate-600 dark:text-slate-400 mb-6 leading-relaxed">시민의 행사 인지 경로, 참여 동기, 만족도·재방문 의사를 AI 인터뷰로 파악하고, 광고 에이전시를 위한 채널·메시지·정보 제공 제언을 도출했습니다.</p>
-<div class="flex flex-wrap gap-2 mb-6">
-<span class="px-3 py-1 bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 text-xs font-bold rounded-full">AI 인터뷰</span>
-<span class="px-3 py-1 bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 text-xs font-bold rounded-full">정성 리서치</span>
-<span class="px-3 py-1 bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 text-xs font-bold rounded-full">지자체</span>
-</div>
-</div>
-</a>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
 
-<!-- Case Study #3 -->
-<a href="case-study-03-japan-fashion.html" class="group bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300">
-<div class="relative h-64 overflow-hidden">
-<img alt="Case Study 3" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" src="assets/case%233.jpeg"/>
-<div class="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent"></div>
-<div class="absolute bottom-0 left-0 p-6">
-<span class="px-3 py-1 bg-primary text-white text-[10px] font-black rounded-full mb-2 inline-block tracking-widest uppercase">패션 · 이커머스</span>
-</div>
-</div>
-<div class="p-8">
-<div class="flex items-start justify-between mb-4">
-<h3 class="text-2xl font-extrabold text-slate-900 dark:text-white group-hover:text-primary transition-colors">일본 유저가 선호하는 패션 앱 UI 방향성</h3>
-<span class="material-symbols-outlined text-primary opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all ml-4 shrink-0">arrow_forward</span>
-</div>
-<p class="text-slate-600 dark:text-slate-400 mb-6 leading-relaxed">일본 거주 사용자 대상 패션 앱 UI 인터뷰를 통해 시간 존중·가격 투명성·한 화면에서 정보 해결 등 선호 방향성과 Must-have 속성을 도출하고, Product Designer용 가이드를 제작했습니다.</p>
-<div class="flex flex-wrap gap-2 mb-6">
-<span class="px-3 py-1 bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 text-xs font-bold rounded-full">AI 인터뷰</span>
-<span class="px-3 py-1 bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 text-xs font-bold rounded-full">UI/UX</span>
-<span class="px-3 py-1 bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 text-xs font-bold rounded-full">일본 시장</span>
-</div>
-</div>
-</a>
+      <!-- Case #1 -->
+      <a href="case-study-01-webtoon.html" class="cs-card group">
+        <div class="cs-img-wrap">
+          <img src="assets/hero.jpeg" alt="Webtoon Platform" class="cs-img group-hover:scale-105"/>
+          <div class="cs-img-overlay"></div>
+          <span class="cs-category-badge">웹소설 플랫폼</span>
+        </div>
+        <div class="cs-body">
+          <div class="flex items-start justify-between gap-4 mb-3">
+            <h3 class="cs-title">연재형-단행본 교차 구매 동기 분석</h3>
+            <span class="material-symbols-outlined cs-arrow">arrow_forward</span>
+          </div>
+          <p class="cs-desc">연재형 소장 유저의 단행본 추가 구매 시 기대 가치와 니즈를 파악하여 교차 구매 동기를 심층 분석했습니다.</p>
+          <div class="cs-tags">
+            <span class="cs-tag">AI Interview</span>
+            <span class="cs-tag">Qualitative</span>
+          </div>
+        </div>
+      </a>
 
-<!-- Case Study #4 -->
-<a href="case-study-04-finance-behavior.html" class="group bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300">
-<div class="relative h-64 overflow-hidden">
-<img alt="Case Study 4" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" src="assets/case4.jpg"/>
-<div class="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent"></div>
-<div class="absolute bottom-0 left-0 p-6">
-<span class="px-3 py-1 bg-primary text-white text-[10px] font-black rounded-full mb-2 inline-block tracking-widest uppercase">금융 · MZ</span>
-</div>
-</div>
-<div class="p-8">
-<div class="flex items-start justify-between mb-4">
-<h3 class="text-2xl font-extrabold text-slate-900 dark:text-white group-hover:text-primary transition-colors">MZ 세대 금융 라이프스타일 및 은행 이용 인사이트</h3>
-<span class="material-symbols-outlined text-primary opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all ml-4 shrink-0">arrow_forward</span>
-</div>
-<p class="text-slate-600 dark:text-slate-400 mb-6 leading-relaxed">금융 관심·소비/저축/투자·은행·앱 이용·브랜드 인식을 심층 파악하고, MZ 타깃 디지털 마케팅 캠페인 제언을 도출했습니다.</p>
-<div class="flex flex-wrap gap-2 mb-6">
-<span class="px-3 py-1 bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 text-xs font-bold rounded-full">AI 인터뷰</span>
-<span class="px-3 py-1 bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 text-xs font-bold rounded-full">정성 리서치</span>
-<span class="px-3 py-1 bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 text-xs font-bold rounded-full">금융</span>
-</div>
-</div>
-</a>
+      <!-- Case #2 -->
+      <a href="case-study-02-local-government.html" class="cs-card group">
+        <div class="cs-img-wrap">
+          <img src="assets/case%232.jpeg" alt="Local Government" class="cs-img group-hover:scale-105"/>
+          <div class="cs-img-overlay"></div>
+          <span class="cs-category-badge">지자체 · 광고</span>
+        </div>
+        <div class="cs-body">
+          <div class="flex items-start justify-between gap-4 mb-3">
+            <h3 class="cs-title">지자체 주관 행사 참여 경험 조사</h3>
+            <span class="material-symbols-outlined cs-arrow">arrow_forward</span>
+          </div>
+          <p class="cs-desc">시민의 행사 인지 경로, 참여 동기, 만족도·재방문 의사를 AI 인터뷰로 파악하고 채널·메시지·정보 제공 제언을 도출했습니다.</p>
+          <div class="cs-tags">
+            <span class="cs-tag">AI Interview</span>
+            <span class="cs-tag">Qualitative</span>
+            <span class="cs-tag">Public Sector</span>
+          </div>
+        </div>
+      </a>
 
-<!-- Case Study #5 -->
-<a href="case-study-05-ai-interview-attitude.html" class="group bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300">
-<div class="relative h-64 overflow-hidden">
-<img alt="Case Study 5" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" src="assets/hero.jpeg"/>
-<div class="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent"></div>
-<div class="absolute bottom-0 left-0 p-6">
-<span class="px-3 py-1 bg-primary text-white text-[10px] font-black rounded-full mb-2 inline-block tracking-widest uppercase">AI 인터뷰 · 사용자 인식</span>
-</div>
-</div>
-<div class="p-8">
-<div class="flex items-start justify-between mb-4">
-<h3 class="text-2xl font-extrabold text-slate-900 dark:text-white group-hover:text-primary transition-colors">AI 인터뷰에 대한 참여자 태도와 선호 인사이트</h3>
-<span class="material-symbols-outlined text-primary opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all ml-4 shrink-0">arrow_forward</span>
-</div>
-<p class="text-slate-600 dark:text-slate-400 mb-6 leading-relaxed">AI로 진행한 인터뷰에 참여한 13명의 경험을 모아, 사람 연구원과의 유사도·선호 상황·재참여 의향을 파악하고 개선 포인트와 활용 방향을 제안했습니다.</p>
-<div class="flex flex-wrap gap-2 mb-6">
-<span class="px-3 py-1 bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 text-xs font-bold rounded-full">AI 인터뷰</span>
-<span class="px-3 py-1 bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 text-xs font-bold rounded-full">정성 리서치</span>
-<span class="px-3 py-1 bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 text-xs font-bold rounded-full">사용자 인식</span>
-</div>
-</div>
-</a>
+      <!-- Case #3 -->
+      <a href="case-study-03-japan-fashion.html" class="cs-card group">
+        <div class="cs-img-wrap">
+          <img src="assets/case%233.jpeg" alt="Japan Fashion" class="cs-img group-hover:scale-105"/>
+          <div class="cs-img-overlay"></div>
+          <span class="cs-category-badge">패션 · 이커머스</span>
+        </div>
+        <div class="cs-body">
+          <div class="flex items-start justify-between gap-4 mb-3">
+            <h3 class="cs-title">일본 유저가 선호하는 패션 앱 UI 방향성</h3>
+            <span class="material-symbols-outlined cs-arrow">arrow_forward</span>
+          </div>
+          <p class="cs-desc">일본 거주 사용자 대상 패션 앱 UI 인터뷰를 통해 시간 존중·가격 투명성·한 화면 정보 해결 등 선호 방향성과 Must-have 속성을 도출했습니다.</p>
+          <div class="cs-tags">
+            <span class="cs-tag">AI Interview</span>
+            <span class="cs-tag">UI/UX</span>
+            <span class="cs-tag">Japan Market</span>
+          </div>
+        </div>
+      </a>
 
-</div>
+      <!-- Case #4 -->
+      <a href="case-study-04-finance-behavior.html" class="cs-card group">
+        <div class="cs-img-wrap">
+          <img src="assets/case4.jpg" alt="Finance Behavior" class="cs-img group-hover:scale-105"/>
+          <div class="cs-img-overlay"></div>
+          <span class="cs-category-badge">금융 · MZ</span>
+        </div>
+        <div class="cs-body">
+          <div class="flex items-start justify-between gap-4 mb-3">
+            <h3 class="cs-title">MZ 세대 금융 라이프스타일 및 은행 이용 인사이트</h3>
+            <span class="material-symbols-outlined cs-arrow">arrow_forward</span>
+          </div>
+          <p class="cs-desc">금융 관심·소비/저축/투자·은행·앱 이용·브랜드 인식을 심층 파악하고 MZ 타깃 디지털 마케팅 캠페인 제언을 도출했습니다.</p>
+          <div class="cs-tags">
+            <span class="cs-tag">AI Interview</span>
+            <span class="cs-tag">Qualitative</span>
+            <span class="cs-tag">Finance</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- Case #5 — full width -->
+      <a href="case-study-05-ai-interview-attitude.html" class="cs-card cs-card-wide group md:col-span-2">
+        <div class="cs-img-wrap cs-img-wide">
+          <img src="assets/hero.jpeg" alt="AI Interview Attitude" class="cs-img group-hover:scale-105"/>
+          <div class="cs-img-overlay"></div>
+          <span class="cs-category-badge">AI 인터뷰 · 사용자 인식</span>
+        </div>
+        <div class="cs-body">
+          <div class="flex items-start justify-between gap-4 mb-3">
+            <h3 class="cs-title cs-title-wide">AI 인터뷰에 대한 참여자 태도와 선호 인사이트</h3>
+            <span class="material-symbols-outlined cs-arrow">arrow_forward</span>
+          </div>
+          <p class="cs-desc max-w-2xl">AI로 진행한 인터뷰에 참여한 13명의 경험을 모아, 사람 연구원과의 유사도·선호 상황·재참여 의향을 파악하고 개선 포인트와 활용 방향을 제안했습니다.</p>
+          <div class="cs-tags">
+            <span class="cs-tag">AI Interview</span>
+            <span class="cs-tag">Qualitative</span>
+            <span class="cs-tag">User Perception</span>
+          </div>
+        </div>
+      </a>
+
+    </div>
+  </div>
 </section>
 
-<!-- CTA Section -->
-<section class="mb-20">
-<div class="bg-primary text-white rounded-2xl p-8 md:p-12 relative overflow-hidden shadow-2xl">
-<div class="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full -mr-20 -mt-20 blur-3xl"></div>
-<div class="relative z-10 text-center">
-<h2 class="text-3xl md:text-4xl font-extrabold mb-4">프로젝트를 시작하고 싶으신가요?</h2>
-<p class="text-white/80 text-lg mb-8 max-w-2xl mx-auto">AI 기반 사용자 리서치로 더 깊은 인사이트를 얻어보세요.</p>
-<a href="https://www.proby.io/landing/contact" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 bg-white text-primary hover:bg-slate-100 h-12 px-8 rounded-lg font-bold transition-all">
-문의하기
-<span class="material-symbols-outlined">arrow_forward</span>
-</a>
-</div>
-</div>
+<!-- ─── CTA ───────────────────────────────────────────────────────── -->
+<section class="relative z-10 py-28">
+  <div class="blob w-[600px] h-[600px] left-1/2 -translate-x-1/2 top-0" style="background:#1E3050;opacity:0.15;"></div>
+  <div class="max-w-[1600px] mx-auto px-6 md:px-16 text-center relative z-10">
+    <p class="section-label mb-6">Get Started</p>
+    <h2 class="text-4xl md:text-5xl font-black leading-tight mb-6">
+      <span class="grad-text">Start a tailored sample project</span>
+    </h2>
+    <p class="text-white/50 text-lg max-w-xl mx-auto mb-12 leading-relaxed">
+      Share your research objectives and we'll run a sample interview — at no cost.
+    </p>
+    <a href="index.html"
+       class="btn-primary inline-flex items-center gap-2 px-10 py-4 rounded-full font-bold text-white text-sm">
+      <span class="material-symbols-outlined">arrow_back</span>
+      Back to main page
+    </a>
+  </div>
 </section>
-</main>
-<footer class="w-full bg-primary text-white py-12 mt-20">
-<div class="max-w-[1600px] mx-auto px-6 md:px-20 lg:px-16 flex flex-col md:flex-row justify-between items-center gap-8">
-<div class="flex items-center gap-3">
-<div class="size-8 bg-primary rounded-lg flex items-center justify-center text-white">
-<span class="material-symbols-outlined text-xl">biotech</span>
-</div>
-<span class="font-bold text-lg">Proby</span>
-</div>
-<p class="text-slate-400 text-sm">© 2026 Proby. AI 기반 사용자 리서치 플랫폼.</p>
-<div class="flex gap-6">
-<a class="text-slate-400 hover:text-white transition-colors" href="#"><span class="material-symbols-outlined">public</span></a>
-<a class="text-slate-400 hover:text-white transition-colors" href="#"><span class="material-symbols-outlined">mail</span></a>
-</div>
-</div>
+
+<!-- ─── FOOTER ────────────────────────────────────────────────────── -->
+<footer class="relative z-10 border-t border-white/5 py-10">
+  <div class="max-w-[1600px] mx-auto px-6 md:px-16 flex flex-col md:flex-row justify-between items-center gap-6">
+    <div class="flex items-center">
+      <img src="assets/header-white.png" alt="Proby" class="h-7 w-auto"/>
+    </div>
+    <p class="text-white/25 text-sm">© 2026 Proby. AI-powered user research platform.</p>
+    <div class="flex gap-5">
+      <a class="text-white/25 hover:text-white transition-colors" href="https://www.proby.io" target="_blank" rel="noopener noreferrer"><span class="material-symbols-outlined">public</span></a>
+      <a class="text-white/25 hover:text-white transition-colors" href="mailto:chris@proby.io"><span class="material-symbols-outlined">mail</span></a>
+    </div>
+  </div>
 </footer>
-</div>
 
-</body></html>
+<style>
+/* ── Case study cards ─────────────────────────────────────────── */
+.cs-card {
+  display: flex;
+  flex-direction: column;
+  background: rgba(25,25,30,0.85);
+  border: 1px solid rgba(40,64,110,0.3);
+  border-radius: 1.25rem;
+  overflow: hidden;
+  transition: border-color 0.25s, transform 0.25s, box-shadow 0.25s;
+  text-decoration: none;
+}
+.cs-card:hover {
+  border-color: rgba(65,104,175,0.55);
+  transform: translateY(-4px);
+  box-shadow: 0 16px 48px rgba(30,48,80,0.35);
+}
+.cs-card-wide {
+  flex-direction: row;
+  align-items: stretch;
+}
+@media (max-width: 767px) {
+  .cs-card-wide { flex-direction: column; }
+}
+
+.cs-img-wrap {
+  position: relative;
+  height: 220px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.cs-img-wide {
+  width: 340px;
+  height: auto;
+}
+@media (max-width: 767px) {
+  .cs-img-wide { width: 100%; height: 220px; }
+}
+
+.cs-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+.cs-img-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(10,10,11,0.75) 0%, rgba(10,10,11,0.2) 50%, transparent 100%);
+}
+.cs-category-badge {
+  position: absolute;
+  bottom: 1rem;
+  left: 1.25rem;
+  font-size: 0.6rem;
+  font-weight: 900;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent-lt);
+  background: rgba(30,48,80,0.8);
+  border: 1px solid rgba(65,104,175,0.35);
+  border-radius: 999px;
+  padding: 3px 10px;
+  backdrop-filter: blur(8px);
+}
+
+.cs-body {
+  padding: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+.cs-title {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: rgba(255,255,255,0.9);
+  line-height: 1.35;
+  transition: color 0.2s;
+}
+.cs-title-wide {
+  font-size: 1.35rem;
+}
+.cs-card:hover .cs-title { color: var(--accent-lt); }
+
+.cs-arrow {
+  font-size: 1.1rem;
+  color: var(--accent-text);
+  flex-shrink: 0;
+  opacity: 0;
+  transform: translateX(-4px);
+  transition: opacity 0.2s, transform 0.2s;
+}
+.cs-card:hover .cs-arrow {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.cs-desc {
+  font-size: 0.83rem;
+  color: rgba(255,255,255,0.45);
+  line-height: 1.7;
+  margin-bottom: 1.25rem;
+  flex: 1;
+}
+
+.cs-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+.cs-tag {
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: var(--accent-lt);
+  background: rgba(30,48,80,0.55);
+  border: 1px solid rgba(65,104,175,0.22);
+  border-radius: 999px;
+  padding: 3px 10px;
+  letter-spacing: 0.03em;
+}
+</style>
+
+</body>
+</html>
